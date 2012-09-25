@@ -1,4 +1,10 @@
 Prosperion2012::Application.routes.draw do
+  resources :goal_categories
+
+  resources :goals
+
+  resources :to_dos
+
   resources :visits
 
   resources :clients

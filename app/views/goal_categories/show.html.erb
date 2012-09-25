@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @goal_category.name %>
+</p>
+
+<p>
+  <b>Icon:</b>
+  <%= @goal_category.icon %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= @goal_category.priority %>
+</p>
+
+
+<%= link_to 'Edit', edit_goal_category_path(@goal_category) %> |
+<%= link_to 'Back', goal_categories_path %>

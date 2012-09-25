@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924010407) do
+ActiveRecord::Schema.define(:version => 20120925025511) do
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,33 @@ ActiveRecord::Schema.define(:version => 20120924010407) do
     t.text     "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "goal_categories", :force => true do |t|
+    t.string   "name"
+    t.binary   "icon"
+    t.integer  "priority"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "goals", :force => true do |t|
+    t.datetime "target_date"
+    t.integer  "target_value"
+    t.integer  "current_value"
+    t.integer  "target_expenditures"
+    t.integer  "current_expenditures"
+    t.boolean  "complete"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "to_dos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "complete"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "visits", :force => true do |t|

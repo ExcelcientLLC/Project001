@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  target_date: 2012-09-24 20:52:54
+  target_value: 1
+  current_value: 1
+  target_expenditures: 1
+  current_expenditures: 1
+  complete: false
+
+two:
+  target_date: 2012-09-24 20:52:54
+  target_value: 1
+  current_value: 1
+  target_expenditures: 1
+  current_expenditures: 1
+  complete: false

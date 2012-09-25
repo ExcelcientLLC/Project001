@@ -1,0 +1,27 @@
+<h1>Listing goal_categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Icon</th>
+    <th>Priority</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @goal_categories.each do |goal_category| %>
+  <tr>
+    <td><%= goal_category.name %></td>
+    <td><%= goal_category.icon %></td>
+    <td><%= goal_category.priority %></td>
+    <td><%= link_to 'Show', goal_category %></td>
+    <td><%= link_to 'Edit', edit_goal_category_path(goal_category) %></td>
+    <td><%= link_to 'Destroy', goal_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Goal category', new_goal_category_path %>

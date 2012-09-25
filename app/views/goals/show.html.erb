@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Target date:</b>
+  <%= @goal.target_date %>
+</p>
+
+<p>
+  <b>Target value:</b>
+  <%= @goal.target_value %>
+</p>
+
+<p>
+  <b>Current value:</b>
+  <%= @goal.current_value %>
+</p>
+
+<p>
+  <b>Target expenditures:</b>
+  <%= @goal.target_expenditures %>
+</p>
+
+<p>
+  <b>Current expenditures:</b>
+  <%= @goal.current_expenditures %>
+</p>
+
+<p>
+  <b>Complete:</b>
+  <%= @goal.complete %>
+</p>
+
+
+<%= link_to 'Edit', edit_goal_path(@goal) %> |
+<%= link_to 'Back', goals_path %>
