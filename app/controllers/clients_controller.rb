@@ -3,6 +3,7 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.all
+    @client = Client.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,30 +13,30 @@ class ClientsController < ApplicationController
 
   # GET /clients/1
   # GET /clients/1.json
-  def show
-    @client = Client.find(params[:id])
+  # def show
+    # @client = Client.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @client }
-    end
-  end
+    # respond_to do |format|
+      # format.html # show.html.erb
+      # format.json { render json: @client }
+    # end
+  # end
 
-  # GET /clients/new
-  # GET /clients/new.json
-  def new
-    @client = Client.new
+  # # GET /clients/new
+  # # GET /clients/new.json
+  # def new
+    # @client = Client.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @client }
-    end
-  end
+    # respond_to do |format|
+      # format.html # new.html.erb
+      # format.json { render json: @client }
+    # end
+  # end
 
-  # GET /clients/1/edit
-  def edit
-    @client = Client.find(params[:id])
-  end
+  # # GET /clients/1/edit
+  # def edit
+    # @client = Client.find(params[:id])
+  # end
 
   # POST /clients
   # POST /clients.json
