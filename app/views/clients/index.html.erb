@@ -11,8 +11,6 @@
     <th>Zip</th>
     <th>Comment</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @clients.each do |client| %>
@@ -25,6 +23,7 @@
     <td><%= client.state %></td>
     <td><%= client.zip %></td>
     <td><%= client.comment %></td>
+    <td><%= link_to 'Show', client %></td>
   </tr>
 <% end %>
 </table>

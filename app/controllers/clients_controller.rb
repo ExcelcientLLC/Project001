@@ -13,14 +13,14 @@ class ClientsController < ApplicationController
 
   # GET /clients/1
   # GET /clients/1.json
-  # def show
-    # @client = Client.find(params[:id])
+  def show
+    @client = Client.find(params[:id])
 
-    # respond_to do |format|
-      # format.html # show.html.erb
-      # format.json { render json: @client }
-    # end
-  # end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @client }
+    end
+  end
 
   # # GET /clients/new
   # # GET /clients/new.json
@@ -45,7 +45,7 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
-        format.html { render action: "index", notice: 'Client was successfully created.' }
+        format.html { redirect_to @client, notice: 'Client was successfully created.' }
         format.json { render json: @client, status: :created, location: @client }
       else
         format.html { render action: "index" }
@@ -61,7 +61,7 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.update_attributes(params[:client])
-        format.html { render action: "index", notice: 'Client was successfully updated.' }
+        format.html { redirect_to @client, notice: 'Client was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "index" }
