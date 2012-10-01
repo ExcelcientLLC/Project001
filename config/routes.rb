@@ -8,11 +8,6 @@ Prosperion2012::Application.routes.draw do
   resources :visits
 
   resources :clients, :except => [:new, :edit]
-  # get "/clients" => "clients#index"
-  # get "/clients/:id" => "clients#show"
-  # post "/clients" => "clients#create"
-  # put "/clients/:id" => "clients#update"
-  # delete "/clients/:id" => "clients#destroy"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
