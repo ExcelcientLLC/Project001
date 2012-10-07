@@ -3,6 +3,7 @@ class VisitsController < ApplicationController
   # GET /visits.json
   def index
     @visits = Visit.all
+    @visit = Visit.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,22 +20,6 @@ class VisitsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @visit }
     end
-  end
-
-  # GET /visits/new
-  # GET /visits/new.json
-  def new
-    @visit = Visit.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @visit }
-    end
-  end
-
-  # GET /visits/1/edit
-  def edit
-    @visit = Visit.find(params[:id])
   end
 
   # POST /visits
