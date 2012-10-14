@@ -10,6 +10,18 @@ class ClientsController < ApplicationController
       format.json { render json: @clients }
     end
   end
+  
+  # GET /clients/1
+  # GET /clients/1.json
+  def show
+    @clients = Client.all
+    @client = Client.find(params[:id])
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @client }
+    end
+  end
 
   # POST /clients
   # POST /clients.json
