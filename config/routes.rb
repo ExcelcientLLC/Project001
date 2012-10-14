@@ -1,8 +1,9 @@
 Prosperion2012::Application.routes.draw do
   resources :goals
 
-  resources :clients, :except => [:new, :edit]
-  resources :visits, :except => [:new, :edit]
+  resources :clients, :except => [:new, :edit] do
+    resources :visits, :except => [:new, :edit]
+end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

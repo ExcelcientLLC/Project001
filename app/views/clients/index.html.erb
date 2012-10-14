@@ -15,7 +15,6 @@
       <th>
       </th> -->
     </tr>
-
     <% @clients.each do |client| %>
     <tr style="background:red;border-style:solid">
       <td style="color:white"><%= client.name %></td>
@@ -26,14 +25,13 @@
       <td><%= client.state %></td>
       <td><%= client.zip %></td>
       <td><%= client.comment %></td>-->
-      <td><%= link_to 'Show', client %></td>
+      <td><%= link_to 'Show', client_visits_path(client) %></td>
     </tr>
     <% end %>
   </table>
 </div>
 <div style="width:50%;float:left">
   <h1>Editing client</h1>
-
   <%= render 'form' %>
 </div>
 
