@@ -2,7 +2,8 @@ class VisitsController < ApplicationController
   # GET /visits
   # GET /visits.json
   def index
-    @visits = Visit.all
+    @client = Client.find(params[:client_id])
+    @visits = @client.visits
     @visit = Visit.new
 
     respond_to do |format|
@@ -14,6 +15,7 @@ class VisitsController < ApplicationController
   # GET /visits/1
   # GET /visits/1.json
   def show
+    @client = Client.find(params[:client_id])
     @visit = Visit.find(params[:id])
 
     respond_to do |format|
@@ -26,6 +28,7 @@ class VisitsController < ApplicationController
   # POST /visits.json
   def create
     @visit = Visit.new(params[:visit])
+    @visit.client = Client.find(params[:client_id])
 
     respond_to do |format|
       if @visit.save
