@@ -41,13 +41,14 @@ class GoalsController < ApplicationController
   # POST /goals.json
   def create
     @goal = Goal.new(params[:goal])
+    @goal = Visit.find(params[:visit_id])
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+        format.html { redirect_to client_visits_path(@todo.visit.client), notice: 'Goal was successfully created.' }
         format.json { render json: @goal, status: :created, location: @goal }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to client_visits_path(@todo.visit.client) }
         format.json { render json: @goal.errors, status: :unprocessable_entity }
       end
     end
@@ -60,10 +61,10 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       if @goal.update_attributes(params[:goal])
-        format.html { redirect_to @goal, notice: 'Goal was successfully updated.' }
+        format.html { redirect_to client_visits_path(@todo.visit.client), notice: 'Goal was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { redirect_to client_visits_path(@todo.visit.client) }
         format.json { render json: @goal.errors, status: :unprocessable_entity }
       end
     end
@@ -76,7 +77,7 @@ class GoalsController < ApplicationController
     @goal.destroy
 
     respond_to do |format|
-      format.html { redirect_to goals_url }
+      format.html { redirect_to client_visits_path(@todo.visit.client) }
       format.json { head :no_content }
     end
   end

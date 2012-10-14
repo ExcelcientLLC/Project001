@@ -1,9 +1,11 @@
 Prosperion2012::Application.routes.draw do
-  resources :goals
 
-  resources :clients, :except => [:new, :edit] do
-    resources :visits, :except => [:new, :edit]
-end
+    resources :clients, :except => [:new, :edit] do
+        resources :visits, :except => [:new, :edit] do
+            resources :goals, :only => [:create, :update, :destroy]
+            resources :to_dos, :only => [:create, :update, :destroy]
+        end
+    end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -55,7 +57,7 @@ end
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'clients'
-root :to => 'clients#index'
+    root :to => 'clients#index'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

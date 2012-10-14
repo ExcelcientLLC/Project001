@@ -2,6 +2,7 @@ class ToDosController < ApplicationController
   # GET /to_dos
   # GET /to_dos.json
   def index
+    @visit = Visit.find(:visit_id)
     @to_dos = ToDo.all
 
     respond_to do |format|
@@ -41,13 +42,14 @@ class ToDosController < ApplicationController
   # POST /to_dos.json
   def create
     @to_do = ToDo.new(params[:to_do])
+    @to_do.visit = Visit.find(params[:visit_id])
 
     respond_to do |format|
       if @to_do.save
-        format.html { redirect_to @to_do, notice: 'To do was successfully created.' }
+        format.html { redirect_to client_visits_path(@todo.visit.client), notice: 'To do was successfully created.' }
         format.json { render json: @to_do, status: :created, location: @to_do }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to client_visits_path(@todo.visit.client) }
         format.json { render json: @to_do.errors, status: :unprocessable_entity }
       end
     end
@@ -60,10 +62,10 @@ class ToDosController < ApplicationController
 
     respond_to do |format|
       if @to_do.update_attributes(params[:to_do])
-        format.html { redirect_to @to_do, notice: 'To do was successfully updated.' }
+        format.html { redirect_to client_visits_path(@todo.visit.client), notice: 'To do was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { redirect_to client_visits_path(@todo.visit.client) }
         format.json { render json: @to_do.errors, status: :unprocessable_entity }
       end
     end
@@ -76,7 +78,7 @@ class ToDosController < ApplicationController
     @to_do.destroy
 
     respond_to do |format|
-      format.html { redirect_to to_dos_url }
+      format.html { redirect_to client_visits_path(@todo.visit.client) }
       format.json { head :no_content }
     end
   end
