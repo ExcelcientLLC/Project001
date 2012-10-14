@@ -1,35 +1,40 @@
-<h1>Listing clients</h1>
+<div style="width:1024px;margin:0px auto">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Comment</th>
-    <th></th>
-  </tr>
+<div style="width:50%;float:left">
+  <h1>clients</h1>
+  <table style="border-spacing:0;width:100%">
+    <tr>
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Email</th>
+      <!-- <th>Phone</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Comment</th>
+      <th>
+      </th> -->
+    </tr>
 
-<% @clients.each do |client| %>
-  <tr>
-    <td><%= client.name %></td>
-    <td><%= client.email %></td>
-    <td><%= client.phone %></td>
-    <td><%= client.address %></td>
-    <td><%= client.city %></td>
-    <td><%= client.state %></td>
-    <td><%= client.zip %></td>
-    <td><%= client.comment %></td>
-    <td><%= link_to 'Show', client %></td>
-  </tr>
-<% end %>
-</table>
+    <% @clients.each do |client| %>
+    <tr style="background:red;border-style:solid">
+      <td style="color:white"><%= client.name %></td>
+      <td style="color:white"><%= client.email %></td>
+      <!-- <td><%= client.phone %></td>
+      <td><%= client.address %></td>
+      <td><%= client.city %></td>
+      <td><%= client.state %></td>
+      <td><%= client.zip %></td>
+      <td><%= client.comment %></td>-->
+      <td><%= link_to 'Show', client %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<div style="width:50%;float:left">
+  <h1>Editing client</h1>
 
-<br />
+  <%= render 'form' %>
+</div>
 
-<h1>Editing client</h1>
-
-<%= render 'form' %>
+</div>
