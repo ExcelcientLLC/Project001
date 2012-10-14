@@ -40,5 +40,13 @@
   <%= @client.comment %>
 </p>
 
+<p>
+    <% @client.visits.each do |visit| %>
+      <tr>
+        <td><%= visit.visit_date %></td>
+        <td><%= link_to 'Show', client_visit_path(@client, visit) %></td>
+      </tr>
+    <% end %>
+</p>
 
 <%= link_to 'Back', clients_path %>
