@@ -1,5 +1,5 @@
 class Visit < ActiveRecord::Base
-  attr_accessible :visit_date
+  attr_accessible :visit_date, :client
   
   belongs_to :client
   
