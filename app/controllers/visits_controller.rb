@@ -1,6 +1,6 @@
 class VisitsController < ApplicationController
-  # GET /visits
-  # GET /visits.json
+  # GET /clients/:client_id/visits
+  # GET /clients/:client_id/visits.json
   def index
     @client = Client.find(params[:client_id])
     @visits = @client.visits
@@ -12,8 +12,8 @@ class VisitsController < ApplicationController
     end
   end
 
-  # GET /visits/1
-  # GET /visits/1.json
+  # GET /clients/:client_id/visits/1
+  # GET /clients/:client_id/visits/1.json
   def show
     @client = Client.find(params[:client_id])
     @visit = Visit.find(params[:id])
@@ -24,8 +24,8 @@ class VisitsController < ApplicationController
     end
   end
 
-  # POST /visits
-  # POST /visits.json
+  # POST /clients/:client_id/visits
+  # POST /clients/:client_id/visits.json
   def create
     @visit = Visit.new(params[:visit])
     @visit.client = Client.find(params[:client_id])
@@ -41,8 +41,8 @@ class VisitsController < ApplicationController
     end
   end
 
-  # PUT /visits/1
-  # PUT /visits/1.json
+  # PUT /clients/:client_id/visits/1
+  # PUT /clients/:client_id/visits/1.json
   def update
     @visit = Visit.find(params[:id])
 
@@ -57,8 +57,8 @@ class VisitsController < ApplicationController
     end
   end
 
-  # DELETE /visits/1
-  # DELETE /visits/1.json
+  # DELETE /clients/:client_id/visits/1
+  # DELETE /clients/:client_id/visits/1.json
   def destroy
     @visit = Visit.find(params[:id])
     @visit.destroy
