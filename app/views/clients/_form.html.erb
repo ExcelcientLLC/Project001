@@ -70,7 +70,9 @@
   </div>
   <div class="field">
     <%= f.label :comment %><br/>
-    <%= f.text_area :comment %>
+    <div style="height:50px;overflow:auto">
+      <%= f.text_area :comment %>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit %>
