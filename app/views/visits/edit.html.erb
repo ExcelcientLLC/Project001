@@ -46,27 +46,7 @@
 <% end %>
 </table>
 
-<h1>Listing to_dos</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Complete</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @visit.to_dos.each do |to_do| %>
-  <tr>
-    <td><%= to_do.title %></td>
-    <td><%= to_do.description %></td>
-    <td><%= to_do.complete %></td>
-    <td><%= link_to 'Destroy', to_do, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<%= render 'todo_list_form' %>
 
 <%= render 'form' %>
 
