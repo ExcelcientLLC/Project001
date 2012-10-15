@@ -1,27 +1,9 @@
-<h1>Listing visits</h1>
+<%= render 'form' %>
 
-<div>
-  <table>
-  <tr>
-    <th>Visit date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @visits.each do |visit| %>
-  <tr>
-    <td><%= visit.visit_date %></td>
-    <td><%= link_to 'Show', client_visit_path(@client, visit) %></td>
-    <td><%= link_to 'Destroy', client_visit_path(@client, visit), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<%= link_to 'Show', client_visit_path(@client, @visit) %>
+<%= link_to 'Previous', [:edit, @client, @client.visits.first] %>
+<%= link_to 'Next', [:edit, @client, @client.visits.last] %>
 
 <%= render 'goal_list_form' %>
 
 <%= render 'todo_list_form' %>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', client_visit_path(@client, @visit) %>

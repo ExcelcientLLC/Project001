@@ -57,7 +57,7 @@ class VisitsController < ApplicationController
 
     respond_to do |format|
       if @visit.update_attributes(params[:visit])
-        format.html { redirect_to client_visits_path(@visit.client), notice: 'Visit was successfully updated.' }
+        format.html { redirect_to edit_client_visit_path(@visit.client), notice: 'Visit was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { redirect_to client_visits_path(@visit.client)}
