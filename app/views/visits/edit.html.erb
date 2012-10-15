@@ -1,8 +1,12 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', client_visit_path(@client, @visit) %>
-<%= link_to 'Previous', [:edit, @client, @client.visits.first] %>
-<%= link_to 'Next', [:edit, @client, @client.visits.last] %>
+<% if @visit != @client.visits.first %>
+    <%= link_to 'Previous', [:edit, @client, @client.visits.first] %>
+<% end %>
+<% if @visit != @client.visits.last  %>
+    <%= link_to 'Next', [:edit, @client, @client.visits.last] %>
+<% end %>
 
 <%= render 'goal_list_form' %>
 
