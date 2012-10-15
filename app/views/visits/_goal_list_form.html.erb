@@ -1,0 +1,27 @@
+<%= form_for(@visit, :url => client_visit_path(@client, @visit))  do |f| %>
+    <h1>Listing goals</h1>
+
+    <table>
+    <tr>
+        <th>Target date</th>
+        <th>Target value</th>
+        <th>Current value</th>
+        <th>Target expenditures</th>
+        <th>Current expenditures</th>
+        <th>Complete</th>
+        <th></th>
+    </tr>
+
+    <% @visit.goals.each do |goal| %>
+    <tr>
+        <td><%= goal.target_date %></td>
+        <td><%= goal.target_value %></td>
+        <td><%= goal.current_value %></td>
+        <td><%= goal.target_expenditures %></td>
+        <td><%= goal.current_expenditures %></td>
+        <td><%= goal.complete %></td>
+        <td><%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    </table>
+<% end %>
