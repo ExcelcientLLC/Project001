@@ -5,13 +5,18 @@
     	<th style="text-align:left">Name</th>
     	<th style="text-align:left">Email</th>
     </tr>
-
+  </table>
+  <table style="width:90%;border-collapse:collapse;border-spacing:0px">
     <% @clients.each do |client| %>
-    <tr style="background:red;border-style:solid">
-    	<td style="color:white"><%= client.name %></td>
-    	<td style="color:white"><%= client.email %></td>
+    <tr>
+    <table style="background:red;width:90%;border-spacing:0px;border-radius:5px;border-style:solid;border-width:1px;border-color:black">
+    <tr>
+    	<td style="color:white;width:40%"><%= client.name %></td>
+    	<td style="color:white;width:40%"><%= client.email %></td>
     	<td><%= link_to 'Show', client_visits_path(client) %></td>
     </tr>
+    </table>
+  </tr>
     <% end %>
 	</table>
 <% end %>
