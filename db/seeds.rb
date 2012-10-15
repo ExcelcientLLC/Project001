@@ -39,4 +39,14 @@ clients = Client.create([
 	address: '8503 21st St.', city: 'Los Angelis', state: 'California', zip: '59049',
 	comment: 'He may neeed a break mid meeting to take an Alka-Seltzer '}
 ])
+Visit.delete_all
+visits = Visit.create([ visit_date: Date.today - rand(10).days, client: clients.first])
+
+	
+Goal.delete_all
+Goal.create( target_date: Date.today - rand(10).days, target_value: 9000, current_value: 5,
+	 target_expenditures: 40, current_expenditures: 30, complete: false, visit: visits.first)
+	
+GoalCategory.delete_all
+GoalCategory.create( name: 'Boat', priority: 5)  
 	

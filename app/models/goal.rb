@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-  attr_accessible :complete, :current_expenditures, :current_value, :target_date, :target_expenditures, :target_value
+  attr_accessible :complete, :current_expenditures, :current_value, :target_date, :target_expenditures, :target_value, :visit
   
   belongs_to :visit
   belongs_to :goal_category
