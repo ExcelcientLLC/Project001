@@ -1,23 +1,24 @@
 <h1>Listing visits</h1>
 
 <div>
-  <table>
-  <tr>
+    <table>
+    <tr>
     <th>Visit date</th>
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+    </tr>
 
-<% @visits.each do |visit| %>
-  <tr>
-    <td><%= visit.visit_date %></td>
-    <td><%= link_to 'Show', client_visit_path(@client, visit) %></td>
-    <td><%= link_to 'Destroy', client_visit_path(@client, visit), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <% @visits.each do |visit| %>
+      <tr>
+        <td><%= visit.visit_date %></td>
+        <td><%= link_to 'Show', client_visit_path(@client, visit) %></td>
+        <td><%= link_to 'Destroy', client_visit_path(@client, visit), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
 </div>
+
 <div>
   <%= render 'form' %>
 </div>

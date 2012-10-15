@@ -1,7 +1,7 @@
 Prosperion2012::Application.routes.draw do
 
     resources :clients, :except => [:new, :edit] do
-        resources :visits, :except => [:new, :edit] do
+        resources :visits, :except => [:new] do
             resources :goals, :only => [:create, :update, :destroy]
             resources :to_dos, :only => [:create, :update, :destroy]
         end

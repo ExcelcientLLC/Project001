@@ -16,12 +16,21 @@ class VisitsController < ApplicationController
   # GET /clients/:client_id/visits/1.json
   def show
     @client = Client.find(params[:client_id])
+    @visits = @client.visits
     @visit = Visit.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @visit }
     end
+  end
+  
+  # GET /clients/:client_id/visits/1/edit
+  # GET /clients/:client_id/visits/1/edit.json
+  def edit
+    @client = Client.find(params[:client_id])
+    @visits = @client.visits
+    @visit = Visit.find(params[:id])
   end
 
   # POST /clients/:client_id/visits
