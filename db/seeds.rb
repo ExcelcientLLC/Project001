@@ -37,7 +37,28 @@ clients = Client.create([
 	comment: 'He is a math professor and will calculate everything you do in his head. Give him time and let him double check you.'},
 	{ name: 'Al Kaseltzer', email: 'alkaseltzer@hotmail.com', phone: '845-999-3759',
 	address: '8503 21st St.', city: 'Los Angelis', state: 'California', zip: '59049',
-	comment: 'He may neeed a break mid meeting to take an Alka-Seltzer '}
+	comment: 'He may neeed a break mid meeting to take an Alka-Seltzer '},
+	{ name: 'Alex Blaine Layder', email: 'alexblainelayder@yahoo.com', phone: '893-487-3976',
+	address: '8496 Procrastination Court', city: 'Portland', state: 'Oregon', zip: '89593',
+	comment: 'He always says he will explain later but never gets around to it. Persist.'},
+	{ name: 'Alf Abet', email: 'alfabet@hotmail.com', phone: '845-999-3759',
+	address: '8503 A St.', city: 'New York', state: 'New York', zip: '59049',
+	comment: 'An english teacher'},
+	{ name: 'Andy Gravity ', email: 'andygravity@gmail.com', phone: '748-389-1793',
+	address: '8437 Huston ct.', city: 'Orlando', state: 'Florida', zip: '49837',
+	comment: 'This guy stayed on the space station longer than anybody else'},
+	{ name: 'Anita Bath', email: 'anitabath@yahoo.com', phone: '893-487-3976',
+	address: '8496 Dirty Road.', city: 'Cheyenne', state: 'Wyoming', zip: '89593',
+	comment: 'She is a rancher and sometimes comes in coverd in dust'},
+	{ name: 'Ann B. Dextrous', email: 'annbdextrous@hotmail.com', phone: '845-999-3759',
+	address: '8503 31st St.', city: 'Fargo', state: 'North Dakota', zip: '59049',
+	comment: 'She does everyting with two hands.'},
+	{ name: 'Anna Mull ', email: 'annamull@yahoo.com', phone: '893-487-3976',
+	address: '8496 Zoo Drive', city: 'Boston', state: 'Massachusetts', zip: '89593',
+	comment: 'She is a cat lady.'},
+	{ name: 'Anne T. Lope', email: 'annetlope@hotmail.com', phone: '845-999-3759',
+	address: '8503 21st St.', city: 'Los Angelis', state: 'California', zip: '59049',
+	comment: 'She can run really fast.'}
 ])
 Visit.delete_all
 visits = Visit.create([ visit_date: Date.today - rand(10).days, client: clients.first])
