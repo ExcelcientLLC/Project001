@@ -32,7 +32,7 @@ class VisitsController < ApplicationController
     @visits = @client.visits
     @visit = Visit.find(params[:id])
     @goal = Goal.new
-    
+    @to_do = ToDo.new
   end
 
   # POST /clients/:client_id/visits
