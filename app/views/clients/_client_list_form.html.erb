@@ -1,11 +1,12 @@
 <%= form_for(@clients, :url => @clients.first) do |f| %>
 	<h1>clients</h1>
-  <table style="border-spacing:0;width:90%">
+  <table style="border-spacing:0;width:90%;">
    	<tr>
     	<th style="text-align:left">Name</th>
     	<th style="text-align:left">Email</th>
     </tr>
   </table>
+	<div style="overflow:auto">
   <table style="width:90%;border-collapse:collapse;border-spacing:0px">
     <% @clients.each do |client| %>
     <tr>
@@ -19,4 +20,5 @@
   </tr>
     <% end %>
 	</table>
+</div>
 <% end %>
