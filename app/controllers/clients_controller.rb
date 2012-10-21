@@ -20,6 +20,17 @@ class ClientsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @client }
+      format.js
+    end
+  end
+  
+  # GET /clients/new
+  # GET /clients/new.json
+  def new
+    @client = Client.new
+
+    respond_to do |format|
+      format.js # new.html.erb
     end
   end
 

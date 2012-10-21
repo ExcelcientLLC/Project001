@@ -17,7 +17,7 @@
     <tr>
     	<td style="color:white;width:40%"><%= client.name %></td>
     	<td style="color:white;width:40%"><%= client.email %></td>
-    	<td><%= link_to 'Show', client_visits_path(client) %></td>
+    	<td><%= link_to 'Show', client_path(client), :remote => true %></td>
     </tr>
     </table>
   </tr>
