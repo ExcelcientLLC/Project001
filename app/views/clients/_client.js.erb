@@ -1,3 +1,6 @@
-$('#client').html("<%= escape_javascript(link_to "New", new_client_path, :remote => true) %>");
+$('#client').html("<p>");
+$('#client').append("<%= escape_javascript(link_to "New", new_client_path, :remote => true) %> | ");
+$('#client').append("<%= escape_javascript(link_to "Delete", client_path(@client), :method => :delete, :remote => true) %>");
+$('#client').append("</p>");
 $('#client').append("<h1>Editing Client</h1>");
 $('#client').append("<%= escape_javascript(render 'form') %>");

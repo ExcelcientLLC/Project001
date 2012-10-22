@@ -37,8 +37,8 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
-    @clients = Client.all
     @client = Client.new(params[:client])
+    @clients = Client.all
 
     respond_to do |format|
       if @client.save
@@ -56,8 +56,8 @@ class ClientsController < ApplicationController
   # PUT /clients/1
   # PUT /clients/1.json
   def update
-    @clients = Client.all
     @client = Client.find(params[:id])
+    @clients = Client.all
 
     respond_to do |format|
       if @client.update_attributes(params[:client])
@@ -77,6 +77,8 @@ class ClientsController < ApplicationController
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
+    @clients = Client.all
+    @client = Client.new
 
     respond_to do |format|
       format.html { redirect_to clients_url }
