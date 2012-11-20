@@ -1,8 +1,7 @@
-<%= form_for(@clients, :url => @clients.first) do |f| %>
-	<div style="height:30px">
-		<h1>clients</h1>
-	</div>
-	<div style="height:15px">
+<div style="height:30px">
+	<h1>clients</h1>
+</div>
+<div style="height:15px">
   <table style="border-spacing:0;width:95%;">
    	<tr>
     	<th style="text-align:left">Name</th>
@@ -10,19 +9,18 @@
     </tr>
   </table>
 	<div style="height:450px;overflow:auto">
-  <table style="width:95%;border-collapse:collapse;border-spacing:0px">
-    <% @clients.each do |client| %>
-    <tr>
-    <table style="background:red;width:100%;border-spacing:0px;border-radius:5px;border-style:solid;border-width:1px;border-color:black">
-    <tr>
-    	<td style="color:white;width:40%"><%= client.name %></td>
-    	<td style="color:white;width:40%"><%= client.email %></td>
-    	<td><%= link_to 'Show', client_path(client), :remote => true %></td>
-    </tr>
-    </table>
-  </tr>
-    <% end %>
-	</table>
+    <table style="width:95%;border-collapse:collapse;border-spacing:0px">
+      <% @clients.each do |client| %>
+        <tr>
+          <table style="background:red;width:100%;border-spacing:0px;border-radius:5px;border-style:solid;border-width:1px;border-color:black">
+            <tr>
+              <td style="color:white;width:40%"><%= client.name %></td>
+              <td style="color:white;width:40%"><%= client.email %></td>
+              <td><%= link_to 'Show', client_path(client), :remote => true %></td>
+            </tr>
+          </table>
+        </tr>
+      <% end %>
+	 </table>
+  </div>
 </div>
-	</div>
-<% end %>
