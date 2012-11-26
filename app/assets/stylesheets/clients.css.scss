@@ -1,16 +1,54 @@
 // Place all the styles related to the Clients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-client_list {
-
+/* Supporting the index of client */
+div.admin_body
+{
+  height: 500px;
+  width: 960px;
+  margin: 0px auto;
 }
-edit_label {
+div.client_list 
+{
+  height: 100%;
+  width: 45%;
+  margin: 15px;
+  float: left;
+}
+div.create_client
+{
+  height: 100%;
+  width: 45%;
+  float: left;
+  boarder: solid;
+  boarder-width: 1px;
+  margin: 15px;
+  background: gray;
+}
+
+/* Supporting form css */
+div.field
+{
+ height: 20px;
+ width: 100%;
+}
+div.edit_label 
+{
   width: 25%;
+  float: left;
+}
+
+div.edit_field 
+{
+  width: 75%;
   float: right;
 }
 
-edit_field {
-  width: 50%;
+div.edit_comment_field 
+{
+  overflow: auto;
+  height: 50px;
+  width: 100%;
   float: right;
 }
 
