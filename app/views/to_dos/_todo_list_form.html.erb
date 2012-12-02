@@ -13,7 +13,7 @@
       <td><%= to_do.title %></td>
       <td><%= to_do.description %></td>
       <td><%= to_do.complete %></td>
-      <td><%= link_to 'Destroy', client_visit_to_do_path(@visit.client, @visit, to_do), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy', client_visit_to_do_path(@visit.client, @visit, to_do), method: :delete, :remote => true, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

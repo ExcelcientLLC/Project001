@@ -89,6 +89,7 @@ class ToDosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to client_visits_path(@todo.visit.client) }
       format.json { head :no_content }
+      format.js
     end
   end
 end
