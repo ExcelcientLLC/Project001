@@ -1,0 +1,6 @@
+$('#todo').html("<p>");
+//$('#goal').append("<%= escape_javascript(link_to "New", new_goal_path(@client, @visit), :remote => true) %> | ");
+//$('#goal').append("<%= escape_javascript(link_to "Delete", goal_path(@client, @visit, @goal), :method => :delete, :remote => true) %>");
+$('#todo').append("</p>");
+$('#todo').append("<h1>Editing To Do</h1>");
+$('#todo').append("<%= escape_javascript(render 'form') %>");
