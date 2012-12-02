@@ -2,12 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* Supporting the index of client */
-div.admin_body
-{
-  height: 500px;
-  width: 960px;
-  margin: 0px auto;
-}
 div.client_list 
 {
   height: 100%;
@@ -24,31 +18,5 @@ div.create_client
   boarder-width: 1px;
   margin: 15px;
   background: gray;
-}
-
-/* Supporting form css */
-div.field
-{
- height: 20px;
- width: 100%;
-}
-div.edit_label 
-{
-  width: 25%;
-  float: left;
-}
-
-div.edit_field 
-{
-  width: 75%;
-  float: right;
-}
-
-div.edit_comment_field 
-{
-  overflow: auto;
-  height: 50px;
-  width: 100%;
-  float: right;
 }
 

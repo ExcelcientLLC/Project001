@@ -11,3 +11,36 @@
  *= require_self
  *= require_tree .
  */
+div.admin_body
+{
+  height: 500px;
+  width: 960px;
+  margin: 0px auto;
+}
+
+/* Supporting admin form*/
+div.field
+{
+ height: 20px;
+ width: 100%;
+}
+div.edit_label
+{
+  width: 25%;
+  float: left;
+}
+
+div.edit_field
+{
+  width: 75%;
+  float: right;
+}
+
+div.edit_comment_field
+{
+  overflow: auto;
+  height: 50px;
+  width: 100%;
+  float: right;
+}
+
