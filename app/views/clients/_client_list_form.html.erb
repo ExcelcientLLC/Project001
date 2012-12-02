@@ -1,14 +1,13 @@
-<div style="height:30px">
-	<h1>clients</h1>
-</div>
+<h1>Clients</h1>
+
 <div style="height:15px">
   <table style="border-spacing:0;width:95%;">
-   	<tr>
+   <tr>
     	<th style="text-align:left">Name</th>
     	<th style="text-align:left">Email</th>
     </tr>
   </table>
-	<div style="height:450px;overflow:auto">
+  <div style="height:450px;overflow:auto">
     <table style="width:95%;border-collapse:collapse;border-spacing:0px">
       <% @clients.each do |client| %>
         <tr>
@@ -21,6 +20,6 @@
           </table>
         </tr>
       <% end %>
-	 </table>
+    </table>
   </div>
 </div>
