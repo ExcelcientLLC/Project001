@@ -27,17 +27,13 @@ class ToDosController < ApplicationController
   # GET /to_dos/new.json
   def new
     @to_do = ToDo.new
+    @visit = Visit.find(params[:visit_id])
 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @to_do }
       format.js
     end
-  end
-
-  # GET /to_dos/1/edit
-  def edit
-    @to_do = ToDo.find(params[:id])
   end
 
   # POST /to_dos
