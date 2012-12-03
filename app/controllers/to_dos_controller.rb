@@ -15,6 +15,7 @@ class ToDosController < ApplicationController
   # GET /to_dos/1.json
   def show
     @to_do = ToDo.find(params[:id])
+    @visit = @to_do.visit
 
     respond_to do |format|
       format.html # show.html.erb
