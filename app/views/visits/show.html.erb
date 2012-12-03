@@ -1,5 +1,5 @@
 <%= render 'form' %>
-
+ 
 <% if @visit != @client.visits.first %>
     <%= link_to 'Previous', [:edit, @client, previous_visit(@client.visits, @visit)] %>
 <% end %>
@@ -8,7 +8,7 @@
 <% end %>
 
 <div id="goal_list">
-	<%= render :partial => '/goals/goal_list' %>
+	<%= render :partial => '/goals/goal_list_form' %>
 </div>
 <div id="todo_list">
 	<%= render :partial => '/to_dos/todo_list_form' %>
