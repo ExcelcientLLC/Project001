@@ -19,6 +19,7 @@
             <td><%= goal.target_expenditures %></td>
             <td><%= goal.current_expenditures %></td>
             <td><%= goal.complete %></td>
+            <td><%= link_to 'Show', client_visit_goal_path(@visit.client, @visit, goal), :remote => true %></td>
             <td><%= link_to 'Destroy', client_visit_goal_path(@visit.client, @visit, goal), method: :delete, :remote => true %></td>
         </tr>
     <% end %>
