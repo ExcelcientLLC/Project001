@@ -38,9 +38,10 @@ div.edit_field
 
 div.edit_comment_field
 {
-  overflow: auto;
-  height: 50px;
+  overflow: scroll;
+  height: 150px;
   width: 100%;
   float: right;
 }
+
 
