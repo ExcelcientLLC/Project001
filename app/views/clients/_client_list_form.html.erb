@@ -1,15 +1,15 @@
 <div class="filed">
-  <div style="height:30px;width:90%;float:left">
+  <div class=search>
     <form name="input" action="html_form_action.asp" method="get">
       <input type="text" name="user">
       <input type="submit" value="Search">
     </form>
   </div>
-  <div style="height:30px;width:10%;float:right">
+  <div class=add>
     <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_path, :remote => true%>
   </div>
 </div>
-<div style="height:15px">
+<div class=field>
   <table style="border-spacing:0;width:95%;">
    <tr>
     	<th style="text-align:left">Name</th>

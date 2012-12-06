@@ -4,13 +4,32 @@ div.admin_body
   width: 960px;
   margin: 0px auto;
 }
-
-/* Supporting admin form*/
 div.field
 {
  height: 20px;
  width: 100%;
 }
+
+/*Supporting admin list*/
+div.search
+{
+  height: 30px;
+  width: 90%;
+  float: left;
+}
+div.add
+{
+  height: 30px;
+  width: 10px;
+  float: left;
+}
+table.heder
+{
+  boarder-spacing: 0;
+  width: 95%;
+}
+
+/* Supporting admin form*/
 div.edit_label
 {
   width: 25%;
@@ -29,6 +48,10 @@ div.edit_comment_field
   overflow: scroll;
   height: 150px;
   width: 82%;
+  float: left;
+}
+div.button_format
+{
   float: left;
 }
 
