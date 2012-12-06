@@ -1,9 +1,12 @@
 <div class="filed">
-  <div class="edit_label">
-  <h1>Clients</h1>
+  <div style="height:30px;width:90%;float:left">
+    <form name="input" action="html_form_action.asp" method="get">
+      <input type="text" name="user">
+      <input type="submit" value="Search">
+    </form>
   </div>
-  <div class="edit_field">
-    <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "40x40"), new_client_path, :remote => true%>
+  <div style="height:30px;width:10%;float:right">
+    <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_path, :remote => true%>
   </div>
 </div>
 <div style="height:15px">
