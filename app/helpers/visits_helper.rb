@@ -18,6 +18,6 @@ module VisitsHelper
     end
 
     def getGoalProgress(goal)
-        return "%d%s%d" % [goal.current_value, "/", goal.target_value]
+        return "$%d%s$%d dollars" % [goal.current_value, " out of ", goal.target_value]
     end
 end

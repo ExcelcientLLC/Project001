@@ -13,7 +13,7 @@
     <h2>Goal Progress</h2>
     <% @curr_visit.goals.each do |goal| %>
         <% if not goal.complete %>
-            <%= goal.target_date %>
+            <%= goal.target_date %>|
             <%= getGoalProgress(goal) %>
         <% end %>
     <% end %>
