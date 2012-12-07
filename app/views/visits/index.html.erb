@@ -1,25 +1,15 @@
 <h1>Listing visits</h1>
 
 <div>
-    <table>
-    <tr>
-    <th>Visit date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    </tr>
-
     <% @visits.each do |visit| %>
-      <tr>
-        <td><%= visit.visit_date %></td>
-        <td><%= link_to 'Show', client_visit_path(@client, visit) %></td>
-        <td><%= link_to 'Destroy', client_visit_path(@client, visit), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <%= visit.visit_date %> |
+        <%= link_to 'Show', client_visit_path(@client, visit) %> |
+        <%= link_to 'Destroy', client_visit_path(@client, visit), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= tryToAddVisitSpacer(@visits, visit) %>
     <% end %>
-    </table>
 </div>
 
 <div>
-  <%= render 'form' %>
+    <%= render 'form' %>
 </div>
 

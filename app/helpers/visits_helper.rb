@@ -9,4 +9,12 @@ module VisitsHelper
         return visits[visit_id+1]
     end
 
+    def tryToAddVisitSpacer(visits, visit) 
+        if visit != visits.last
+            return "---"
+        else
+            return ""
+        end
+    end
+
 end
