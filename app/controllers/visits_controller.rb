@@ -4,6 +4,7 @@ class VisitsController < ApplicationController
   def index
     @client = Client.find(params[:client_id])
     @visits = @client.visits
+    @curr_visit = @visits.last
     @visit = Visit.new
 
     respond_to do |format|

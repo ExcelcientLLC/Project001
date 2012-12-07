@@ -17,4 +17,7 @@ module VisitsHelper
         end
     end
 
+    def getGoalProgress(goal)
+        return "%d%s%d" % [goal.current_value, "/", goal.target_value]
+    end
 end

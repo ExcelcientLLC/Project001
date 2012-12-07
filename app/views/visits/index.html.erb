@@ -1,6 +1,6 @@
 <h1>Listing visits</h1>
 
-<div>
+<div id="visits_bar">
     <% @visits.each do |visit| %>
         <%= visit.visit_date %> |
         <%= link_to 'Show', client_visit_path(@client, visit) %> |
@@ -9,7 +9,26 @@
     <% end %>
 </div>
 
+<div id="goal_progress">
+    <h2>Goal Progress</h2>
+    <% @curr_visit.goals.each do |goal| %>
+        <% if not goal.complete %>
+            <%= goal.target_date %>
+            <%= getGoalProgress(goal) %>
+        <% end %>
+    <% end %>
+</div>
+
+<div id="todo_progress">
+    <h2>To Do Progress</h2>
+    <% @curr_visit.to_dos.each do |to_do| %>
+        <% if not to_do.complete %>\
+        <% end %>
+    <% end %>
+</div>
+
 <div>
+    <h2>Create New Visit</h2>
     <%= render 'form' %>
 </div>
 
