@@ -2,7 +2,14 @@
 
 <div id="visits_bar">
     <% @visits.each do |visit| %>
-        <%= visit.visit_date %> |
+        <div class="circle_icon" style.left="x_loc 5%">
+            <p>
+                <%= visit.visit_date %>
+            </p>
+
+        </div>
+
+        <!--<%= visit.visit_date %>--> |
         <%= link_to 'Show', client_visit_path(@client, visit) %> |
         <%= link_to 'Destroy', client_visit_path(@client, visit), method: :delete, data: { confirm: 'Are you sure?' } %>
         <%= tryToAddVisitSpacer(@visits, visit) %>
