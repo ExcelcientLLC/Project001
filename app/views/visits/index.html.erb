@@ -14,7 +14,10 @@
     <% @curr_visit.goals.each do |goal| %>
         <% if not goal.complete %>
             <%= goal.target_date %>|
-            <%= getGoalProgress(goal) %>
+            <%= getGoalProgressPercent(goal).to_s + "%" %>|
+            <!-- <%= getGoalProgress(goal) %>| -->
+            <b>$<%= goal.target_expenditures %></b> per month|
+            <%= getGoalEndDate(goal) %>
         <% end %>
     <% end %>
 </div>
