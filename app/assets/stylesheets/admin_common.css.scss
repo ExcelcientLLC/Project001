@@ -23,10 +23,40 @@ div.add
   width: 10px;
   float: left;
 }
-table.heder
+table.header
 {
-  boarder-spacing: 0;
+  border-spacing: 0;
   width: 95%;
+}
+div.table_body
+{
+  height: 450px;
+  overflow: auto;
+}
+table.body
+{
+  width: 95%;
+  border-collapse:collapse;
+  border-spacing: 0px;
+}
+table.element
+{
+  background:red;
+  width:100%;
+  border-spacing:0px;
+  border-radius:5px;
+  border-style:solid;
+  border-width:1px;
+  border-color:black;
+}
+table.element:hover
+{
+  background:gray;
+}
+td.element_column
+{
+  color: white;
+  width: 40%;
 }
 
 /* Supporting admin form*/
@@ -45,13 +75,19 @@ div.edit_field
 div.edit_comment_field
 {
   margin: 5px;
-  overflow: scroll;
+  overflow: auto;
   height: 150px;
   width: 82%;
   float: left;
 }
 div.button_format
 {
+  padding: 5px;
   float: left;
+}
+div.delete_format
+{
+  margin-right: 15%;
+  float: right;
 }
 
