@@ -1,8 +1,93 @@
-client_list {
-
+div.admin_body
+{
+  height: 500px;
+  width: 960px;
+  margin: 0px auto;
+}
+div.field
+{
+ height: 20px;
+ width: 100%;
 }
 
-client_list_item {
-  width: 50%;
+/*Supporting admin list*/
+div.search
+{
+  height: 30px;
+  width: 90%;
   float: left;
 }
+div.add
+{
+  height: 30px;
+  width: 10px;
+  float: left;
+}
+table.header
+{
+  border-spacing: 0;
+  width: 95%;
+}
+div.table_body
+{
+  height: 450px;
+  overflow: auto;
+}
+table.body
+{
+  width: 95%;
+  border-collapse:collapse;
+  border-spacing: 0px;
+}
+table.element
+{
+  background:red;
+  width:100%;
+  border-spacing:0px;
+  border-radius:5px;
+  border-style:solid;
+  border-width:1px;
+  border-color:black;
+}
+table.element:hover
+{
+  background:gray;
+}
+td.element_column
+{
+  color: white;
+  width: 40%;
+}
+
+/* Supporting admin form*/
+div.edit_label
+{
+  width: 25%;
+  float: left;
+}
+
+div.edit_field
+{
+  width: 75%;
+  float: right;
+}
+
+div.edit_comment_field
+{
+  margin: 5px;
+  overflow: auto;
+  height: 150px;
+  width: 82%;
+  float: left;
+}
+div.button_format
+{
+  padding: 5px;
+  float: left;
+}
+div.delete_format
+{
+  margin-right: 15%;
+  float: right;
+}
+

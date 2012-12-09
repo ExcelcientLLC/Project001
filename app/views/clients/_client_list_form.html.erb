@@ -1,20 +1,29 @@
-<h1>Clients</h1>
-
-<div style="height:15px">
-  <table style="border-spacing:0;width:95%;">
+<div class="filed">
+  <div class=search>
+    <form name="input" action="html_form_action.asp" method="get">
+      <input type="text" name="user">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+  <div class=add>
+    <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_path, :remote => true%>
+  </div>
+</div>
+<div class=field>
+  <table class=header>
    <tr>
     	<th style="text-align:left">Name</th>
     	<th style="text-align:left">Email</th>
     </tr>
   </table>
-  <div style="height:450px;overflow:auto">
-    <table style="width:95%;border-collapse:collapse;border-spacing:0px">
+  <div class=table_body>
+    <table class=body>
       <% @clients.each do |client| %>
         <tr>
-          <table style="background:red;width:100%;border-spacing:0px;border-radius:5px;border-style:solid;border-width:1px;border-color:black">
+          <table class=element>
             <tr>
-              <td style="color:white;width:40%"><%= client.name %></td>
-              <td style="color:white;width:40%"><%= client.email %></td>
+              <td class=element_column><%= client.name %></td>
+              <td class=element_column><%= client.email %></td>
               <td><%= link_to 'Show', client_path(client), :remote => true %></td>
             </tr>
           </table>

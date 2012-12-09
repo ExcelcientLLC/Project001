@@ -1,8 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%= render 'form' %>
+ 
+<% if @visit != @client.visits.first %>
+    <%= link_to 'Previous', [:edit, @client, previous_visit(@client.visits, @visit)] %>
+<% end %>
+<% if @visit != @client.visits.last  %>
+    <%= link_to 'Next', [:edit, @client, next_visit(@client.visits, @visit)] %>
+<% end %>
 
-<p>
-  <b>Visit date:</b>
-  <%= @visit.visit_date %>
-</p>
-
-<%= link_to 'Edit', [:edit, @client, @visit] %>
+<div id="goal_list">
+	<%= render :partial => '/goals/goal_list_form' %>
+</div>
+<div id="todo_list">
+	<%= render :partial => '/to_dos/todo_list_form' %>
+</div>
+<div id="goal">
+	<h1>Create Goal</h1>
+	<%= render :partial => '/goals/form' %>
+</div>
+<div id="todo">
+	<h1>Create To Do</h1>
+	<%= render :partial => '/to_dos/form' %>
+</div>

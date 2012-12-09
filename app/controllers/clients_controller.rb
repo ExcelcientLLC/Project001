@@ -30,7 +30,7 @@ class ClientsController < ApplicationController
     @client = Client.new
 
     respond_to do |format|
-      format.js # new.html.erb
+      format.js # new.js.erb
     end
   end
 

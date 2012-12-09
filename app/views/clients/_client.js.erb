@@ -1,6 +1,9 @@
 $('#client').html("<p>");
-$('#client').append("<%= escape_javascript(link_to "New", new_client_path, :remote => true) %> | ");
-$('#client').append("<%= escape_javascript(link_to "Delete", client_path(@client), :method => :delete, :remote => true) %>");
 $('#client').append("</p>");
 $('#client').append("<h1>Editing Client</h1>");
 $('#client').append("<%= escape_javascript(render 'form') %>");
+$('#client').append("<div class=button_format><%= escape_javascript(button_to "Timeline", "www.google.com") %></div>");
+$('#client').append("<div class=button_format><%= escape_javascript(button_to "Goals", "www.google.com") %></div>");
+$('#client').append("<div class=delete_format><%= escape_javascript(link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), client_path(@client), :method => :delete, :remote => true) %></div>");
+
+

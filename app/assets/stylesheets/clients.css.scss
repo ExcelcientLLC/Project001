@@ -14,9 +14,10 @@ div.create_client
   height: 100%;
   width: 45%;
   float: left;
-  boarder: solid;
-  boarder-width: 1px;
+  border-style: solid;
+  border-width: 1px;
   margin: 15px;
+  padding: 15px;
   background: gray;
 }
 
