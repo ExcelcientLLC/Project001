@@ -1,0 +1,132 @@
+//# Place all the behaviors and hooks related to the matching controller here.
+//# All this logic will automatically be available in application.js.
+//# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
+
+function init_bar() {		//prototype (messy) float width
+	count = -1;
+//	var date_array = ["01 01 2005", "02 02 2006", "02 27 2011", "03 03 2011", "03 29 2011", "10 13 2012"];
+	var date_array = ["01 01 2011", "02 02 2012", "02 27 2013", "03 03 2018", "03 29 2027", "10 13 2099"];
+	var first_date = new Date(date_array[0]).getTime()/1000;
+	var last_date = new Date(date_array[date_array.length-1]).getTime()/1000;
+	var date_var;
+	var temp_calc;
+	add_circle(0, date_array[0]);
+	for (var i = 1; i < date_array.length; i++) {
+		date_var = new Date(date_array[i]).getTime()/1000;
+		temp_calc = (date_var-first_date)/(last_date-first_date)*97;
+		temp_calc += shift_factor(date_array, i);
+		add_circle(temp_calc, date_array[i]);
+	}
+}
+function init_bar_1() {		//prototype (messy) float width
+	count = -1;
+	var date_array = ["01 01 2011", "02 02 2012", "02 27 2013", "03 03 2018", "03 29 2027", "10 13 2080"];
+	var today = new Date();
+	var today_date = today.getTime()/1000;
+	var first_date = new Date(date_array[0]).getTime()/1000;
+	var last_date = new Date(date_array[date_array.length-1]).getTime()/1000;
+
+	var date_var;
+	var temp_calc;
+
+	var i = 0;
+	var date_i = new Date(date_array[i]).getTime()/1000;
+	while (date_i < today_date) {
+		temp_calc = (date_i-first_date)/(today_date-first_date)*15;
+		temp_calc += shift_factor(date_array, i);
+		add_circle(temp_calc, date_array[i]);
+		i++;
+		date_i = new Date(date_array[i]).getTime()/1000;
+	}
+	add_circle(15, today.toDateString());
+	while (date_i < last_date) {
+		temp_calc = ((date_i-today_date)/(last_date-today_date)*83) + 15;
+		temp_calc += shift_factor(date_array, i);
+		add_circle(temp_calc, date_array[i]);
+		i++;
+		date_i = new Date(date_array[i]).getTime()/1000;
+	}
+	add_circle(99, date_array[i]);
+}
+function init_bar_2() {		//Float across bar - no respect given to relation to "Today"
+	alert("This ran!!!");
+	count = -1;
+//	var date_array = ["01 01 2005", "02 02 2006", "02 27 2011", "03 03 2011", "03 29 2011", "10 13 2012"];
+	var date_array = ["01 01 2011", "02 02 2012", "02 27 2013", "03 03 2018", "03 29 2027", "10 13 2099"];
+	var first_date = new Date(date_array[0]).getTime()/1000;
+	var last_date = new Date(date_array[date_array.length-1]).getTime()/1000;
+	var date_var;
+	var temp_calc;
+	add_circle(0, date_array[0]);
+	for (var i = 1; i < date_array.length; i++) {
+		date_var = new Date(date_array[i]).getTime()/1000;
+		temp_calc = (date_var-first_date)/(last_date-first_date)*97;
+//		temp_calc += shift_factor_2(date_array, i);
+		add_circle(temp_calc, date_array[i]);
+	}
+}
+function shift_factor(date_array, i) {
+	if (i == 0) {
+		return 0;
+	}
+	if (i == date_array.length-1) {
+		return 0;
+	}
+	var shift = 0;
+	var prev_date = new Date(date_array[i-1]).getTime()/1000;
+	var next_date = new Date(date_array[i+1]).getTime()/1000;
+	var this_date = new Date(date_array[i]).getTime()/1000;
+	if (this_date/prev_date < 1.03) {
+		shift += 3;
+	}
+	if (next_date/this_date < 1.03) {
+		shift -= 3;
+	}
+	return shift;
+}
+function shift_factor_2(date_array, i) {
+	if (i == 0) {
+		return 0;
+	}
+	if (i == date_array.length-1) {
+		return 0;
+	}
+	var shift = 0;
+	var prev_date = new Date(date_array[i-1]).getTime()/1000;
+	var next_date = new Date(date_array[i+1]).getTime()/1000;
+	var this_date = new Date(date_array[i]).getTime()/1000;
+	if (this_date/prev_date < 1.03) {
+		shift += 3;
+	}
+	if (next_date/this_date < 1.03) {
+		shift -= 3;
+	}
+	return shift;
+}
+function add_circle(x_loc, date_text)
+{
+	count++;
+
+	var js_circle = document.createElement('div');
+	js_circle.setAttribute('id', 'circle_loc_' + count);
+	js_circle.setAttribute('class', 'circle_icon');
+	js_circle.style.left=(x_loc)+"%";
+
+	var js_circle_text = document.createElement('p');
+	js_circle_text.setAttribute('id', 'circle_text_loc_' + count);
+	js_circle_text.setAttribute('class', 'circle_text');
+	js_circle_text.innerHTML = date_text;
+
+	js_circle.appendChild(js_circle_text);
+	document.getElementById("timeline").appendChild(js_circle);
+}
+function clear_circles() {
+	var circle;
+	for (var i = 0; i < count+1; i++) {
+		circle = document.getElementById('circle_loc_' + i);
+		document.getElementById("timeline").removeChild(circle);
+	}
+	count = -1;
+	document.getElementById("first").innerHTML = "count = 0";
+}
