@@ -25,10 +25,6 @@ module VisitsHelper
             return 0
         end
 
-        if visit == end_visit
-            return 100
-        end
-
         span = end_visit.visit_date - start_visit.visit_date
         diff = visit.visit_date - start_visit.visit_date
 
