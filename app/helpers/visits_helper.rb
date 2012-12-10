@@ -17,6 +17,24 @@ module VisitsHelper
         end
     end
 
+    def getVisitLocationPercentage(visits, visit)
+        start_visit = visits.first
+        end_visit = visits.last
+
+        if visit == start_visit
+            return 0
+        end
+
+        if visit == end_visit
+            return 100
+        end
+
+        span = end_visit.visit_date - start_visit.visit_date
+        diff = visit.visit_date - start_visit.visit_date
+
+        return (diff.to_i*100)/span.to_i
+    end
+
     def getGoalProgress(goal)
         return "$%d%s$%d dollars" % [goal.current_value, " out of ", goal.target_value]
     end

@@ -4,6 +4,7 @@ class VisitsController < ApplicationController
   def index
     @client = Client.find(params[:client_id])
     @visits = @client.visits
+    sortVisits(@visits)
     @curr_visit = @visits.last
     @visit = Visit.new
 
@@ -18,6 +19,7 @@ class VisitsController < ApplicationController
   def show
     @client = Client.find(params[:client_id])
     @visits = @client.visits
+    sortVisits(@visits)
     @visit = Visit.find(params[:id])
     @goal = Goal.new
     @to_do = ToDo.new
@@ -79,5 +81,10 @@ class VisitsController < ApplicationController
       format.html { redirect_to client_visits_path(@visit.client) }
       format.json { head :no_content }
     end
+  end
+
+  
+  def sortVisits(visits)
+      visits.sort! { |a,b| a.visit_date <=> b.visit_date }
   end
 end
