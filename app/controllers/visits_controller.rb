@@ -22,6 +22,7 @@ class VisitsController < ApplicationController
     @curr_visit = @visit
     @goal = Goal.new
     @to_do = ToDo.new
+    @goal_categories = GoalCategory.all
 
     respond_to do |format|
       format.html # show.html.erb
@@ -43,6 +44,7 @@ class VisitsController < ApplicationController
   def create
     @visit = Visit.new(params[:visit])
     @visit.client = Client.find(params[:client_id])
+    @goal_categories = GoalCategory.all
 
     puts "Calling copyGoalsAndToDos"
     copyGoalsAndToDos(@visit, @visit.client)
@@ -63,6 +65,7 @@ class VisitsController < ApplicationController
   # PUT /clients/:client_id/visits/1.json
   def update
     @visit = Visit.find(params[:id])
+    @goal_categories = GoalCategory.all
 
     respond_to do |format|
       if @visit.update_attributes(params[:visit])
@@ -80,6 +83,7 @@ class VisitsController < ApplicationController
   def destroy
     @visit = Visit.find(params[:id])
     @visit.destroy
+    @goal_categories = GoalCategory.all
 
     respond_to do |format|
       format.html { redirect_to client_visits_path(@visit.client) }

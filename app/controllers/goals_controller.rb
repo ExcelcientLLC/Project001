@@ -14,6 +14,7 @@ class GoalsController < ApplicationController
   # GET /goals/1.json
   def show
     @goal = Goal.find(params[:id])
+    @goal_categories = GoalCategory.all
     @visit = @goal.visit
 
     respond_to do |format|
@@ -46,6 +47,7 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(params[:goal])
     @goal.visit = Visit.find(params[:visit_id])
+    @goal_categories = GoalCategory.all
     @visit = @goal.visit
 
     respond_to do |format|
@@ -65,6 +67,7 @@ class GoalsController < ApplicationController
   # PUT /goals/1.json
   def update
     @goal = Goal.find(params[:id])
+    @goal_categories = GoalCategory.all
     @visit = @goal.visit
 
     respond_to do |format|
@@ -84,6 +87,7 @@ class GoalsController < ApplicationController
   # DELETE /goals/1.json
   def destroy
     @goal = Goal.find(params[:id])
+    @goal_categories = GoalCategory.all
     @visit = @goal.visit
     @goal.destroy
 
