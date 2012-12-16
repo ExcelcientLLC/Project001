@@ -1,5 +1,7 @@
+<%= render 'common/header' %>
+
+<div class=admin_body>
 <%= render 'form' %>
- 
 <% if @visit != @client.visits.first %>
     <%= link_to 'Previous', [:edit, @client, previous_visit(@client.visits, @visit)] %>
 <% end %>
@@ -7,17 +9,26 @@
     <%= link_to 'Next', [:edit, @client, next_visit(@client.visits, @visit)] %>
 <% end %>
 
-<div id="goal_list">
+<!--Goal Section-->
+<div style="width:100%">
+<div id="goal_list" class=visits_list_set>
 	<%= render :partial => '/goals/goal_list_form' %>
 </div>
-<div id="todo_list">
-	<%= render :partial => '/to_dos/todo_list_form' %>
-</div>
-<div id="goal">
+<div id="goal" class=visits_detail_view>
 	<h1>Create Goal</h1>
 	<%= render :partial => '/goals/form' %>
 </div>
-<div id="todo">
+</div>
+
+<!--Todo Section-->
+<div style="width:100%">
+<div id="todo_list" class=visits_list_set>
+	<%= render :partial => '/to_dos/todo_list_form' %>
+</div>
+<div id="todo" class=visits_detail_view>
 	<h1>Create To Do</h1>
 	<%= render :partial => '/to_dos/form' %>
+</div>
+</div>
+
 </div>
