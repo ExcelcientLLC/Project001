@@ -44,6 +44,10 @@ class VisitsController < ApplicationController
     @visit = Visit.new(params[:visit])
     @visit.client = Client.find(params[:client_id])
 
+    puts "Calling copyGoalsAndToDos"
+    copyGoalsAndToDos(@visit, @visit.client)
+    puts "Done Calling copyGoalsAndToDos"
+
     respond_to do |format|
       if not @visit.save
         format.html { redirect_to client_visits_path(@visit.client), notice: 'Visit was successfully created.' }
@@ -91,5 +95,30 @@ class VisitsController < ApplicationController
 
   def sortVisits(visits)
       visits.sort! { |a,b| a.visit_date <=> b.visit_date }
+  end
+
+  def copyGoalsAndToDos(visit, client)
+      if client.visits.length > 0
+        copyGoals(visit, client.visits.last)
+        copyToDos(visit, client.visits.last)
+      end
+  end
+
+  def copyGoals(visit, lastVisit)
+    puts "Copying Visit Goals"
+    lastVisit.goals.each do |goal|
+      new_goal = goal.dup
+      new_goal.visit = visit
+      new_goal.save()
+    end
+  end
+
+  def copyToDos(visit, lastVisit)
+    puts "Copying Visit To Dos"
+    lastVisit.to_dos.each do |to_do|
+      new_to_do = to_do.dup
+      new_to_do.visit = visit
+      new_to_do.save()
+    end
   end
 end
