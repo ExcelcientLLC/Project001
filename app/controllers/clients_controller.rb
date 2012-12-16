@@ -43,6 +43,7 @@ class ClientsController < ApplicationController
     respond_to do |format|
       if @client.save
         @clients = Client.all
+        newVisitOnCreate(@client)
         format.html { redirect_to @client, notice: 'Client was successfully created.' }
         format.json { render json: @client, status: :created, location: @client }
         format.js
@@ -87,5 +88,13 @@ class ClientsController < ApplicationController
       format.json { head :no_content }
       format.js
     end
+  end
+
+  def newVisitOnCreate(client)
+    visit = Visit.new
+    visit.visit_date = Date.today.to_time_in_current_zone
+    puts visit.visit_date
+    visit.client = client
+    visit.save
   end
 end

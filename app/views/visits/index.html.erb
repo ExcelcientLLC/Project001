@@ -2,35 +2,22 @@
 
 <div id="visits_bar">
     <% @visits.each do |visit| %>
-        <%= visit.visit_date %> |
-        <%= link_to 'Show', client_visit_path(@client, visit) %> |
+        <div class="circle_icon" style.left="x_loc 5%">
+            <p>
+                <%= visit.visit_date %>
+            </p>
+        </div>
+        |-- <%= getVisitLocationPercentage(@visits, visit).to_s %> --|
+        <%= visit.visit_date %>|
+        <%= link_to 'Show', client_visit_path(@client, visit), :remote => true %> |
+        <%= link_to 'Edit', client_visit_path(@client, visit) %> |
         <%= link_to 'Destroy', client_visit_path(@client, visit), method: :delete, data: { confirm: 'Are you sure?' } %>
         <%= tryToAddVisitSpacer(@visits, visit) %>
     <% end %>
 </div>
 
-<div id="goal_progress">
-    <h2>Goal Progress</h2>
-    <% @curr_visit.goals.each do |goal| %>
-        <% if not goal.complete %>
-            <%= goal.target_date %>|
-            <%= getGoalProgressPercent(goal).to_s + "%" %>|
-            <!-- <%= getGoalProgress(goal) %>| -->
-            <b>$<%= goal.target_expenditures %></b> per month|
-            <%= getGoalEndDate(goal) %>
-        <% end %>
-    <% end %>
-</div>
-
-<div id="todo_progress">
-    <h2>To Do Progress</h2>
-    <% @curr_visit.to_dos.each do |to_do| %>
-        <% if not to_do.complete %>
-            <b><%= to_do.title %></b>
-            <br />
-            <%= to_do.description %>
-        <% end %>
-    <% end %>
+<div id="snapshot">
+    <%= render 'visit_snapshot' %>
 </div>
 
 <div>

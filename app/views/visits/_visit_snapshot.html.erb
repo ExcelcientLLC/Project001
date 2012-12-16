@@ -1,0 +1,23 @@
+<div id="goal_progress">
+    <h2>Goal Progress</h2>
+    <% @curr_visit.goals.each do |goal| %>
+        <% if not goal.complete %>
+            <%= goal.target_date %>|
+            <%= getGoalProgressPercent(goal).to_s + "%" %>|
+            <!-- <%= getGoalProgress(goal) %>| -->
+            <b>$<%= goal.target_expenditures %></b> per month|
+            <%= getGoalEndDate(goal) %>
+        <% end %>
+    <% end %>
+</div>
+
+<div id="todo_progress">
+    <h2>To Do Progress</h2>
+    <% @curr_visit.to_dos.each do |to_do| %>
+        <% if not to_do.complete %>
+            <b><%= to_do.title %></b>
+            <br />
+            <%= to_do.description %>
+        <% end %>
+    <% end %>
+</div>

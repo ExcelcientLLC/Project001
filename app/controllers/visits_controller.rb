@@ -3,7 +3,7 @@ class VisitsController < ApplicationController
   # GET /clients/:client_id/visits.json
   def index
     @client = Client.find(params[:client_id])
-    @visits = @client.visits
+    @visits = getSortedVisits(@client)
     @curr_visit = @visits.last
     @visit = Visit.new
 
@@ -17,14 +17,16 @@ class VisitsController < ApplicationController
   # GET /clients/:client_id/visits/1.json
   def show
     @client = Client.find(params[:client_id])
-    @visits = @client.visits
+    @visits = getSortedVisits(@client)
     @visit = Visit.find(params[:id])
+    @curr_visit = @visit
     @goal = Goal.new
     @to_do = ToDo.new
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @visit }
+      format.js
     end
   end
   
@@ -79,5 +81,15 @@ class VisitsController < ApplicationController
       format.html { redirect_to client_visits_path(@visit.client) }
       format.json { head :no_content }
     end
+  end
+
+  def getSortedVisits(client)
+    @visits = client.visits
+    sortVisits(@visits)
+    return @visits
+  end
+
+  def sortVisits(visits)
+      visits.sort! { |a,b| a.visit_date <=> b.visit_date }
   end
 end
