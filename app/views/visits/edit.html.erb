@@ -1,5 +1,4 @@
 <%= render 'form' %>
-
 <%= link_to 'Show', client_visit_path(@client, @visit) %>
 <% if @visit != @client.visits.first %>
     <%= link_to 'Previous', [:edit, @client, previous_visit(@client.visits, @visit)] %>

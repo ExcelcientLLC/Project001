@@ -2,6 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.visits_list_set
+{
+	width:50%;
+	float:left
+}
+
+div.visits_detail_view
+{
+	width:50%;
+	float:left;
+	background:gray
+}
+
+div.visits_date
+{
+	float:left
+}
+
+div.visits_action_items
+{
+	float:right
+}
+
+div.visits_header
+{
+	width:100%;
+	height:100px
+}
+
 #global_container	/*Archor point, to center other divs*/
 {
 	position:relative;

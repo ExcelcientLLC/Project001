@@ -1,4 +1,5 @@
 <%= form_for(@visit, :url => [@client, @visit])  do |f| %>
+
   <% if @visit.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@visit.errors.count, "error") %> prohibited this visit from being saved:</h2>
@@ -11,12 +12,18 @@
     </div>
   <% end %>
 
+<div class=visits_header>
+  <div class=visits_header>
   <div class="field">
     <%= f.label :visit_date %><br />
     <%= f.date_select :visit_date %>
   </div>
-  </br>
-  <div class="actions">
+  </div>
+  <div class="visits_action_items">
+  <div class="visits_actions">
     <%= f.submit %>
   </div>
+  </div>
+</div>
+
 <% end %>
