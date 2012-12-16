@@ -1,10 +1,10 @@
 <%= render 'form' %>
  
 <% if @visit != @client.visits.first %>
-    <%= link_to 'Previous', [:edit, @client, previous_visit(@client.visits, @visit)] %>
+    <%= link_to 'Previous', [@client, previous_visit(@client.visits, @visit)] %>
 <% end %>
 <% if @visit != @client.visits.last  %>
-    <%= link_to 'Next', [:edit, @client, next_visit(@client.visits, @visit)] %>
+    <%= link_to 'Next', [@client, next_visit(@client.visits, @visit)] %>
 <% end %>
 
 <div id="goal_list">
