@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label "Goal Name" %><br/>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
     <%= f.label "Goal Category" %><br />
     <%= collection_select(:goal, :goal_category_id, @goal_categories, :id, :name) %>
   </div>

@@ -2,6 +2,7 @@
 
 <table>
     <tr>
+        <th>Name</th>
         <th>Target date</th>
         <th>Target value</th>
         <th>Current value</th>
@@ -13,6 +14,7 @@
 
     <% @visit.goals.each do |goal| %>
         <tr>
+            <td><%= goal.name %></td>
             <td><%= goal.target_date %></td>
             <td><%= goal.target_value %></td>
             <td><%= goal.current_value %></td>
