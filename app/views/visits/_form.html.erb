@@ -12,17 +12,13 @@
     </div>
   <% end %>
 
-<div class=visits_header>
-  <div class=visits_header>
-  <div class="field">
-    <%= f.label :visit_date %><br />
+<div class="visits_header">
+  <div class="visits_date">
+    <%= f.label :visit_date %><br/>
     <%= f.date_select :visit_date %>
   </div>
-  </div>
   <div class="visits_action_items">
-  <div class="visits_actions">
     <%= f.submit %>
-  </div>
   </div>
 </div>
 

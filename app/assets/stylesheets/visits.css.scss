@@ -19,12 +19,16 @@ div.visits_detail_view
 
 div.visits_date
 {
-	float:left
+	width:30%;
+	float:left;
+	/*border-style:dotted*/
 }
 
 div.visits_action_items
 {
-	float:right
+	width:50%;
+	float:left;
+	/*border-style:dashed*/
 }
 
 div.visits_header
