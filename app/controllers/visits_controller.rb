@@ -103,14 +103,17 @@ class VisitsController < ApplicationController
 
   def copyGoalsAndToDos(visit, client)
       if client.visits.length > 0
-        copyGoals(visit, client.visits.last)
-        copyToDos(visit, client.visits.last)
+        @visits = getSortedVisits(client)
+        copyGoals(visit, @visits.last)
+        copyToDos(visit, @visits.last)
       end
   end
 
   def copyGoals(visit, lastVisit)
     puts "Copying Visit Goals"
+    puts lastVisit.goals.length
     lastVisit.goals.each do |goal|
+      puts goal.name
       new_goal = goal.dup
       new_goal.visit = visit
       new_goal.save()
@@ -119,7 +122,9 @@ class VisitsController < ApplicationController
 
   def copyToDos(visit, lastVisit)
     puts "Copying Visit To Dos"
+    puts lastVisit.to_dos.length
     lastVisit.to_dos.each do |to_do|
+      puts to_do.title
       new_to_do = to_do.dup
       new_to_do.visit = visit
       new_to_do.save()
