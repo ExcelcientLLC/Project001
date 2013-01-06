@@ -28,6 +28,10 @@ table.header
   border-spacing: 0;
   width: 95%;
 }
+th.header
+{
+  text-align: left;
+}
 div.table_body
 {
   height: 450px;
@@ -51,6 +55,10 @@ table.element
 }
 table.element:hover
 {
+  background:gray;
+}
+table.element:active
+{ 
   background:gray;
 }
 td.element_column

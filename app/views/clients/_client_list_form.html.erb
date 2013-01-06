@@ -9,25 +9,27 @@
     <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_path, :remote => true%>
   </div>
 </div>
+
+
+
 <div class=field>
   <table class=header>
    <tr>
-    	<th style="text-align:left">Name</th>
-    	<th style="text-align:left">Email</th>
+    	<th class=header>Name</th>
+    	<th class=header>Email</th>
     </tr>
   </table>
   <div class=table_body>
     <table class=body>
       <% @clients.each do |client| %>
-        <tr>
-          <table class=element>
+          <%= link_to(client_path(client), :remote => true) do %>
+          <table class=element id=element>
             <tr>
-              <td class=element_column><%= client.name %></td>
+              <td class=element_column><%= client.first_name %></td>
               <td class=element_column><%= client.email %></td>
-              <td><%= link_to 'Show', client_path(client), :remote => true %></td>
             </tr>
           </table>
-        </tr>
+          <%end%>
       <% end %>
     </table>
   </div>
