@@ -15,7 +15,8 @@
 <div class=field>
   <table class=header>
    <tr>
-    	<th class=header>Name</th>
+    	<th class=header>First Name</th>
+        <th class=header>Last Name</th>
     	<th class=header>Email</th>
     </tr>
   </table>
@@ -26,6 +27,7 @@
           <table class=element id=element>
             <tr>
               <td class=element_column><%= client.first_name %></td>
+              <td class=element_column><%= client.last_name %></td>
               <td class=element_column><%= client.email %></td>
             </tr>
           </table>
