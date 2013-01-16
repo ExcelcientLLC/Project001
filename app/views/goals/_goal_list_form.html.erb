@@ -2,25 +2,17 @@
 
 <table>
     <tr>
-        <th>Target date</th>
-        <th>Target value</th>
-        <th>Current value</th>
-        <th>Target expenditures</th>
-        <th>Current expenditures</th>
-        <th>Complete</th>
-        <th></th>
+        <th>Name</th>
+        
     </tr>
 
     <% @visit.goals.each do |goal| %>
         <tr>
-            <td><%= goal.target_date %></td>
-            <td><%= goal.target_value %></td>
-            <td><%= goal.current_value %></td>
-            <td><%= goal.target_expenditures %></td>
-            <td><%= goal.current_expenditures %></td>
-            <td><%= goal.complete %></td>
-            <td><%= link_to 'Show', client_visit_goal_path(@visit.client, @visit, goal), :remote => true %></td>
-            <td><%= link_to 'Destroy', client_visit_goal_path(@visit.client, @visit, goal), method: :delete, :remote => true %></td>
+            <table class="element">
+            <td class="element_column"><%= goal.name %></td>
+            <td class="element_column"><%= link_to 'Show', client_visit_goal_path(@visit.client, @visit, goal), :remote => true %></td>
+            </table>
+            <!--<td><%= link_to 'Destroy', client_visit_goal_path(@visit.client, @visit, goal), method: :delete, :remote => true %></td>-->
         </tr>
     <% end %>
 </table>

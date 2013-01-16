@@ -4,31 +4,37 @@
 
 div.visits_list_set
 {
-	width:50%;
+	width:48%;
 	float:left
 }
 
 div.visits_detail_view
 {
-	width:50%;
+	width:48%;
 	float:left;
-	background:gray
+	background:gray;
+	border-style:solid;
+	border-width:2px
 }
 
 div.visits_date
 {
-	float:left
+	width:30%;
+	float:left;
+	/*border-style:dotted*/
 }
 
 div.visits_action_items
 {
-	float:right
+	width:50%;
+	float:left;
+	/*border-style:dashed*/
 }
 
 div.visits_header
 {
 	width:100%;
-	height:100px
+	height:50px
 }
 
 #global_container	/*Archor point, to center other divs*/

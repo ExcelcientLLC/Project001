@@ -12,16 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <div class="edit_label">
+      <%= f.label :title %><br />
+    </div>
+    <div class="edit_field">
+      <%= f.text_field :title %>
+    </div>
   </div>
+  
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <div class="edit_label">
+      <%= f.label :complete %><br />
+    </div>
+    <div class="edit_field">
+      <%= f.check_box :complete %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :complete %><br />
-    <%= f.check_box :complete %>
+
+  <div class="large_field">
+    <div class="edit_label">
+      <%= f.label :description %><br />
+    </div>
+    <div class="edit_comment_field_2">
+      <%= f.text_area :description %>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit %>

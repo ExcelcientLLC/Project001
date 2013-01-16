@@ -6,6 +6,7 @@ Prosperion2012::Application.routes.draw do
             resources :to_dos, :except => [:edit]
         end
     end
+    resources :goal_categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

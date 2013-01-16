@@ -4,10 +4,17 @@ div.admin_body
   width: 960px;
   margin: 0px auto;
 }
+
 div.field
 {
  height: 20px;
  width: 100%;
+}
+
+div.large_field
+{
+  height:80px;
+  width:100%
 }
 
 /*Supporting admin list*/
@@ -30,13 +37,15 @@ table.header
 }
 th.header
 {
-  text-align: left;
+  float: left;
+  width: 25%
 }
 div.table_body
 {
   height: 450px;
   overflow: auto;
 }
+
 table.body
 {
   width: 95%;
@@ -64,19 +73,25 @@ table.element:active
 td.element_column
 {
   color: white;
-  width: 40%;
+  width: 25%;
+  float: left;
 }
+td.element_column.email
+{
+  width: 50%;
+}
+
 
 /* Supporting admin form*/
 div.edit_label
 {
-  width: 25%;
+  width: 30%;
   float: left;
 }
 
 div.edit_field
 {
-  width: 75%;
+  width: 70%;
   float: right;
 }
 
@@ -88,6 +103,15 @@ div.edit_comment_field
   width: 82%;
   float: left;
 }
+
+div.edit_comment_field_2
+{
+  overflow:hidden;
+  height:80px;
+  width:70%;
+  float:right
+}
+
 div.button_format
 {
   padding: 5px;
