@@ -1,20 +1,44 @@
 <h1>Listing visits</h1>
 
-<div id="visits_bar">
-    <% @visits.each do |visit| %>
-        <div class="circle_icon" style.left="x_loc 5%">
+<div style="height:100px;"></div>
+
+<div id="timeline">
+	<% @visits.each do |visit| %>
+<!--
+	<div class="circle_icon" style.left="x_loc 65%">
             <p>
                 <%= visit.visit_date %>
             </p>
         </div>
-        |-- <%= getVisitLocationPercentage(@visits, visit).to_s %> --|
-        <%= visit.visit_date %>|
-        <%= link_to 'Show', client_visit_path(@client, visit), :remote => true %> |
-        <%= link_to 'Edit', client_visit_path(@client, visit) %> |
-        <%= link_to 'Destroy', client_visit_path(@client, visit), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= tryToAddVisitSpacer(@visits, visit) %>
+-->
+
+	<% if visit == @visits.first then %>
+		<div class="circle_icon">
+			<p class="circle_text"><%= visit.visit_date %></p>
+		</div>
+	<% elsif visit == @visits.last then %>
+		<div class="circle_icon" style="float:right;">
+			<p class="circle_text"><%= visit.visit_date %></p>
+		</div>
+	<% else %>
+<!--		<div class="spacer" style="width:10%;"></div>	-->
+<!--		<div class="circle_icon">
+			<p><%= visit.visit_date %></p>
+		</div>
+-->
+		<div class="circle_icon" style="left:<%=getVisitLocationPercentage(@visits, visit).to_s %>%;position:absolute;">
+<!--			<p><%= getVisitLocationPercentage(@visits, visit).to_s %></p>		-->
+			<p class="circle_text"><%= visit.visit_date %></p>
+		</div>
+	<% end %>
     <% end %>
 </div>
+		</div>
+
+<div style="height:20px;"></div>
+
+
+
 
 <div id="snapshot">
     <%= render 'visit_snapshot' %>
