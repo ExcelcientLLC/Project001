@@ -1,9 +1,11 @@
 <div class="filed">
   <div class=search>
-    <form name="input" action="html_form_action.asp" method="get">
-      <input type="text" name="user">
-      <input type="submit" value="Search">
-    </form>
+    <%= form_tag clients_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search %>
+        <%= submit_tag "Search" %>
+      </p>
+    <% end %>
   </div>
   <div class=add>
     <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_path, :remote => true%>
