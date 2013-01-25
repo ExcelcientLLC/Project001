@@ -1,0 +1,10 @@
+<div id="todo_progress">
+    <h2>To Do Progress</h2>
+    <% @curr_visit.to_dos.each do |to_do| %>
+        <% if not to_do.complete %>
+            <b><%= to_do.title %></b>
+            <br />
+            <%= to_do.description %>
+        <% end %>
+    <% end %>
+</div>
