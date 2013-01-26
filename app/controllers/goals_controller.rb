@@ -50,6 +50,13 @@ class GoalsController < ApplicationController
     @goal_categories = GoalCategory.all
     @visit = @goal.visit
 
+    max = Goal.maximum("continuity_id")
+    if max
+      @goal.continuity_id = max+1
+    else
+      @goal.continuity_id = 1
+    end
+
     respond_to do |format|
       if @goal.save
         format.html { redirect_to client_visits_path(@goal.visit.client), notice: 'Goal was successfully created.' }

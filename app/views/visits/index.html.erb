@@ -16,6 +16,7 @@
 				<p class="circle_text"><%= visit.visit_date %></p>
 			</div>
 		<% end %>
+		<%= link_to "Show", client_visit_path(visit.client, visit) %>
 	<% end %>
 </div>
 <div style="height:100%;overflow:hidden;position:relative;">
