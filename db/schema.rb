@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106211145) do
+ActiveRecord::Schema.define(:version => 20130120215133) do
 
   create_table "clients", :force => true do |t|
     t.string   "first_name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20130106211145) do
     t.integer  "goal_category_id"
     t.integer  "visit_id"
     t.string   "name"
+    t.integer  "continuity_id"
   end
 
   create_table "to_dos", :force => true do |t|
