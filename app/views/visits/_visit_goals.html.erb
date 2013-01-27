@@ -1,12 +1,20 @@
-<div id="goal_progress">
-    <h2>Goal Progress</h2>
-    <% @curr_visit.goals.each do |goal| %>
-        <% if not goal.complete %>
-            <%= goal.target_date %>|
-            <%= getGoalProgressPercent(goal).to_s + "%" %>|
-            <!-- <%= getGoalProgress(goal) %>| -->
-            <b>$<%= goal.target_expenditures %></b> per month|
-            <%= getGoalEndDate(goal) %>
-        <% end %>
-    <% end %>
-</div>
+<% @curr_visit.goals.each do |goal| %>
+	<% if not goal.complete %>
+		<div class="goal_class_undefined">
+			<div class="picture_frame" style="margin-left:100px; height:50px; width:10%; position:relative; float:left;">
+				<%= link_to image_tag(getGoalImgURL(goal), size:"50x50") %>
+			</div>
+			<div class="content_or_something" style="margin-left:130px; margin-top:20px; position:relative; float:left;">
+				<%= goal.target_date %>|
+				<%= getGoalProgressPercent(goal).to_s + "%" %>|
+				<%= getGoalProgress(goal) %>|
+				<b>$<%= goal.target_expenditures %></b> per month|
+				<%= getGoalEndDate(goal) %>
+			</div>
+		</div>
+		</br>
+		</br>
+		</br>
+		</br>
+	<% end %>
+<% end %>

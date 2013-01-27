@@ -16,32 +16,53 @@
 				<p class="circle_text"><%= visit.visit_date %></p>
 			</div>
 		<% end %>
-		<%= link_to "Show", client_visit_path(visit.client, visit) %>
+<!--		<#%= link_to "Show", client_visit_path(visit.client, visit) %>	-->
 	<% end %>
 </div>
+
+<!--
 <div style="height:100%;overflow:hidden;position:relative;">
 	<div id="split_bar" style="width:15px;background-color:#555555;border-radius:8px;position:absolute;left:20%;z-index:2;height:100%"></div>
 	<div id="goals" style="width:95%;position:relative;">
 		<div id="goal_01" style="margin-left:100px;margin-bottom:10px;height:50px;align:center;background-color:#FFFFFF;">
-			<%= link_to image_tag("house.jpg", size: "50x50"), new_client_path, :remote => true%>
+			<#%= link_to image_tag("house.jpg", size: "50x50"), new_client_path, :remote => true%>
 		</div>
 		<div id="goal_02" style="margin-left:100px;margin-bottom:10px;height:50px;align:center;background-color:#FFFFFF;">
-			<%= link_to image_tag("car.jpg", size: "50x50"), new_client_path, :remote => true%>
+			<#%= link_to image_tag("car.jpg", size: "50x50"), new_client_path, :remote => true%>
 		</div>
 		<div id="goal_03" style="margin-left:100px;margin-bottom:10px;height:50px;align:center;background-color:#FFFFFF;">
-			<%= link_to image_tag("Nuvola_Red_Plus.svg", size: "50x50"), new_client_path, :remote => true%>
+			<#%= link_to image_tag("Nuvola_Red_Plus.svg", size: "50x50"), new_client_path, :remote => true%>
 		</div>
 	</div>
 </div>
+-->
+<div style="height:100%;overflow:hidden;position:relative;">
+	<div id="split_bar" style="width:15px;background-color:#555555;border-radius:8px;position:absolute;left:20%;z-index:2;height:100%"></div>
+	<%= render 'visit_goals' %>
+</div>
 
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<h2>Bottom Floaties</h2>
 <div id="snapshot">
 	<%= render 'visit_snapshot' %>
 </div>
 
+<!--
 <div id="goals">
 	<p>These are goals</p>
-	<%= render 'visit_goals' %>
+	<#%= render 'visit_goals' %>
 </div>
+-->
 <div id="todos">
 	<p>These are todos</p>
 	<%= render 'visit_todos' %>
