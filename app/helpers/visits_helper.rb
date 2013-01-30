@@ -47,6 +47,10 @@ module VisitsHelper
 	case goal.goal_category_id 
 	when 1
 		return "boat.jpg"
+	when 2
+		return "car.jpg"
+	when 3
+		return "house.jpg"
 	else 
 		return "default.jpg"
 	end

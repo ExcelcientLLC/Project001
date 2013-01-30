@@ -1,7 +1,6 @@
-<div style="margin-bottom:100px;">
-	<h1 style="background-color:#FF0000;">Listing visits, Splash Logo Goes Here</h1>
-</div>
-<div id="timeline" style="margin-bottom:10px;">
+<!--HEADER-->
+<%= render 'common/header' %>
+<div id="timeline" style="margin-top:100px;margin-bottom:10px;">
 	<% @visits.each do |visit| %>
 		<% if visit == @visits.first then %>
 			<div class="circle_icon">
@@ -42,35 +41,15 @@
 </div>
 
 
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
+<!--	Please Don't Delete These:
 </br>
 </br>
 <h2>Bottom Floaties</h2>
 <div id="snapshot">
-	<%= render 'visit_snapshot' %>
+	<#%= render 'visit_snapshot' %>
 </div>
-
-<!--
-<div id="goals">
-	<p>These are goals</p>
-	<#%= render 'visit_goals' %>
-</div>
--->
 <div id="todos">
 	<p>These are todos</p>
-	<%= render 'visit_todos' %>
-</div>
-
-<!--
-<div>
-	<h2>Create New Visit</h2>
-	<#%= render 'form' %>
+	<#%= render 'visit_todos' %>
 </div>
 -->
