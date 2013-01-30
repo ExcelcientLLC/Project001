@@ -1,17 +1,23 @@
-<h1>Listing to_dos</h1>
+<div class=search>
+  <h1>To Do List</h1>
+</div>
+<div class=add>
+  <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_to_do_path(@visit.client, @visit), :remote => true%> 
+</div>
 
-<table>
+
+<table class=header>
   <tr>
-    <th>Title</th>
+    <th class=header>Title</th>
   </tr>
 
   <% @visit.to_dos.each do |to_do| %>
+    <%= link_to(client_visit_to_do_path(@visit.client, @visit, to_do), :remote => true) do %>
     <tr>
       <table class="element">
         <td class="element_column"><%= to_do.title %></td>
-        <td class="element_column"><%= link_to 'Show', client_visit_to_do_path(@visit.client, @visit, to_do), :remote => true %></td>
       </table>
-      <!--<td><%= link_to 'Destroy', client_visit_to_do_path(@visit.client, @visit, to_do), method: :delete, :remote => true %></td>-->
     </tr>
+    <% end %>
   <% end %>
 </table>

@@ -1,18 +1,27 @@
-<h1>Listing goals</h1>
+<div class=search>
+  <h1>Goals</h1>
+</div>
+<div class=add>
+  <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_goal_path(@visit.client, @visit), :remote => true%>
+</div>
 
-<table>
-    <tr>
-        <th>Name</th>
-        
-    </tr>
 
-    <% @visit.goals.each do |goal| %>
-        <tr>
-            <table class="element">
-            <td class="element_column"><%= goal.name %></td>
-            <td class="element_column"><%= link_to 'Show', client_visit_goal_path(@visit.client, @visit, goal), :remote => true %></td>
-            </table>
-            <!--<td><%= link_to 'Destroy', client_visit_goal_path(@visit.client, @visit, goal), method: :delete, :remote => true %></td>-->
-        </tr>
-    <% end %>
+<table class=header>
+  <tr>
+    <th class=header>Name</th>
+    <th class=header>Target Value</th>
+    <th class=header>Target Date</th>
+  </tr>
+
+  <% @visit.goals.each do |goal| %>
+    <%= link_to(client_visit_goal_path(@visit.client, @visit, goal), :remote => true) do %>
+      <tr>
+        <table class="element">
+          <td class="element_column"><%= goal.name %></td>
+	  <td class="element_column"> <%= number_to_currency(goal.target_value) %></td>
+          <td class="element_column"><%= goal.target_date.to_date %></td>
+        </table>
+      </tr>
+      <% end %>
+  <% end %>
 </table>

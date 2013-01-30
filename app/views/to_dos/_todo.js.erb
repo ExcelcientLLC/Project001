@@ -1,6 +1,7 @@
 $('#todo').html("<p>");
-$('#todo').append("<%= escape_javascript(link_to "New", new_client_visit_to_do_path(@visit.client, @to_do.visit), :remote => true) %> | ");
-$('#todo').append("<%= escape_javascript(link_to "Delete", client_visit_to_do_path(@visit.client, @visit, @to_do), :method => :delete, :remote => true) %>");
 $('#todo').append("</p>");
 $('#todo').append("<h1>Editing To Do</h1>");
 $('#todo').append("<%= escape_javascript(render 'form') %>");
+$('#todo').append("<div class=delete_format><%= escape_javascript(link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"),  client_visit_to_do_path(@visit.client, @visit, @to_do), :method => :delete, :remote => true) %>");
+
+
