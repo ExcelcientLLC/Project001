@@ -13,11 +13,32 @@ describe Client do
 
   it { should have_many :visits}
 
-    it "should return all first names that match" do
-      clients = Client.new(first_name: "Abe")
-      results = clients.search("Abe")
-      puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXX"
-      results.first.should == "Abe"
+ describe "method tests" do
+
+   before(:each) do
+     Client.create(first_name: "Abe", last_name: "Rudder" )
+     Client.create(first_name: "Sid", last_name: "The Kid" )
+     Client.create(first_name: "Abbie", last_name: "Birthday" )
+     Client.create(first_name: "Wonder", last_name: "About" )
+   end
+
+    it "should return all names that match" do
+      clients = Client.search("Ab")
+      clients.count.should == 3
+      clients[2].first_name.should == "Abe"
+      clients[1].first_name.should == "Abbie"
+      clients[0].last_name.should == "About"
     end
+
+    it "should default to sorting by last name asc" do
+      clients = Client.all
+      puts clients[0].last_name
+      clinets[0].last_name.should == "About"
+      clients[1].last_name.should == "Birthday"
+      clients[2].last_name.should == "Rudder"
+      clients[3].last_name.should == "The Kid"
+    end
+
+  end
  
 end

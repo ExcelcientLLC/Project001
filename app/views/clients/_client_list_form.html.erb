@@ -24,7 +24,7 @@
   </table>
   <div class=table_body>
     <table class=body>
-      <% @clients.each do |client| %>
+      <% @clients.sort_by{|clients| clients.first_name}.each do |client| %>
           <%= link_to(client_path(client), :remote => true) do %>
           <table class=element id=element>
             <tr>

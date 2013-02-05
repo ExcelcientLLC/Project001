@@ -42,4 +42,17 @@ module VisitsHelper
     def getGoalEndDate(goal)
         return "Reaching goal of $%d in %d" % [goal.target_value, goal.target_date.year]
     end
+
+    def getGoalImgURL(goal)
+	case goal.goal_category_id 
+	when 1
+		return "boat.jpg"
+	when 2
+		return "car.jpg"
+	when 3
+		return "house.jpg"
+	else 
+		return "default.jpg"
+	end
+    end
 end

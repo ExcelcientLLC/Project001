@@ -8,6 +8,14 @@
 <% if @visit != @client.visits.last  %>
     <%= link_to 'Next', [@client, next_visit(@client.visits, @visit)] %>
 <% end %>
+<div style="float:right;margin-right:32px;margin-bottom:15px">
+  <div style="float:right">
+    <%= button_to "Timeline", client_visits_path(@client), :method => :get %>
+  </div>
+  <div style="float:right">
+    <%= button_to "Client List", clients_path, :method => :get %>
+  </div>
+</div>
 
 <!--Goal Section-->
 <div style="width:100%">

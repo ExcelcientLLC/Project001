@@ -1,7 +1,6 @@
-<div style="margin-bottom:100px;">
-	<h1 style="background-color:#FF0000;">Listing visits, Splash Logo Goes Here</h1>
-</div>
-<div id="timeline" style="margin-bottom:10px;">
+<!--HEADER-->
+<%= render 'common/header' %>
+<div id="timeline" style="margin-top:100px;margin-bottom:10px;">
 	<% @visits.each do |visit| %>
 		<% if visit == @visits.first then %>
 			<div class="circle_icon">
@@ -16,30 +15,40 @@
 				<p class="circle_text"><%= visit.visit_date %></p>
 			</div>
 		<% end %>
-		<%= link_to "Show", client_visit_path(visit.client, visit) %>
+<!--		<#%= link_to "Show", client_visit_path(visit.client, visit) %>	-->
 	<% end %>
 </div>
+
+<!--
 <div style="height:100%;overflow:hidden;position:relative;">
 	<div id="split_bar" style="width:15px;background-color:#555555;border-radius:8px;position:absolute;left:20%;z-index:2;height:100%"></div>
 	<div id="goals" style="width:95%;position:relative;">
 		<div id="goal_01" style="margin-left:100px;margin-bottom:10px;height:50px;align:center;background-color:#FFFFFF;">
-			<%= link_to image_tag("house.jpg", size: "50x50"), new_client_path, :remote => true%>
+			<#%= link_to image_tag("house.jpg", size: "50x50"), new_client_path, :remote => true%>
 		</div>
 		<div id="goal_02" style="margin-left:100px;margin-bottom:10px;height:50px;align:center;background-color:#FFFFFF;">
-			<%= link_to image_tag("car.jpg", size: "50x50"), new_client_path, :remote => true%>
+			<#%= link_to image_tag("car.jpg", size: "50x50"), new_client_path, :remote => true%>
 		</div>
 		<div id="goal_03" style="margin-left:100px;margin-bottom:10px;height:50px;align:center;background-color:#FFFFFF;">
-			<%= link_to image_tag("Nuvola_Red_Plus.svg", size: "50x50"), new_client_path, :remote => true%>
+			<#%= link_to image_tag("Nuvola_Red_Plus.svg", size: "50x50"), new_client_path, :remote => true%>
 		</div>
 	</div>
 </div>
-
-<div id="snapshot">
-	<%= render 'visit_snapshot' %>
+-->
+<div style="height:100%;overflow:hidden;position:relative;">
+	<div id="split_bar" style="width:15px;background-color:#555555;border-radius:8px;position:absolute;left:20%;z-index:2;height:100%"></div>
+	<%= render 'visit_goals' %>
 </div>
-<!--
-<div>
-	<h2>Create New Visit</h2>
-	<#%= render 'form' %>
+
+<!--	Please Don't Delete These:
+</br>
+</br>
+<h2>Bottom Floaties</h2>
+<div id="snapshot">
+	<#%= render 'visit_snapshot' %>
+</div>
+<div id="todos">
+	<p>These are todos</p>
+	<#%= render 'visit_todos' %>
 </div>
 -->
