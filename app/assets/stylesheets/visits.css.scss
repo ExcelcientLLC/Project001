@@ -18,16 +18,21 @@ div.visits_detail_view
 	border-width:2px
 }
 
+div.arrow
+{
+    width:5%;
+    float:left;
+}
 div.visits_date
 {
-	width:30%;
+	width:25%;
 	float:left;
 	/*border-style:dotted*/
 }
 
 div.visits_action_items
 {
-	width:50%;
+	width:12%;
 	float:left;
 	/*border-style:dashed*/
 }

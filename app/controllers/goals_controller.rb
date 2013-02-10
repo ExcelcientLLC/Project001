@@ -28,6 +28,7 @@ class GoalsController < ApplicationController
   # GET /goals/new.json
   def new
     @goal = Goal.new
+    @goal_categories = GoalCategory.all
     @visit = Visit.find(params[:visit_id])
 
     respond_to do |format|
