@@ -27,14 +27,8 @@ class GoalCategoriesController < ApplicationController
     @goal_category = GoalCategory.new
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @goal_category }
+      format.js # new.js.erb
     end
-  end
-
-  # GET /goal_categories/1/edit
-  def edit
-    @goal_category = GoalCategory.find(params[:id])
   end
 
   # POST /goal_categories
@@ -46,9 +40,11 @@ class GoalCategoriesController < ApplicationController
       if @goal_category.save
         format.html { redirect_to @goal_category, notice: 'Goal category was successfully created.' }
         format.json { render json: @goal_category, status: :created, location: @goal_category }
+	format.js
       else
         format.html { render action: "new" }
         format.json { render json: @goal_category.errors, status: :unprocessable_entity }
+	format.js
       end
     end
   end
@@ -62,9 +58,11 @@ class GoalCategoriesController < ApplicationController
       if @goal_category.update_attributes(params[:goal_category])
         format.html { redirect_to @goal_category, notice: 'Goal category was successfully updated.' }
         format.json { head :no_content }
+	format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @goal_category.errors, status: :unprocessable_entity }
+	format.js
       end
     end
   end
@@ -74,10 +72,13 @@ class GoalCategoriesController < ApplicationController
   def destroy
     @goal_category = GoalCategory.find(params[:id])
     @goal_category.destroy
+    @clients = Client.all
+    @client = Client.new
 
     respond_to do |format|
       format.html { redirect_to goal_categories_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end

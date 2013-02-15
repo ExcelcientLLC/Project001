@@ -4,6 +4,9 @@
 <%= render 'form' %>
 <div style="float:right;margin-right:32px;margin-bottom:15px">
   <div style="float:right">
+    <%= button_to "Goal Categories", goal_categories_path, :method => :get %>
+  </div>
+  <div style="float:right">
     <%= button_to "Timeline", client_visits_path(@client), :method => :get %>
   </div>
   <div style="float:right">

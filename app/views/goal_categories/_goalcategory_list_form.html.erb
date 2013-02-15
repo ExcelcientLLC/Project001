@@ -1,0 +1,30 @@
+<div class="filed">
+  <div class=add>
+    <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_goal_category_path, :remote => true%>
+  </div>
+</div>
+ 
+
+<div class=field>
+  <table class=header>
+    <tr>
+      <th class=header>Icon</th>
+      <th class=header>Name</th>
+    </tr>
+  </table>
+  <div class=table_body>
+    <table class=body>
+      <% @goal_categories.sort_by{|goal_categories| goal_categories.name}.each do |goal_category| %>
+        <%= link_to(goal_category_path(goal_category), :remote => true) do %>
+          <table class=element id=element>
+            <tr>
+              <td class=element_column><%= goal_category.icon %></td>
+              <td class=element_column><%= goal_category.name %></td>
+            </tr>
+          </table>
+        <%end%>
+      <% end %>
+    </table>
+  </div>
+</div>
+
