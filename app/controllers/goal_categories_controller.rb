@@ -3,6 +3,8 @@ class GoalCategoriesController < ApplicationController
   # GET /goal_categories.json
   def index
     @goal_categories = GoalCategory.all
+    @goal_category = GoalCategory.new
+
 
     respond_to do |format|
       format.html # index.html.erb

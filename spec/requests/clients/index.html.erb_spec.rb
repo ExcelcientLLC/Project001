@@ -18,7 +18,9 @@ describe 'client index page' do
         fill_in 'State', with: 'Florida'
         fill_in 'Zip', with: '30948'
         fill_in 'Comment', with: 'No comment'
-        click_on 'Create Client'
+        #click_on 'Create Client'
+
+        sleep 1000
    
         #page.should_not have_content('New Client')
         #page.should have_content('Editing Client')

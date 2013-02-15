@@ -37,10 +37,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem 'execjs'
-#gem 'therubyracer'
 gem 'minitest'
 gem 'rspec-rails'
 gem 'rspec'
 gem 'shoulda-matchers'
 gem 'capybara'
 gem 'database_cleaner'
+gem "paperclip"
