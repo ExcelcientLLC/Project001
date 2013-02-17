@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120215133) do
+ActiveRecord::Schema.define(:version => 20130215223246) do
 
   create_table "clients", :force => true do |t|
     t.string   "first_name"
@@ -29,10 +29,12 @@ ActiveRecord::Schema.define(:version => 20130120215133) do
 
   create_table "goal_categories", :force => true do |t|
     t.string   "name"
-    t.binary   "icon"
-    t.integer  "priority"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "goals", :force => true do |t|

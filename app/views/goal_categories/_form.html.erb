@@ -1,4 +1,4 @@
-<%= form_for(@goal_category, remote: true) do |f| %>
+<%= form_for(@goal_category, remote: true, html: { multipart: true }) do |f| %>
   <% if @goal_category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@goal_category.errors.count, "error") %> prohibited this goal_category from being saved:</h2>
@@ -12,16 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <div class="edit_label">
+      <%= f.label :name %><br />
+    </div>
+    <div class="edit_field">
+      <%= f.text_field :name %>
+    </div>
   </div>
   <div class="field">
-    <%= f.label :icon %><br />
-    <%= f.text_field :icon %>
-  </div>
-  <div class="field">
-    <%= f.label :priority %><br />
-    <%= f.number_field :priority %>
+    <div class="edit_label">
+      <%= f.label :goal_category %><br />
+    </div>
+    <div class="edit_field">
+      <%= image_tag @goal_category.avatar.url(:thumb) %>
+    </div>
+    <div class="edit_field">
+      <%= f.file_field :avatar %> <br />
+    </div>
   </div>
   <div class="actions">
     <%= f.submit %>

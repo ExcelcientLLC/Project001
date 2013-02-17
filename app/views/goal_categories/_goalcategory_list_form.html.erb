@@ -8,7 +8,7 @@
 <div class=field>
   <table class=header>
     <tr>
-      <th class=header>Icon</th>
+      <th class=header>Image</th>
       <th class=header>Name</th>
     </tr>
   </table>
@@ -18,7 +18,9 @@
         <%= link_to(goal_category_path(goal_category), :remote => true) do %>
           <table class=element id=element>
             <tr>
-              <td class=element_column><%= goal_category.icon %></td>
+              <td class=element_column><div>
+      <%= image_tag @goal_category.avatar.url(:thumb) %>
+    </div></td>
               <td class=element_column><%= goal_category.name %></td>
             </tr>
           </table>

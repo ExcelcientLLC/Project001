@@ -36,6 +36,7 @@ class GoalCategoriesController < ApplicationController
   # POST /goal_categories
   # POST /goal_categories.json
   def create
+    #@goal_category = GoalCategory.create( params[:goal_category] )
     @goal_category = GoalCategory.new(params[:goal_category])
 
     respond_to do |format|

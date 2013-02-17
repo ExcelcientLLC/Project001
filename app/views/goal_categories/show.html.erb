@@ -4,16 +4,11 @@
   <b>Name:</b>
   <%= @goal_category.name %>
 </p>
-
-<p>
-  <b>Icon:</b>
-  <%= @goal_category.icon %>
-</p>
-
-<p>
-  <b>Priority:</b>
-  <%= @goal_category.priority %>
-</p>
+<div>
+  <b>photato:</b>
+    <%= image_tag @goal_category.avatar.url(:medium) %>
+  </p>
+</div>
 
 
 <%= link_to 'Edit', edit_goal_category_path(@goal_category) %> |
