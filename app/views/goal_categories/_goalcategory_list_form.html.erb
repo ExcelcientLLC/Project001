@@ -16,12 +16,14 @@
     <table class=body>
       <% @goal_categories.sort_by{|goal_categories| goal_categories.name}.each do |goal_category| %>
         <%= link_to(goal_category_path(goal_category), :remote => true) do %>
-          <table class=element id=element>
+          <table class=element id="element">
             <tr>
-              <td class=element_column><div>
-      <%= image_tag @goal_category.avatar.url(:thumb) %>
-    </div></td>
-              <td class=element_column><%= goal_category.name %></td>
+              <td class=element_column>
+                <%= image_tag @goal_category.avatar.url(:medium) %>
+              </td>
+              <td class=element_column>
+                <%= goal_category.name %>
+              </td>
             </tr>
           </table>
         <%end%>

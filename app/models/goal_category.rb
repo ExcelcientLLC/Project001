@@ -3,8 +3,8 @@ class GoalCategory < ActiveRecord::Base
   
   has_many :goals
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-                    :url  => "/assets/images/:attachment/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/images :attachment/:id/:style/:basename.:extension"
+  #                  :url  => "/assets/goal_categories/:id/:style/:basename.:extension",
+  #                  :path => ":rails_root/app/asset:goal_categories/:id/:style/:basename.:extension"
 
   validates_attachment_presence :avatar
   validates_attachment_size :avatar, :less_than => 5.megabytes
