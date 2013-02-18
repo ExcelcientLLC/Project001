@@ -1,6 +1,0 @@
-$('#goalcategory').html("<p>");
-$('#goalcategory').append("</p>");
-$('#goalcategory').append("<h1>Editing Goal Category</h1>");
-$('#goalcategory').append("<%= escape_javascript(render 'form') %>");
-$('#goalcategory').append("<div class=delete_format><%= escape_javascript(link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"),  client_visit_to_do_path(@visit.client, @visit, @to_do), :method => :delete, :remote => true) %>");
-
