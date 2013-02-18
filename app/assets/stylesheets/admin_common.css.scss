@@ -32,6 +32,7 @@ div.add
   width: 10%;
   float: left;
 }
+/*
 table.header
 {
   border-spacing: 0;
@@ -42,12 +43,13 @@ th.header
   float: left;
   width: 25%
 }
+*/
 div.table_body
 {
   height: 450px;
   overflow: auto;
 }
-
+/*
 table.body
 {
   width: 95%;
@@ -63,6 +65,55 @@ table.element
   border-style:solid;
   border-width:1px;
   border-color:black;
+}
+*/
+div.table_header_01
+{
+  width:25%;
+  position:relative;
+  float:left;
+}
+div.table_header_02
+{
+  width:50%;
+  position:relative;
+  float:left;
+}
+div.todo_header
+{
+  width:100%;
+  position:relative;
+  float:left;
+}
+div.table_body_01
+{
+  width:25%;
+  position:relative;
+  float:left;
+}
+div.table_body_02
+{
+  width:50%;
+  position:relative;
+  float:left;
+}
+div.element
+{
+  position:relative;
+  float:left;
+  background-color:#FF0000;
+  color:#FFFFFF;
+  width:100%;
+  border-spacing:0px;
+  border-radius:5px;
+  border-style:solid;
+  border-width:1px;
+  border-color:black;
+  min-height:20px;
+}
+div.element:hover
+{
+  background:gray;
 }
 table.element:hover
 {

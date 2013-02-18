@@ -12,29 +12,21 @@
   </div>
 </div>
 
-
-
-<div class=field>
-  <table class=header>
-   <tr>
-    	<th class=header>First Name</th>
-        <th class=header>Last Name</th>
-    	<th class=header>Email</th>
-    </tr>
-  </table>
-  <div class=table_body>
-    <table class=body>
-      <% @clients.sort_by{|clients| clients.first_name}.each do |client| %>
-          <%= link_to(client_path(client), :remote => true) do %>
-          <table class=element id=element>
-            <tr>
-              <td class=element_column><%= client.first_name %></td>
-              <td class=element_column><%= client.last_name %></td>
-              <td class=element_column><%= client.email %></td>
-            </tr>
-          </table>
-          <%end%>
-      <% end %>
-    </table>
+<div>
+  <div>
+    <div class="table_header_01">First Name</div>
+    <div class="table_header_01">Last Name</div>
+    <div class="table_header_02">Email</div>
+  </div>
+  <div>
+    <% @clients.sort_by{|clients| clients.first_name}.each do |client| %>
+      <%= link_to(client_path(client), :remote => true) do %>
+      <div class="element">
+        <div class="table_body_01"><%= client.first_name %></div>
+        <div class="table_body_01"><%= client.last_name %></div>
+        <div class="table_body_02"><%= client.email %></div>
+      </div>
+      <%end%>
+    <% end %>
   </div>
 </div>
