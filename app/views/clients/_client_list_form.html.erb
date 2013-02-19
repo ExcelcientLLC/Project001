@@ -1,6 +1,8 @@
 <div class="filed">
   <div class=search>
     <%= form_tag clients_path, :method => 'get' do %>
+      <%= hidden_field_tag :direction, params[:direction] %>
+      <%= hidden_field_tag :sort, params[:sort] %>
       <p>
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "Search", name: nil %>
@@ -14,12 +16,12 @@
 
 <div>
   <div>
-    <div class="table_header_01">First Name</div>
-    <div class="table_header_01">Last Name</div>
-    <div class="table_header_02">Email</div>
+    <div class="table_header_01"><%= sortable "first_name", "First Name"%></div>
+    <div class="table_header_01"><%= sortable "last_name", "Last Name"%></div>
+    <div class="table_header_02"><%= sortable "email", "Email"%></div>
   </div>
   <div>
-    <% @clients.sort_by{|clients| clients.first_name}.each do |client| %>
+    <% @clients.each do |client| %>
       <%= link_to(client_path(client), :remote => true) do %>
       <div class="element">
         <div class="table_body_01"><%= client.first_name %></div>
