@@ -27,14 +27,12 @@ div.visits_date
 {
 	width:25%;
 	float:left;
-	/*border-style:dotted*/
 }
 
 div.visits_action_items
 {
 	width:12%;
 	float:left;
-	/*border-style:dashed*/
 }
 
 div.visits_header
@@ -43,69 +41,15 @@ div.visits_header
 	height:50px
 }
 
-#global_container	/*Archor point, to center other divs*/
+div.timeline
 {
 	position:relative;
-	top:150px;
-}
-
-/*
-#leftpane
-{
-	position:relative;
-	float:left;
-	width:15%;
-	min-height:100%;
-
-	background-color:#FF0000;
-}
-*/
-/*
-#dividebar
-{
-	position:relative;
-	float:left;
-	width:2%;
-	min-height:500px;
-
-	border-radius:50px;
-	background-color:#555555;
-}
-*/
-/*
-#rightpane
-{
-	position:relative;
-	float:left;
-	width:83%;
-	min-height:100%;
-
-	background-color:#0000FF;
-}
-*/
-#timeline
-{
-	position:relative;
-//	float:left;
 	border:0;
 	width:95%;
-//	width:100%;
 	height:15px;
-/*	top:90px;	*/
-/*	bottom:5px;	*/
-//	margin-bottom:20px;
 	background-color:#555555;
 	color:#ff4800;
 	border-radius:8px;
-
-	margin:0 auto;
-}
-div.container
-{
-	position:relative;
-	width:1000px;
-	height:10px;
-	
 	margin:0 auto;
 }
 div.circle_icon
@@ -121,31 +65,6 @@ div.circle_icon
 
 	border: 2px solid #555555;
 }
-div.circle_button
-{
-	position:relative;
-	float:left;
-	left:20px;
-
-	height:50px;
-	width:100px;
-	border-radius:25px;
-	background-color:#FF4800;
-
-	border: 2px solid #555555;
-}
-div.wide
-{
-	width:15%;	/*Adds 14% to width value??*/
-}
-p.button
-{
-	position:relative;
-	left:25px;
-
-	font-family:"Courier New", sans-serif;
-	font-weight:900;
-}
 p.circle_text
 {
 	position:relative;
@@ -161,132 +80,54 @@ p.circle_text
 	-webkit-transform:rotate(300deg);
 	-moz-transform:rotate(300deg);
 }
-#global_container	/*Archor point, to center other divs*/
+div.visit_goals
 {
-	position:relative;
-	top:150px;
+  position:relative;
+  float:left;
+  width:100%;
+/*
+  border-spacing:0px;
+  border-radius:5px;
+  border-style:solid;
+  border-width:1px;
+  border-color:black;
+*/
+  min-height:20px;
+  margin-bottom:10px;
 }
-#leftpane
+div.visit_goals_picture
 {
-	position:relative;
-	float:left;
-	width:15%;
-	min-height:100%;
-
-	background-color:#FF0000;
+  position:relative;
+  float:left;
+  padding-left:30px;
+  width:15%;
 }
-#dividebar
+div.visit_goals_progress
 {
-	position:relative;
-	float:left;
-	width:2%;
-/*	min-height:100%;	*/
-	min-height:500px;
-
-	border-radius:50px;
-	background-color:#555555;
+  position:relative;
+  float:left;
+  width:65%
 }
-#rightpane
+div.visit_goals_monthly
 {
-	position:relative;
-	float:left;
-	width:83%;
-	min-height:100%;
-
-	background-color:#0000FF;
+  position:relative;
+  float:left;
+  margin-top:18px;
+  padding-left:12px;
+  width:15%
 }
-div.timeline
+div.visit_todos
 {
-	position:relative;
-	float:left;
-	border:0;
-	width:100%;
-	height:15px;
-	bottom:5px;
-	background-color:#555555;
-	color:#ff4800;
-	border-radius:8px;
-
-	margin:0 auto;
-}
-div.container
-{
-	position:relative;
-	width:1000px;
-	height:10px;
-	
-	margin:0 auto;
-}
-div.circle_icon
-{
-/*	position:absolute;  */
-	position:relative;
-	float:left;
-	top:-2px;
-
-	height:	15px;
-	width:	15px;
-	border-radius:10px;
-	background-color:#FFFF00;
-
-	border: 2px solid #555555;
-	white-space:nowrap;
-}
-
-div.spacer
-{
-/*	position:absolute;  */
-	position:relative;
-	float:left;
-/*	top:-2px;	*/
-
-/*	height:	15px;	*/
-/*	width:	15px;	*/
-/*	border-radius:10px;	*/
-
-	min-width:0px;
-
-	background-color:#FFFF00;	
-	border: 2px solid #00FF00;
-
-	white-space:nowrap;
-}
-div.circle_button
-{
-	position:relative;
-	float:left;
-	left:20px;
-
-	height:50px;
-	width:100px;
-	border-radius:25px;
-	background-color:#FF4800;
-
-	border: 2px solid #555555;
-}
-div.wide
-{
-	width:15%;	/*Adds 14% to width value??*/
-}
-p.button
-{
-	position:relative;
-	left:25px;
-
-	font-family:"Courier New", sans-serif;
-	font-weight:900;
-}
-p.circle_text
-{
-	position:relative;
-	bottom:40px;
-
-	font-family:"Courier New", sans-serif;
-	font-weight:900;
-	color:#000000;
-
-	white-space: nowrap;
-	transform:rotate(300deg);
-	-moz-transform:rotate(300deg);
-	-webkit-transform:rotate(300deg);
+  position:relative;
+  float:left;
+  width:100%;
+/*
+  border-spacing:0px;
+  border-radius:5px;
+  border-style:solid;
+  border-width:1px;
+  border-color:black;
+*/
+  min-height:20px;
+  margin-bottom:10px;
 }
