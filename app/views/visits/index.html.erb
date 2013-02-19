@@ -1,54 +1,19 @@
 <!--HEADER-->
 <%= render 'common/header' %>
-<div id="timeline" style="margin-top:100px;margin-bottom:10px;">
-	<% @visits.each do |visit| %>
-		<% if visit == @visits.first then %>
-			<div class="circle_icon">
-				<p class="circle_text"><%= visit.visit_date %></p>
-			</div>
-		<% elsif visit == @visits.last then %>
-			<div class="circle_icon" style="float:right;">
-				<p class="circle_text"><%= visit.visit_date %></p>
-			</div>
-		<% else %>
-			<div class="circle_icon" style="left:<%=getVisitLocationPercentage(@visits, visit).to_s %>%;position:absolute;">
-				<p class="circle_text"><%= visit.visit_date %></p>
-			</div>
-		<% end %>
-<!--		<#%= link_to "Show", client_visit_path(visit.client, visit) %>	-->
-	<% end %>
+
+<!-- Timeline -->
+<div class="timeline" style="margin-top:100px;margin-bottom:10px;">
+  <%= render 'visit_visits' %>
 </div>
 
-<!--
-<div style="height:100%;overflow:hidden;position:relative;">
-	<div id="split_bar" style="width:15px;background-color:#555555;border-radius:8px;position:absolute;left:20%;z-index:2;height:100%"></div>
-	<div id="goals" style="width:95%;position:relative;">
-		<div id="goal_01" style="margin-left:100px;margin-bottom:10px;height:50px;align:center;background-color:#FFFFFF;">
-			<#%= link_to image_tag("house.jpg", size: "50x50"), new_client_path, :remote => true%>
-		</div>
-		<div id="goal_02" style="margin-left:100px;margin-bottom:10px;height:50px;align:center;background-color:#FFFFFF;">
-			<#%= link_to image_tag("car.jpg", size: "50x50"), new_client_path, :remote => true%>
-		</div>
-		<div id="goal_03" style="margin-left:100px;margin-bottom:10px;height:50px;align:center;background-color:#FFFFFF;">
-			<#%= link_to image_tag("Nuvola_Red_Plus.svg", size: "50x50"), new_client_path, :remote => true%>
-		</div>
-	</div>
+<!-- Main Content Box -->
+<div style="overflow:hidden;position:relative;">
+  <div id="split_bar" style="width:15px; background-color:#555555; border-radius:8px; position:absolute; left:10%; z-index:2; height:100%"></div>
+  <div class="goals_box" style="width:70%; position:relative; float:left;">
+    <div style="margin-left: 18%"><h2>Goal Progress</h2></div>
+    <%= render 'visit_goals' %>
+  </div>
+  <div class="todo_box" style="margin-left:1%; width:29%; position:relative; float:left;">
+    <%= render 'visit_todos' %>
+  </div>
 </div>
--->
-<div style="height:100%;overflow:hidden;position:relative;">
-	<div id="split_bar" style="width:15px;background-color:#555555;border-radius:8px;position:absolute;left:20%;z-index:2;height:100%"></div>
-	<%= render 'visit_goals' %>
-</div>
-
-<!--	Please Don't Delete These:
-</br>
-</br>
-<h2>Bottom Floaties</h2>
-<div id="snapshot">
-	<#%= render 'visit_snapshot' %>
-</div>
-<div id="todos">
-	<p>These are todos</p>
-	<#%= render 'visit_todos' %>
-</div>
--->

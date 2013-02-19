@@ -1,20 +1,30 @@
 <% @curr_visit.goals.each do |goal| %>
   <% if not goal.complete %>
-    <div class="goal_class_undefined">
-      <div class="picture_frame" style="margin-left:100px; height:50px; width:10%; position:relative; float:left;">
-        <%= link_to image_tag(getGoalImgURL(goal), size:"50x50") %>
+    <div class="visit_goals">
+<!--      <div class="visit_goals_picture"><#%= link_to image_tag(getGoalImgURL(goal), size:"50x50") %></div>	-->
+      <div class="visit_goals_picture"><%= link_to image_tag(GoalCategory.find(goal.goal_category_id).avatar_file_name, size:"50x50") %></div>
+      <div class="visit_goals_progress">
+      <!-- Progress Bubble -->
+        <div style="height:50%; background-color:#FFFFFF;">
+          &nbsp;
+          <div style="border-radius:8px; color:#FFFFFF; background-color:#000000; width:5%; position:relative; float:left; left:<%= (getGoalProgressPercent(goal) - 2.5).to_s %>%;">
+            <%= getGoalProgressPercent(goal).to_s %>%
+          </div>
+        </div>
+      <!-- Bar -->
+        <div style="height:20%; background-color:#555555; border-radius:8px;">
+          &nbsp;
+          <div style="background-color:#55FF55; position:relative; float:left; width:<%= getGoalProgressPercent(goal).to_s %>%; border-radius:8px;">
+            &nbsp;
+          </div>
+        </div>
+      <!-- Footer Text -->
+        <div style="height:20%; background-color:#5555FF;">
+          <div style="position:relative; float:left;"><%= GoalCategory.find(goal.goal_category_id).name %></div>
+          <div style="position:relative; float:right;"><%= getGoalEndDate(goal) %></div>
+        </div>
       </div>
-      <div class="content_or_something" style="margin-left:130px; margin-top:20px; position:relative; float:left;">
-        <%= goal.target_date %>|
-        <%= getGoalProgressPercent(goal).to_s + "%" %>|
-        <%= getGoalProgress(goal) %>|
-        <b>$<%= goal.target_expenditures %></b> per month|
-        <%= getGoalEndDate(goal) %>
-      </div>
+      <div class="visit_goals_monthly"><b>$<%= goal.target_expenditures %></b> per month</div>
     </div>
-    </br>
-    </br>
-    </br>
-    </br>
   <% end %>
 <% end %>
