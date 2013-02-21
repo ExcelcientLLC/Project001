@@ -7,15 +7,15 @@
 
 <div>
   <div>
-      <div class="table_header_01">Name</div>
-      <div class="table_header_01">Image</div>
+      <div class="table_header_quarter">Name</div>
+      <div class="table_header_quarter">Image</div>
   </div>
   <div>
     <% @goal_categories.sort_by{|goal_categories| goal_categories.name}.each do |goal_category| %>
       <%= link_to(goal_category_path(goal_category), :remote => true) do %>
         <div class="element">
-            <div class="table_body_01"><%= goal_category.name %></div>
-            <div class="table_body_01"><%= image_tag goal_category.avatar.url(:medium), size:"50x50" %></div>
+            <div class="table_body_quarter"><%= goal_category.name %></div>
+            <div class="table_body_quarter"><%= image_tag goal_category.avatar.url(:medium), size:"50x50" %></div>
         </div>
       <%end%>
     <% end %>

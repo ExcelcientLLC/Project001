@@ -20,25 +20,37 @@ div.visits_detail_view
 
 div.arrow
 {
-    width:5%;
+    margin:12px;
     float:left;
 }
 div.visits_date
 {
-	width:25%;
+	margin:12px;
 	float:left;
 }
 
 div.visits_action_items
 {
-	width:12%;
+	margin:12px;
 	float:left;
 }
 
 div.visits_header
 {
 	width:100%;
-	height:50px
+	float:left;
+	height:50px;
+}
+div.vistits_header_right
+{
+    padding-right: 30px;
+}
+div.vistits_right_header_element
+{
+	float: right;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	
 }
 
 div.timeline

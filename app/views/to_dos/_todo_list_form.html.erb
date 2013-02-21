@@ -7,12 +7,14 @@
 
 <div>
   <div>
-    <div class="todo_header">Title</div>
+    <div class="todo_header_full">Title</div>
   </div>
   <div>
   <% @visit.to_dos.each do |to_do| %>
     <%= link_to(client_visit_to_do_path(@visit.client, @visit, to_do), :remote => true) do %>
-      <div class="element"><%= to_do.title %></div>
+      <div class="element">
+        <div class="table_body_full"><%= to_do.title %></div>
+      </div>
     <% end %>
   <% end %>
   </div>

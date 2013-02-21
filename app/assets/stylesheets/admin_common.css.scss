@@ -32,70 +32,57 @@ div.add
   width: 10%;
   float: left;
 }
-/*
-table.header
-{
-  border-spacing: 0;
-  width: 95%;
-}
-th.header
-{
-  float: left;
-  width: 25%
-}
-*/
+
 div.table_body
 {
   height: 450px;
   overflow: auto;
 }
-/*
-table.body
-{
-  width: 95%;
-  border-collapse:collapse;
-  border-spacing: 0px;
-}
-table.element
-{
-  background:red;
-  width:100%;
-  border-spacing:0px;
-  border-radius:5px;
-  border-style:solid;
-  border-width:1px;
-  border-color:black;
-}
-*/
-div.table_header_01
+
+div.table_header_quarter
 {
   width:25%;
   position:relative;
   float:left;
 }
-div.table_header_02
+div.table_header_half
 {
   width:50%;
   position:relative;
   float:left;
 }
-div.todo_header
+div.todo_header_full
 {
   width:100%;
   position:relative;
   float:left;
 }
-div.table_body_01
+div.table_body_quarter
 {
   width:25%;
   position:relative;
   float:left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
-div.table_body_02
+div.table_body_half
 {
   width:50%;
   position:relative;
   float:left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div.table_body_full
+{
+  width:100%;
+  position:relative;
+  float:left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 div.element
 {
@@ -157,12 +144,12 @@ div.edit_comment_field
   float: left;
 }
 
-div.edit_comment_field_2
+div.edit_description_field
 {
-  overflow:hidden;
+  overflow:auto;
   height:80px;
   width:70%;
-  float:right
+  float:left;
 }
 
 div.button_format
