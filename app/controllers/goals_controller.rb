@@ -16,7 +16,7 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
     @goal_categories = GoalCategory.all
     @visit = Visit.find(params[:visit_id])
-    @goal.prepareGoalState(@visit)
+    #@goal.prepareGoalState(@visit)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -96,11 +96,12 @@ class GoalsController < ApplicationController
   def destroy
     @goal = Goal.find(params[:id])
     @goal_categories = GoalCategory.all
-    @visit = @goal.visit
+    @visit = Visit.find(params[:visit_id])
+    @client = @goal.client
     @goal.destroy
 
     respond_to do |format|
-      format.html { redirect_to client_visits_path(@todo.visit.client) }
+      format.html { redirect_to client_visits_path(@goal.visit.client) }
       format.json { head :no_content }
       format.js
     end
