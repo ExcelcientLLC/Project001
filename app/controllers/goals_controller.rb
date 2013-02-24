@@ -78,7 +78,7 @@ class GoalsController < ApplicationController
     @goal_state.updateState(@goal.current_value, @goal.current_expenditures)
 
     respond_to do |format|
-      if @goal.update_attributes(params[:goal])
+      if @goal.update_attributes(params[:goal]) && @goal_state.save()
         format.html { redirect_to client_visits_path(@todo.visit.client), notice: 'Goal was successfully updated.' }
         format.json { head :no_content }
         format.js
