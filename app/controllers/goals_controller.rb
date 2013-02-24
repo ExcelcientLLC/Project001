@@ -58,7 +58,9 @@ class GoalsController < ApplicationController
     @goal.setPresentGoalState(@goal_state)
 
     respond_to do |format|
-      if @goal.save && @goal_state.save
+      if @goal.save
+        @goal_state.goal = @goal
+        @goal_state.save
         format.html { redirect_to client_visits_path(@goal.visit.client), notice: 'Goal was successfully created.' }
         format.json { render json: @goal, status: :created, location: @goal }
         format.js
@@ -79,7 +81,7 @@ class GoalsController < ApplicationController
     @goal_state.updateState(@goal.current_value, @goal.current_expenditures)
 
     respond_to do |format|
-      if @goal.update_attributes(params[:goal]) && @goal_state.save()
+      if @goal.update_attributes(params[:goal]) && @goal_state.save
         format.html { redirect_to client_visits_path(@todo.visit.client), notice: 'Goal was successfully updated.' }
         format.json { head :no_content }
         format.js

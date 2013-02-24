@@ -5,13 +5,18 @@ class GoalState < ActiveRecord::Base
   belongs_to :visit
 
   def setup(other_current_value, other_current_expenditures, other_visit, other_goal)
+    puts "Setting up the Goal State"
     updateState(other_current_value, other_current_expenditures)
-    visit = other_visit
-    goal = other_goal
+    self.visit = other_visit
+    self.goal = other_goal
+
+    puts @current_value
+    puts @current_expenditures
   end
 
   def updateState(other_current_value, other_current_expenditures)
-    current_value = other_current_value
-    current_expenditures = other_current_expenditures
+    puts "Updating the Goal State"
+    self.current_value = other_current_value
+    self.current_expenditures = other_current_expenditures
   end
 end
