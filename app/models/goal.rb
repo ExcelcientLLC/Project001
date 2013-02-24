@@ -8,6 +8,7 @@ class Goal < ActiveRecord::Base
 
   def getGoalStateForVisit(visit)
     closest_goal_state = nil
+    puts goal_states
     goal_states.each do |goal_state|
       if goal_state.visit.visit_date <= visit.visit_date
         if closest_goal_state.visit.visit_date < goal_state.visit.visit_date
@@ -21,5 +22,10 @@ class Goal < ActiveRecord::Base
   def setPresentGoalState(goal_state)
     current_value = goal_state.current_value
     current_expenditures = goal_state.current_expenditures
+  end
+
+  def prepareGoalState(visit)
+    goal_state = getGoalStateForVisit(visit)
+    setPresentGoalState(goal_state)
   end
 end
