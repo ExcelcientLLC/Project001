@@ -1,0 +1,2 @@
+module GoalStatesHelper
+end
