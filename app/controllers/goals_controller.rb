@@ -47,19 +47,21 @@ class GoalsController < ApplicationController
   # POST /goals.json
   def create
     @goal = Goal.new(params[:goal])
-    @goal.visit = Visit.find(params[:visit_id])
+    @visit = Visit.find(params[:visit_id])
+    @client = Client.find(params[:client_id])
+    @goal.client = @client
     @goal_categories = GoalCategory.all
-    @visit = @goal.visit
+    @goal_state = GoalState.new()
+    @goal_state.current_value = @goal.current_value
+    @goal_state.current_expenditures = @goal.current_expenditures
+    @goal_state.visit = @visit
+    @goal_state.goal = @goal
 
-    max = Goal.maximum("continuity_id")
-    if max
-      @goal.continuity_id = max+1
-    else
-      @goal.continuity_id = 1
-    end
+    @goal.setPresentGoalState(@goal_state)
+    @client = @goal.client
 
     respond_to do |format|
-      if @goal.save
+      if @goal.save && @goal_state.save
         format.html { redirect_to client_visits_path(@goal.visit.client), notice: 'Goal was successfully created.' }
         format.json { render json: @goal, status: :created, location: @goal }
         format.js
