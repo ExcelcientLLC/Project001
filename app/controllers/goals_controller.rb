@@ -15,7 +15,7 @@ class GoalsController < ApplicationController
   def show
     @goal = Goal.find(params[:id])
     @goal_categories = GoalCategory.all
-    @visit = @goal.visit
+    @visit = Visit.find(params[:visit_id])
 
     respond_to do |format|
       format.html # show.html.erb
