@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Current value:</b>
+  <%= @goal_state.current_value %>
+</p>
+
+<p>
+  <b>Current expenditures:</b>
+  <%= @goal_state.current_expenditures %>
+</p>
+
+
+<%= link_to 'Edit', edit_goal_state_path(@goal_state) %> |
+<%= link_to 'Back', goal_states_path %>

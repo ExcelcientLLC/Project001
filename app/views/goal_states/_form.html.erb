@@ -1,0 +1,25 @@
+<%= form_for(@goal_state) do |f| %>
+  <% if @goal_state.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@goal_state.errors.count, "error") %> prohibited this goal_state from being saved:</h2>
+
+      <ul>
+      <% @goal_state.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :current_value %><br />
+    <%= f.number_field :current_value %>
+  </div>
+  <div class="field">
+    <%= f.label :current_expenditures %><br />
+    <%= f.number_field :current_expenditures %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
