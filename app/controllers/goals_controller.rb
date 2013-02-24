@@ -76,12 +76,16 @@ class GoalsController < ApplicationController
   # PUT /goals/1.json
   def update
     @goal = Goal.find(params[:id])
+    @client = @goal.client
     @goal_categories = GoalCategory.all
-    @visit = @goal.visit
-    @goal_state.updateState(@goal.current_value, @goal.current_expenditures)
+    @visit = Visit.find(params[:visit_id])
 
     respond_to do |format|
-      if @goal.update_attributes(params[:goal]) && @goal_state.save
+      if @goal.update_attributes(params[:goal])
+        @goal_state = @goal.getGoalStateForVisit(@visit)
+        @goal_state.updateState(@goal.current_value, @goal.current_expenditures)
+        @goal_state.save
+
         format.html { redirect_to client_visits_path(@todo.visit.client), notice: 'Goal was successfully updated.' }
         format.json { head :no_content }
         format.js
