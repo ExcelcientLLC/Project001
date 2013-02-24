@@ -3,8 +3,8 @@ Prosperion2012::Application.routes.draw do
   
 
     resources :clients, :except => [:edit] do
-        resources :goals, :except => [:edit]
         resources :visits, :except => [:new] do
+            resources :goals, :except => [:edit]
             resources :goal_states, :except => [:edit]
             resources :to_dos, :except => [:edit]
         end
