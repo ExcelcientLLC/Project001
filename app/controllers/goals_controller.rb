@@ -52,13 +52,9 @@ class GoalsController < ApplicationController
     @goal.client = @client
     @goal_categories = GoalCategory.all
     @goal_state = GoalState.new()
-    @goal_state.current_value = @goal.current_value
-    @goal_state.current_expenditures = @goal.current_expenditures
-    @goal_state.visit = @visit
-    @goal_state.goal = @goal
 
+    @goal_state.setup(@goal.current_value, @goal.current_expenditures, @visit, @goal)
     @goal.setPresentGoalState(@goal_state)
-    @client = @goal.client
 
     respond_to do |format|
       if @goal.save && @goal_state.save
@@ -79,6 +75,7 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
     @goal_categories = GoalCategory.all
     @visit = @goal.visit
+    @goal_state.updateState(@goal.current_value, @goal.current_expenditures)
 
     respond_to do |format|
       if @goal.update_attributes(params[:goal])
