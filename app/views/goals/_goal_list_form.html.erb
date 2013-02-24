@@ -2,7 +2,7 @@
   <h1>Goals</h1>
 </div>
 <div class=add>
-  <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_goal_path(@visit.client, @visit), :remote => true%>
+  <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_goal_path(@visit.client), :remote => true%>
 </div>
 
 <div>
@@ -12,8 +12,8 @@
     <div class="table_header_quarter">Target Date</div>
   </div>
   <div>
-    <% @visit.goals.each do |goal| %>
-      <%= link_to(client_visit_goal_path(@visit.client, @visit, goal), :remote => true) do %>
+    <% @client.goals.each do |goal| %>
+      <%= link_to(client_goal_path(@visit.client, goal), :remote => true) do %>
         <div class="element">
           <div class="table_body_half"><%= goal.name %></div>
           <div class="table_body_quarter"> <%= number_to_currency(goal.target_value) %></div>

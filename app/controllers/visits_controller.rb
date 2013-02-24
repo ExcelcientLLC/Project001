@@ -46,9 +46,9 @@ class VisitsController < ApplicationController
     @visit.client = Client.find(params[:client_id])
     @goal_categories = GoalCategory.all
 
-    puts "Calling copyGoalsAndToDos"
-    copyGoalsAndToDos(@visit, @visit.client)
-    puts "Done Calling copyGoalsAndToDos"
+    #puts "Calling copyGoalsAndToDos"
+    #copyGoalsAndToDos(@visit, @visit.client)
+    #puts "Done Calling copyGoalsAndToDos"
 
     respond_to do |format|
       if not @visit.save
