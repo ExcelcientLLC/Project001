@@ -37,6 +37,8 @@ class Goal < ActiveRecord::Base
 
   def prepareGoalState(visit)
     goal_state = getClosestGoalStateForVisit(visit)
-    setPresentGoalState(goal_state)
+    if goal_state != nil
+      setPresentGoalState(goal_state)
+    end
   end
 end
