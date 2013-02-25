@@ -9,6 +9,18 @@ class Goal < ActiveRecord::Base
   def getGoalStateForVisit(visit)
     closest_goal_state = nil
     self.goal_states.each do |goal_state|
+      if goal_state.visit.visit_date == visit.visit_date
+        if closest_goal_state == nil || closest_goal_state.visit.visit_date < goal_state.visit.visit_date
+          closest_goal_state = goal_state
+        end
+      end
+    end
+    return closest_goal_state
+  end
+
+  def getClosestGoalStateForVisit(visit)
+    closest_goal_state = nil
+    self.goal_states.each do |goal_state|
       if goal_state.visit.visit_date <= visit.visit_date
         if closest_goal_state == nil || closest_goal_state.visit.visit_date < goal_state.visit.visit_date
           closest_goal_state = goal_state
@@ -24,7 +36,7 @@ class Goal < ActiveRecord::Base
   end
 
   def prepareGoalState(visit)
-    goal_state = getGoalStateForVisit(visit)
+    goal_state = getClosestGoalStateForVisit(visit)
     setPresentGoalState(goal_state)
   end
 end
