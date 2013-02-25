@@ -7,6 +7,10 @@ class VisitsController < ApplicationController
     @curr_visit = @visits.last
     @visit = Visit.new
 
+    @client.goals.each do |goal|
+      goal.prepareGoalState(@curr_visit)
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @visits }
