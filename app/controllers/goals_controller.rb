@@ -3,6 +3,7 @@ class GoalsController < ApplicationController
   # GET /goals.json
   def index
     @goals = Goal.all
+    @visit = Visit.find(params[:visit_id])
 
     respond_to do |format|
       format.html # index.html.erb
