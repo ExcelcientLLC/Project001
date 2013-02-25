@@ -102,24 +102,6 @@ div.element:hover
 {
   background:gray;
 }
-table.element:hover
-{
-  background:gray;
-}
-table.element:active
-{ 
-  background:gray;
-}
-td.element_column
-{
-  color: white;
-  width: 25%;
-  float: left;
-}
-td.element_column.email
-{
-  width: 50%;
-}
 
 
 /* Supporting admin form*/
@@ -162,4 +144,6 @@ div.delete_format
   margin-right: 15%;
   float: right;
 }
+
+
 

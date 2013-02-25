@@ -19,7 +19,7 @@ class GoalCategoriesController < ApplicationController
     @goal_category = GoalCategory.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      #format.html # show.html.erb
       format.json { render json: @goal_category }
       format.js
     end
@@ -57,18 +57,19 @@ class GoalCategoriesController < ApplicationController
   # PUT /goal_categories/1
   # PUT /goal_categories/1.json
   def update
-    @goal_categories = GoalCategories.all
+    @goal_categories = GoalCategory.all
     @goal_category = GoalCategory.find(params[:id])
 
     respond_to do |format|
       if @goal_category.update_attributes(params[:goal_category])
-        format.html { redirect_to @goal_category, notice: 'Goal category was successfully updated.' }
+        @goal_categories = GoalCategory.all
+        #format.html { redirect_to @goal_category, notice: 'Goal category was successfully updated.' }
         format.json { head :no_content }
-	format.js
+	      format.js
       else
-        format.html { render action: "edit" }
+        #format.html { render action: "edit" }
         format.json { render json: @goal_category.errors, status: :unprocessable_entity }
-	format.js
+	      format.js
       end
     end
   end
