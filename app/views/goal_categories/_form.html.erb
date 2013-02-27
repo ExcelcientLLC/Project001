@@ -19,7 +19,17 @@
       <%= f.text_field :name %>
     </div>
   </div>
-  
+  <div class="field">
+    <div class="edit_label">
+      <%= f.label "Image" %><br />
+    </div>
+    <div class="edit_field">
+      <%= image_tag @goal_category.avatar.url(:thumb) %>
+    </div>
+    <div class="edit_field">
+      <%= f.file_field :avatar %> <br />
+    </div>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

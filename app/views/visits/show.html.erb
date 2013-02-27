@@ -1,8 +1,8 @@
 <%= render 'common/header' %>
 
-<div class=admin_body>
+<div class="admin_body">
 
-<div class="visits_header">
+<div class="sub_header">
   <% if @visit != @client.visits.first %>
     <div class="arrow">
       <%= link_to image_tag("Go-previous.svg.png", size: "28x28"), [@client, previous_visit(@client.visits, @visit)] %>
@@ -18,15 +18,15 @@
       <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_goal_path(@visit.client, @visit), :remote => true%>
     <% end %>
   </div>
-  <div class="vistits_header_right">
-    <div class="vistits_right_header_element">
+  <div class="sub_header_right">
+    <div class="sub_header_right_element">
+      <%= button_to "Client List", clients_path, :method => :get %>
+    </div>
+    <div class="sub_header_right_element">
       <%= button_to "Goal Categories", goal_categories_path, :method => :get %>
     </div>
-    <div class="vistits_right_header_element">
+    <div class="sub_header_right_element">
       <%= button_to "Timeline", client_visits_path(@client), :method => :get %>
-    </div>
-    <div class="vistits_right_header_element">
-      <%= button_to "Client List", clients_path, :method => :get %>
     </div>
   </div>
 </div>
@@ -36,7 +36,7 @@
 <div id="goal_list" class="visits_list_set">
 	<%= render :partial => '/goals/goal_list_form' %>
 </div>
-<div id="goal" class="visits_detail_view">
+<div id="goal" class="detail_view">
 	<h1>New Goal</h1>
 	<%= render :partial => '/goals/form' %>
 </div>
@@ -47,7 +47,7 @@
 <div id="todo_list" class="visits_list_set">
 	<%= render :partial => '/to_dos/todo_list_form' %>
 </div>
-<div id="todo" class="visits_detail_view">
+<div id="todo" class="detail_view">
 	<h1>New To Do</h1>
 	<%= render :partial => '/to_dos/form' %>
 </div>

@@ -5,6 +5,26 @@ div.admin_body
   margin: 0px auto;
 }
 
+div.sub_header
+{
+  width:100%;
+  float:left;
+  height:50px;
+}
+
+div.sub_header_right_element
+{
+  float: right;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  
+}
+div.sub_header_right
+{
+    padding-right: 30px;
+    float: right;
+}
+
 div.field
 {
  height: 20px;
@@ -105,6 +125,14 @@ div.element:hover
 
 
 /* Supporting admin form*/
+div.detail_view
+{
+  width:48%;
+  float:left;
+  background:gray;
+  border-style:solid;
+  border-width:2px
+}
 div.edit_label
 {
   width: 30%;

@@ -8,8 +8,18 @@
   <div class=client_list id="client_list">
     <%= render 'goalcategory_list_form' %>
   </div>
+
+<div class="sub_header_right">
+  <div class="sub_header_right_element">
+    <%= button_to "Client List", clients_path, :method => :get %>
+  </div>
+  <div class="sub_header_right_element">
+    <%= button_to_function "Back", "history.back()" %>
+  </div>
+</div>
+
 <!--Create Client-->
-  <div class=create_client id="client">
+  <div class="detail_view" id="client">
     <h1> New Goal Category  </h1>
     <%= render 'form' %>
   </div>
