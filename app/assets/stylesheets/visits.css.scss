@@ -131,3 +131,16 @@ div.visit_todos
   min-height:20px;
   margin-bottom:10px;
 }
+
+
+/* In CSS, not JavaScript */
+@page {
+  size: landscape;
+}
+
+@media print {
+  /* Define print-specific styles here, for example toning down the decoration
+     of hyperlinks and removing the navigation. */
+  a {dispaly: inherit !important; text-decoration: none !important;}
+  nav {display: none;}
+}
