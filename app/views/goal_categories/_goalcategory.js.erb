@@ -2,7 +2,5 @@ $('#goalcategory').html("<p>");
 $('#goalcategory').append("</p>");
 $('#goalcategory').append("<h1>Editing Goal Category</h1>");
 $('#goalcategory').append("<%= escape_javascript(render 'form') %>");
-$('#goalcategory').append("<div class=button_format><%= escape_javascript(button_to "Timeline", goal_category_path(@goal_category), :method => :get) %></div>");
-$('#goalcategory').append("<div class=button_format><%= escape_javascript(button_to "Goals", goal_category_path(@goal_category), :method => :get) %></div>");
 $('#goalcategory').append("<div class=delete_format><%= escape_javascript(link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), goal_category_path(@goal_category), :method => :delete, :remote => true) %></div>");
 

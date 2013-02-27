@@ -39,17 +39,19 @@ class GoalCategoriesController < ApplicationController
   # POST /goal_categories.json
   def create
     #@goal_category = GoalCategory.create( params[:goal_category] )
+    @goal_categories = GoalCategory.all
     @goal_category = GoalCategory.new(params[:goal_category])
 
     respond_to do |format|
       if @goal_category.save
-        format.html { redirect_to @goal_category, notice: 'Goal category was successfully created.' }
+        @goal_categories = GoalCategory.all
+        #format.html { redirect_to @goal_category, notice: 'Goal category was successfully created.' }
         format.json { render json: @goal_category, status: :created, location: @goal_category }
-	format.js
+	      format.js
       else
-        format.html { render action: "new" }
+        #format.html { render action: "new" }
         format.json { render json: @goal_category.errors, status: :unprocessable_entity }
-	format.js
+	      format.js
       end
     end
   end
@@ -83,7 +85,6 @@ class GoalCategoriesController < ApplicationController
     @client = Client.new
 
     respond_to do |format|
-      format.html { redirect_to goal_categories_url }
       format.json { head :no_content }
       format.js
     end

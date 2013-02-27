@@ -5,8 +5,6 @@ class ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.search(params[:search]).order(sort_column + " " + sort_direction)
-
-    #@clients = Client.search(params[:search])
     @client = Client.new
 
     respond_to do |format|
