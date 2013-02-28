@@ -1,4 +1,4 @@
-<%= form_for(@visit, :url => [@client, @visit])  do |f| %>
+<!-- -->
 
   <% if @visit.errors.any? %>
     <div id="error_explanation">
@@ -18,12 +18,14 @@
         <%= link_to image_tag("Go-previous.svg.png", size: "28x28"), [@client, previous_visit(@client.visits, @visit)] %>
       </div>
     <% end %>
+    <%= form_for(@visit, :url => [@client, @visit])  do |f| %>
     <div class="visits_date">
       <%= f.date_select :visit_date %>
     </div>
     <div class="visits_action_items">
       <%= f.submit %>
     </div>
+    <% end %>
     <div class="arrow">
       <% if @visit != @client.visits.last  %>
         <%= link_to image_tag("Go-next.svg", size: "28x28"), [@client, next_visit(@client.visits, @visit)] %>
@@ -47,4 +49,4 @@
 
 
 
-<% end %>
+<!---->
