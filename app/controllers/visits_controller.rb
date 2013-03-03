@@ -47,6 +47,7 @@ class VisitsController < ApplicationController
   # POST /clients/:client_id/visits.json
   def create
     @visit = Visit.new(params[:visit])
+    @visit.visit_date = Date.today.to_time_in_current_zone
     @visit.client = Client.find(params[:client_id])
     @goal_categories = GoalCategory.all
 
@@ -56,7 +57,7 @@ class VisitsController < ApplicationController
 
     respond_to do |format|
       if not @visit.save
-        format.html { redirect_to client_visits_path(@visit.client), notice: 'Visit was successfully created.' }
+        format.html { redirect_to client_visit_path(@visit.client, @visit), notice: 'Visit was successfully created.' }
         format.json { render json: @visit, status: :created, location: @visit }
       else
         format.html { redirect_to client_visits_path(@visit.client) }
