@@ -56,7 +56,7 @@ class VisitsController < ApplicationController
     #puts "Done Calling copyGoalsAndToDos"
 
     respond_to do |format|
-      if not @visit.save
+      if @visit.save
         format.html { redirect_to client_visit_path(@visit.client, @visit), notice: 'Visit was successfully created.' }
         format.json { render json: @visit, status: :created, location: @visit }
       else
