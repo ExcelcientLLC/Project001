@@ -1,23 +1,27 @@
-<div id="goal_progress">
-    <h2>Goal Progress</h2>
-    <% @curr_visit.goals.each do |goal| %>
-        <% if not goal.complete %>
-            <%= goal.target_date %>|
-            <%= getGoalProgressPercent(goal).to_s + "%" %>|
-            <!-- <%= getGoalProgress(goal) %>| -->
-            <b>$<%= goal.target_expenditures %></b> per month|
-            <%= getGoalEndDate(goal) %>
-        <% end %>
-    <% end %>
+<!-- Timeline -->
+<div class="timeline" style="margin-top:100px;margin-bottom:10px;">
+  <%= render 'visit_visits' %>
 </div>
 
-<div id="todo_progress">
-    <h2>To Do Progress</h2>
-    <% @curr_visit.to_dos.each do |to_do| %>
-        <% if not to_do.complete %>
-            <b><%= to_do.title %></b>
-            <br />
-            <%= to_do.description %>
-        <% end %>
-    <% end %>
+<!-- Main Content Box -->
+<div style="overflow:hidden;position:relative;">
+  <div id="split_bar" style="width:15px; background-color:#555555; border-radius:8px; position:absolute; left:10%; z-index:2; height:100%"></div>
+  <div class="goals_box" style="width:70%; position:relative; float:left;">
+    <div style="margin-left: 18%"><h2>Goal Progress</h2></div>
+    <%= render 'visit_goals' %>
+  </div>
+  <div class="todo_box" style="margin-left:1%; width:29%; position:relative; float:left;">
+    <%= render 'visit_todos' %>
+  </div>
+</div>
+<div class="sub_header_right">
+  <div class="sub_header_right_element">
+    <%= button_to_function("Print this Page", "javascript:print()")%>
+  </div>
+  <div class="sub_header_right_element">
+    <%= button_to "Client List", clients_path, :method => :get %>
+  </div>
+  <div class="sub_header_right_element">
+    <%= button_to "Goal Categories", goal_categories_path, :method => :get %>
+  </div>
 </div>

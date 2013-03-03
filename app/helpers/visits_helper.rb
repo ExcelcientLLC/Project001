@@ -36,7 +36,12 @@ module VisitsHelper
     end
 
     def getGoalProgressPercent(goal)
-        return (goal.current_value*100)/goal.target_value
+        if goal.current_value == nil
+            puts "Goal Current Value is nil"
+            return 0
+        else
+            return (goal.current_value*100)/goal.target_value
+        end
     end
 
     def getGoalEndDate(goal)
