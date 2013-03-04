@@ -92,11 +92,11 @@ class GoalsController < ApplicationController
           @goal_state.save
         end
 
-        format.html { redirect_to client_visits_path(@todo.visit.client), notice: 'Goal was successfully updated.' }
+        format.html { redirect_to client_visits_path(@goal.client), notice: 'Goal was successfully updated.' }
         format.json { head :no_content }
         format.js
       else
-        format.html { redirect_to client_visits_path(@todo.visit.client) }
+        format.html { redirect_to client_visits_path(@goal.client) }
         format.json { render json: @goal.errors, status: :unprocessable_entity }
         format.js
       end

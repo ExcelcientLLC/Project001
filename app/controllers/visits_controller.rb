@@ -28,6 +28,10 @@ class VisitsController < ApplicationController
     @to_do = ToDo.new
     @goal_categories = GoalCategory.all
 
+    @client.goals.each do |goal|
+      goal.prepareGoalState(@curr_visit)
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @visit }
