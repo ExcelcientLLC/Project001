@@ -23,9 +23,11 @@
     <div class="edit_label">
       <%= f.label "Image" %><br />
     </div>
-    <div class="edit_field">
-      <%= image_tag @goal_category.avatar.url(:medium) %>
-    </div>
+    <% if @goal_category.avatar_file_name %>
+      <div class="edit_field">
+        <%= image_tag @goal_category.avatar.url(:medium) %>
+      </div>
+    <% end %>
     <div class="edit_field">
       <%= f.file_field :avatar %> <br />
     </div>

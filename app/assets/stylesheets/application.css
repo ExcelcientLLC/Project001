@@ -23,6 +23,6 @@ div.header
   background: -ms-linear-gradient(left,  #690925 0%,#b90938 50%,#690925 100%); /* IE10+ */
   background: linear-gradient(to right,  #690925 0%,#b90938 50%,#690925 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#690925', endColorstr='#690925',GradientType=1 ); /* IE6-9 */
-  padding: 20px;
+  padding: 10px;
 }
 
