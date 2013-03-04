@@ -44,3 +44,4 @@ gem 'shoulda-matchers'
 gem 'capybara'
 gem 'database_cleaner'
 gem "paperclip"
+gem 'jqplot-rails'

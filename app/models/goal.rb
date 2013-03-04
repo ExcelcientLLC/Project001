@@ -41,4 +41,13 @@ class Goal < ActiveRecord::Base
       setPresentGoalState(goal_state)
     end
   end
+
+  def getJQPlotCompatibleData()
+    retval = []
+    self.goal_states.each do |goal_state|
+      retval.push([goal_state.visit.visit_date, goal_state.current_value])
+    end
+    retval.push([self.target_date, self.target_value])
+    return [retval]
+  end
 end
