@@ -1,40 +1,15 @@
 <p id="notice"><%= notice %></p>
-
-<%= jqplot 200, 300,  @goal.getJQPlotCompatibleData(), 
+<%= render 'common/header' %>
+<div class="admin_body">
+  <div style="height:50px;width:100%"></div>
+<%= jqplot 400, 950,  @goal.getJQPlotCompatibleData(), 
          :axes => {
            :xaxis => {:renderer => "$.jqplot.DateAxisRenderer", :min => @goal.goal_states.first.visit.visit_date, :max => @goal.target_date, :tickOptions => {:formatString => '%Y-%m-%d', :tickInterval => "1 month" }  }, 
            :yaxis => {:min => 0, :max =>@goal.target_value } 
          },
+         :title => @goal.name,
          :legend => {:show => false},
          :axesDefaults => {:tickOptions => {:showGridline => true}},
          :grid => {:shadow => false, :drawGridLines => true} %> 
-<p>
-  <b>Target date:</b>
-  <%= @goal.target_date %>
-</p>
-
-<p>
-  <b>Target value:</b>
-  <%= @goal.target_value %>
-</p>
-
-<p>
-  <b>Current value:</b>
-  <%= @goal.current_value %>
-</p>
-
-<p>
-  <b>Target expenditures:</b>
-  <%= @goal.target_expenditures %>
-</p>
-
-<p>
-  <b>Current expenditures:</b>
-  <%= @goal.current_expenditures %>
-</p>
-
-<p>
-  <b>Complete:</b>
-  <%= @goal.complete %>
-</p>
+</div>
 <%= link_to 'Back', client_visits_path(@goal.client) %>
