@@ -7,7 +7,31 @@ class Goal < ActiveRecord::Base
   belongs_to :goal_category
 
   def isVisibleAtVisit(visit)
-    return self.complete == false
+    afterFirstVisit = (visit.visit_date >= getFirstGoalVisitDate())
+    beforeLastVisit = (visit.visit_date <= getLastGoalVisitDate())
+    incomplete = !self.complete
+
+    return (afterFirstVisit and (incomplete or beforeLastVisit))
+  end
+
+  def getFirstGoalVisitDate()
+    first_date = self.goal_states.first.visit.visit_date
+    self.goal_states.each do |goal_state|
+      if first_date > goal_state.visit.visit_date
+        first_date = goal_state.visit.visit_date
+      end
+    end
+    return first_date
+  end
+
+  def getLastGoalVisitDate()
+    last_date = self.goal_states.first.visit.visit_date
+    self.goal_states.each do |goal_state|
+      if last_date < goal_state.visit.visit_date
+        last_date = goal_state.visit.visit_date
+      end
+    end
+    return last_date
   end
 
   def getGoalStateForVisit(visit)
