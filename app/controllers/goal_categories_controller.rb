@@ -19,7 +19,7 @@ class GoalCategoriesController < ApplicationController
     @goal_category = GoalCategory.find(params[:id])
 
     respond_to do |format|
-      #format.html # show.html.erb
+      format.html # show.html.erb
       format.json { render json: @goal_category }
       format.js
     end
