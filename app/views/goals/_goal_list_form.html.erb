@@ -11,7 +11,8 @@
     <div class="table_header_quarter">Target Value</div>
     <div class="table_header_quarter">Target Date</div>
   </div>
-  <div>
+  
+  <div class="short_table_body">
     <% @client.getVisibleGoals(@visit).each do |goal| %>
       <%= link_to(client_visit_goal_path(@visit.client, @visit, goal), :remote => true) do %>
         <div class="element">
