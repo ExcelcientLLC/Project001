@@ -1,14 +1,17 @@
 <div class="header" style=" position: relative;">
   <%= link_to image_tag("prosperionLogo.png"), "/clients" %>
-  <% if @client && @client.first_name && @client.last_name %>
-
     <div style="float:right;width:500px">
-      <div style="color: #F4BB3A; Float: right;">
-      	<%= "For " + @client.first_name + " " + @client.last_name %>
+      <% if @client && @client.first_name && @client.last_name %>
+      <div style="color: #F4BB3A; float: right;width:100%;">
+        <div style="float:right;padding: 12px;">
+      	  <%= "For " + @client.first_name + " " + @client.last_name %>
+        </div>
       </div>
-      <div style="color: white; font-size: 400%;position: absolute; bottom: 0; float:right;">
-      	SNAPSHOT
+      <% end %>
+      <div style="color: white; font-size: 400%;width:100%;">
+        <div style="float:right; padding: 12px;">
+      	  <%= @title %>
+        </div>
       </div>
     </div>
-  <% end %>
 </div>
