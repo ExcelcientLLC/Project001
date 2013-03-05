@@ -6,6 +6,10 @@ class Goal < ActiveRecord::Base
   belongs_to :client
   belongs_to :goal_category
 
+  def isVisibleAtVisit(visit)
+    return self.complete == false
+  end
+
   def getGoalStateForVisit(visit)
     closest_goal_state = nil
     self.goal_states.each do |goal_state|

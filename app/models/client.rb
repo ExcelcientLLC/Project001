@@ -4,6 +4,19 @@ class Client < ActiveRecord::Base
   has_many :visits
   has_many :goals
 
+  def getVisibleGoals(visit)
+    goals = []
+
+    self.goals.each() do |goal|
+      if goal.isVisibleAtVisit(visit)
+        goal.prepareGoalState(visit)
+        goals.push(goal)
+      end
+    end
+
+    return goals
+  end
+
   #def self.search(search)
 #    if search
  #     find(:all, conditions: ['first_name LIKE ? OR last_name LIKE ?', "%#{search}%", "%#{search}%"], order: 'email ASC')
