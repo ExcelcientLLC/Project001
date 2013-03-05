@@ -1,4 +1,4 @@
-<div class="filed">
+<div class="field">
   <div class=search>
     <%= form_tag clients_path, :method => 'get' do %>
       <%= hidden_field_tag :direction, params[:direction] %>
@@ -20,7 +20,7 @@
     <div class="table_header_quarter"><%= sortable "last_name", "Last Name"%></div>
     <div class="table_header_half"><%= sortable "email", "Email"%></div>
   </div>
-  <div>
+  <div class="table_body">
     <% @clients.each do |client| %>
       <%= link_to(client_path(client), :remote => true) do %>
       <div class="element">
