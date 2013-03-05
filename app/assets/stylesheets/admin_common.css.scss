@@ -53,9 +53,22 @@ div.add
   float: left;
 }
 
+div.tiny_table_body
+{
+  height: 175px;
+  width: 100%;
+  overflow: auto;
+}
+div.short_table_body
+{
+  height: 255px;
+  width: 100%;
+  overflow: auto;  
+}
 div.table_body
 {
   height: 450px;
+  width: 100%;
   overflow: auto;
 }
 
@@ -65,18 +78,21 @@ div.table_header_quarter
   position:relative;
   float:left;
 }
+
 div.table_header_half
 {
   width:50%;
   position:relative;
   float:left;
 }
+
 div.table_header_full
 {
   width:100%;
   position:relative;
   float:left;
 }
+
 div.table_body_quarter
 {
   width:25%;
@@ -86,6 +102,7 @@ div.table_body_quarter
   overflow: hidden;
   text-overflow: ellipsis; 
 }
+
 div.table_body_half
 {
   width:50%;
@@ -95,6 +112,7 @@ div.table_body_half
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 div.table_body_full
 {
   width:100%;
@@ -110,7 +128,7 @@ div.element
   float:left;
   background-color:#B40A37;
   color:#FFFFFF;
-  width:100%;
+  width:98%;
   border-spacing:0px;
   border-radius:5px;
   border-style:solid;
