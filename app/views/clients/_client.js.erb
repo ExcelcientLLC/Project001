@@ -4,4 +4,4 @@ $('#client').append("<h1>Editing Client</h1>");
 $('#client').append("<%= escape_javascript(render 'form') %>");
 $('#client').append("<div class=button_format><%= escape_javascript(button_to "Timeline", client_visits_path(@client), :method => :get) %></div>");
 $('#client').append("<div class=button_format><%= escape_javascript(button_to "Goals", client_visit_path(@client, @client.visits.first), :method => :get) %></div>");
-$('#client').append("<div class=delete_format><%= escape_javascript(link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), client_path(@client), :method => :delete, :remote => true) %></div>");
+$('#client').append("<div class=delete_format><%= escape_javascript(link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), client_path(@client), method: :delete, remote: true, confirm: "Are you sure you want to delete this client?") %></div>");
