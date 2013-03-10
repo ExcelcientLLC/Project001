@@ -19,7 +19,7 @@ class GoalCategoriesController < ApplicationController
     @goal_category = GoalCategory.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      #format.html # show.html.erb
       format.json { render json: @goal_category }
       format.js
     end
@@ -38,20 +38,20 @@ class GoalCategoriesController < ApplicationController
   # POST /goal_categories
   # POST /goal_categories.json
   def create
-    @goal_category = GoalCategory.create( params[:goal_category] )
+    #@goal_category = GoalCategory.create( params[:goal_category] )
     @goal_categories = GoalCategory.all
-    #@goal_category = GoalCategory.new(params[:goal_category])
+    @goal_category = GoalCategory.new(params[:goal_category])
 
     respond_to do |format|
       if @goal_category.save
         @goal_categories = GoalCategory.all
         #format.html { redirect_to @goal_category, notice: 'Goal category was successfully created.' }
         format.json { render json: @goal_category, status: :created, location: @goal_category }
-	      format.js
+	format.js
       else
         #format.html { render action: "new" }
         format.json { render json: @goal_category.errors, status: :unprocessable_entity }
-	      format.js
+	format.js
       end
     end
   end
@@ -81,8 +81,8 @@ class GoalCategoriesController < ApplicationController
   def destroy
     @goal_category = GoalCategory.find(params[:id])
     @goal_category.destroy
-    @clients = Client.all
-    @client = Client.new
+    @goal_categories = GoalCategory.all
+    @goal_category = GoalCategory.new
 
     respond_to do |format|
       format.json { head :no_content }
