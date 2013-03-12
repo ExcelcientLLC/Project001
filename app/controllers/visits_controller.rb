@@ -7,7 +7,7 @@ class VisitsController < ApplicationController
     @visit = @visits.last
 
     @client.goals.each do |goal|
-      goal.prepareGoalState(@curr_visit)
+      goal.prepareGoalState(@visit)
     end
 
     respond_to do |format|
