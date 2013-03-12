@@ -1,5 +1,5 @@
 <h2>To Do Progress</h2>
-<% @curr_visit.to_dos.each do |to_do| %>
+<% @visit.to_dos.each do |to_do| %>
   <% if not to_do.complete %>
     <div class="visit_todos"><b><%= to_do.title %></b></br><%= to_do.description %></div>
   <% end %>

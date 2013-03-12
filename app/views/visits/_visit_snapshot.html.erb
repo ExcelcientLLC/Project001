@@ -22,6 +22,6 @@
     <%= button_to "Client List", clients_path, :method => :get %>
   </div>
   <div class="sub_header_right_element">
-    <%= button_to "Goals", client_visit_path(@client, @client.visits.first), :method => :get %>
+    <%= button_to "Goals", client_visit_path(@client, @visit), :method => :get %>
   </div>
 </div>

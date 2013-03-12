@@ -4,8 +4,7 @@ class VisitsController < ApplicationController
   def index
     @client = Client.find(params[:client_id])
     @visits = getSortedVisits(@client)
-    @curr_visit = @visits.last
-    @visit = Visit.new
+    @visit = @visits.last
 
     @client.goals.each do |goal|
       goal.prepareGoalState(@curr_visit)
