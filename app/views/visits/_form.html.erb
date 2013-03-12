@@ -1,11 +1,11 @@
-<%= form_for(@visit, :url => [@client, @visit])  do |f| %>
+<%= form_for(@form_visit, :url => [@client, @form_visit])  do |f| %>
 
-  <% if @visit.errors.any? %>
+  <% if @form_visit.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@visit.errors.count, "error") %> prohibited this visit from being saved:</h2>
+      <h2><%= pluralize(@form_visit.errors.count, "error") %> prohibited this visit from being saved:</h2>
 
       <ul>
-      <% @visit.errors.full_messages.each do |msg| %>
+      <% @form_visit.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

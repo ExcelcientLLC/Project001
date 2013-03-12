@@ -22,17 +22,38 @@ class VisitsController < ApplicationController
     @client = Client.find(params[:client_id])
     @visits = getSortedVisits(@client)
     @visit = Visit.find(params[:id])
-    @curr_visit = @visit
+    @form_visit = @visit
     @goal = Goal.new
     @to_do = ToDo.new
     @goal_categories = GoalCategory.all
 
     @client.goals.each do |goal|
-      goal.prepareGoalState(@curr_visit)
+      goal.prepareGoalState(@visit)
     end
 
     respond_to do |format|
       format.html # show.html.erb
+      format.json { render json: @visit }
+      format.js
+    end
+  end
+
+  # GET /clients/:client_id/visits/1/new
+  # GET /clients/:client_id/visits/1/new.json
+  def new
+    @client = Client.find(params[:client_id])
+    @visits = getSortedVisits(@client)
+    #@visit = Visit.find(params[:id])
+    @form_visit = Visit.new
+    #@goal = Goal.new
+    #@to_do = ToDo.new
+    @goal_categories = GoalCategory.all
+
+    #@client.goals.each do |goal|
+    #  goal.prepareGoalState(@visit)
+    #end
+    respond_to do |format|
+      #format.html # show.html.erb
       format.json { render json: @visit }
       format.js
     end
