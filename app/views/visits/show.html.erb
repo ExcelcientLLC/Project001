@@ -18,8 +18,8 @@
     <% if @visit != @client.visits.last  %>
       <%= link_to image_tag("Go-next.svg", size: "28x28"), [@client, next_visit(@client.visits, @visit)] %>
     <% else %>
-      <!-- <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), client_visits_path(@visit.client), :method => :post %> -->
-      <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_path(@form_visit.client), :remote => true %>
+      <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), client_visits_path(@visit.client), :method => :post %>
+      <!-- <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_path(@form_visit.client), :remote => true %> -->
     <% end %>
   </div>
   <div class="sub_header_right">
