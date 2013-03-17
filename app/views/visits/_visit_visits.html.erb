@@ -1,17 +1,17 @@
 <% @visits.each do |visit| %>
   <%= link_to(client_visit_path(visit.client, visit), :remote => true) do %>
-  <% if visit == @visits.first %>
-    <div class="circle_icon" style="position:relative; float:left;">
-      <p class="circle_text"><%= visit.visit_date %></p>
-    </div>
-  <% elsif visit == @visits.last %>
-    <div class="circle_icon" style="position:relative; float:right;">
-      <p class="circle_text"><%= visit.visit_date %></p>
-    </div>
-  <% else %>
-    <div class="circle_icon" style="left:<%=getVisitLocationPercentage(@visits, visit).to_s %>%;">
-      <p class="circle_text"><%= visit.visit_date %></p>
-    </div>
-  <% end %>
+    <% if visit == @visits.first %>
+      <div class="circle_icon" style="position:relative; float:left;">
+        <p class="circle_text"><%= visit.visit_date.strftime("%B %Y") %></p>
+      </div>
+    <% elsif visit == @visits.last %>
+      <div class="circle_icon" style="position:relative; float:right;">
+        <p class="circle_text"><%= visit.visit_date.strftime("%B %Y") %></p>
+      </div>
+    <% else %>
+      <div class="circle_icon" style="left:<%=getVisitLocationPercentage(@visits, visit).to_s %>%;">
+        <p class="circle_text"><%= visit.visit_date.strftime("%B %Y") %></p>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
