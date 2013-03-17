@@ -17,6 +17,14 @@ module VisitsHelper
         end
     end
 
+    def getVisitString(visit, current_visit)
+      if visit == @visit
+        return "Today"
+      else
+        return visit.visit_date.strftime("%B %Y")
+      end
+    end
+
     def getVisitLocationPercentage(visits, visit)
         start_visit = visits.first
         end_visit = visits.last
