@@ -36,4 +36,10 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
 gem 'execjs'
+gem 'shoulda-matchers'
+gem 'capybara'
+gem 'database_cleaner'
+gem "paperclip"
+gem 'jqplot-rails'
