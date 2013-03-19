@@ -38,5 +38,6 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'execjs'
+gem 'cocaine', '0.3.2'
 gem "paperclip"
 gem 'jqplot-rails'
