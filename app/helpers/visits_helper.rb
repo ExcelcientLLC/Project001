@@ -17,8 +17,8 @@ module VisitsHelper
         end
     end
 
-    def getVisitString(visit, current_visit)
-      if visit == @visit
+    def getVisitString(visit)
+      if visit.visit_date.to_date == DateTime.now.to_date
         return "Today"
       else
         return visit.visit_date.strftime("%B %Y")
