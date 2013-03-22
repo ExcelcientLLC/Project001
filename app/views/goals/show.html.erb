@@ -2,14 +2,20 @@
 <%= render 'common/header' %>
 <div class="admin_body">
   <div style="height:50px;width:100%"></div>
-<%= jqplot 400, 950,  @goal.getJQPlotCompatibleData(), 
-         :axes => {
-           :xaxis => {:renderer => "$.jqplot.DateAxisRenderer", :min => @goal.goal_states.first.visit.visit_date, :max => @goal.target_date, :tickOptions => {:formatString => '%Y-%m-%d', :tickInterval => "1 month" }  }, 
-           :yaxis => {:min => 0, :max =>@goal.target_value } 
-         },
-         :title => @goal.name,
-         :legend => {:show => false},
-         :axesDefaults => {:tickOptions => {:showGridline => true}},
-         :grid => {:shadow => false, :drawGridLines => true} %> 
+<%= jqplot 400, 950,  @goal.getJQPlotCompatibleData(),
+    :axes => {
+      	:xaxis => {:label => 'Date', :renderer => "$.jqplot.DateAxisRenderer", :min => @goal.goal_states.first.visit.visit_date, :max => @goal.target_date, :tickOptions => {:formatString => '%Y-%m-%d', :tickInterval => "1 month" }  }, 
+      	:yaxis => {:label => 'Contributed', :min => 0, :max =>@goal.target_value } 
+    },
+    :title => @goal.name,
+    :legend => {:show => true, :location => 'se'},
+    :axesDefaults => {:tickOptions => {:showGridline => true}},
+    :grid => {:shadow => false, :drawGridLines => true} ,
+    :series => [
+       	{:label => 'Target Contributions'}, 
+       	{:label => 'Actual Contributions', :color => '#b90938'}, 
+      	{:label => 'Target Amount to Date', :color =>'#cccccc', :shadow => false}
+    ]
+%> 
 </div>
 <%= link_to 'Back', client_visits_path(@goal.client) %>

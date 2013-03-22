@@ -75,11 +75,29 @@ class Goal < ActiveRecord::Base
   end
 
   def getJQPlotCompatibleData()
+
+    return [getJQPlotExtrapolation, getJQPlotCurrentContributions, getJQPlotTargetContribution]
+  end
+
+  def getJQPlotCurrentContributions()
     retval = []
     self.goal_states.each do |goal_state|
       retval.push([goal_state.visit.visit_date, goal_state.current_value])
-    end
+    end 
+    return retval
+  end
+
+  def getJQPlotExtrapolation()
+    retval = []
+    retval.push([self.goal_states.last.visit.visit_date, self.goal_states.last.current_value])
     retval.push([self.target_date, self.target_value])
-    return [retval]
+
+    return retval
+  end
+
+  def getJQPlotTargetContribution()
+    retval = []
+    retval.push([self.goal_states.first.visit.visit_date, 0])
+    retval.push([self.target_date, self.target_value])
   end
 end
