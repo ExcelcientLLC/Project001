@@ -1,13 +1,13 @@
-<% @visits.each do |visit| %>
-  <%= link_to(client_visit_path(visit.client, visit), :remote => true) do %>
-    <% if visit == @visit %>
-      <div class="circle_icon" style="left:<%=getVisitLocationPercentage(@visits, visit).to_s %>%;background-color:#F4BB3A;">
-        <p class="circle_text"><%= getVisitString(visit) %></p>
-      </div>
-    <% else %>
-      <div class="circle_icon" style="left:<%=getVisitLocationPercentage(@visits, visit).to_s %>%;">
-        <p class="circle_text"><%= getVisitString(visit) %></p>
+<% @events.each do |event| %>
+  <% if event.visit %>
+    <%= link_to(client_visit_path(event.visit.client, event.visit), :remote => true) do %>
+      <div class="circle_icon" style="left:<%=getEventLocationPercentage(@events, event).to_s %>%;background-color:#F4BB3A;">
+        <p class="circle_text"><%= getEventDateString(event) %></p>
       </div>
     <% end %>
+  <% else %>
+    <div class="circle_icon" style="left:<%=getEventLocationPercentage(@events, event).to_s %>%;background-color:#F4BB3A;">
+      <p class="circle_text"><%= image_tag(event.category.avatar.url(:medium), size:"16x16") %></p>
+    </div>
   <% end %>
 <% end %>

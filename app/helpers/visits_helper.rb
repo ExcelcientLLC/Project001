@@ -17,26 +17,26 @@ module VisitsHelper
         end
     end
 
-    def getVisitString(visit)
-      if visit.visit_date.to_date == DateTime.now.to_date
+    def getEventDateString(event)
+      if event.date.to_date == DateTime.now.to_date
         return "Today"
       else
-        return visit.visit_date.strftime("%B %Y")
+        return event.date.strftime("%B %Y")
       end
     end
 
-    def getVisitLocationPercentage(visits, visit)
-        start_visit = visits.first
-        end_visit = visits.last
+    def getEventLocationPercentage(events, event)
+        start_event = events.first
+        end_event = events.last
 
-        if visit == start_visit
+        if event == start_event
             return 0
         end
 
-        span = end_visit.visit_date - start_visit.visit_date
-        diff = visit.visit_date - start_visit.visit_date
+        span = end_event.date - start_event.date
+        diff = event.date - start_event.date
 
-        return (diff.to_i*100)/span.to_i
+        return ((diff.to_i*95)/span.to_i)-15
     end
 
     def getGoalProgress(goal)
@@ -56,16 +56,4 @@ module VisitsHelper
         return "Reaching goal of $%d in %d" % [goal.target_value, goal.target_date.year]
     end
 
-    def getGoalImgURL(goal)
-	case goal.goal_category_id 
-	when 1
-		return "boat.jpg"
-	when 2
-		return "car.jpg"
-	when 3
-		return "house.jpg"
-	else 
-		return "default.jpg"
-	end
-    end
 end

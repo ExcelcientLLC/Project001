@@ -5,6 +5,8 @@ class VisitsController < ApplicationController
     @client = Client.find(params[:client_id])
     @visits = getSortedVisits(@client)
     @visit = @visits.last
+    @events = generateEvents(@client)
+    puts @events
 
     @client.goals.each do |goal|
       goal.prepareGoalState(@visit)
@@ -26,6 +28,7 @@ class VisitsController < ApplicationController
     @goal = Goal.new
     @to_do = ToDo.new
     @goal_categories = GoalCategory.all
+    @events = generateEvents(@client)
 
     @client.goals.each do |goal|
       goal.prepareGoalState(@visit)
@@ -128,6 +131,22 @@ class VisitsController < ApplicationController
 
   def sortVisits(visits)
       visits.sort! { |a,b| a.visit_date <=> b.visit_date }
+  end
+
+  def generateEvents(client)
+    events = Array.new
+
+    client.visits.each do |visit|
+      event = Event.new(visit.visit_date, visit, nil)
+      events << event
+    end
+
+    client.goals.each do |goal|
+      event = Event.new(goal.target_date, nil, goal.goal_category)
+      events << event
+    end
+
+    return events.sort! { |a,b| a.date <=> b.date }
   end
 
   def copyGoalsAndToDos(visit, client)
