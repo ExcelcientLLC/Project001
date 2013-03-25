@@ -38,6 +38,26 @@ class Goal < ActiveRecord::Base
     return last_date
   end
 
+  def getEarliestGoalState()
+    first_goal = self.goal_states.first
+    self.goal_states.each do |goal_state|
+      if (first_goal.visit.visit_date > goal_state.visit.visit_date)
+        first_goal = goal_state
+      end
+    end
+    return last_goal
+  end
+
+  def getLatestGoalState()
+    last_goal = self.goal_states.first
+    self.goal_states.each do |goal_state|
+      if (last_goal.visit.visit_date < goal_state.visit.visit_date)
+        last_goal = goal_state
+      end
+    end
+    return last_goal
+  end
+  
   def getGoalStateForVisit(visit)
     closest_goal_state = nil
     self.goal_states.each do |goal_state|
@@ -75,11 +95,30 @@ class Goal < ActiveRecord::Base
   end
 
   def getJQPlotCompatibleData()
+
+    return [getJQPlotExtrapolation, getJQPlotCurrentContributions, getJQPlotTargetContribution]
+  end
+
+  def getJQPlotCurrentContributions()
     retval = []
     self.goal_states.each do |goal_state|
       retval.push([goal_state.visit.visit_date, goal_state.current_value])
-    end
+    end 
+    return retval
+  end
+
+  def getJQPlotExtrapolation()
+    retval = []
+    last_goal = getLatestGoalState()
+    retval.push([last_goal.visit.visit_date, last_goal.current_value])
     retval.push([self.target_date, self.target_value])
-    return [retval]
+
+    return retval
+  end
+
+  def getJQPlotTargetContribution()
+    retval = []
+    retval.push([getFirstGoalVisitDate(), 0])
+    retval.push([self.target_date, self.target_value])
   end
 end
