@@ -1,13 +1,41 @@
 <% @events.each do |event| %>
-  <% if event.isVisit() %>
-    <%= link_to(client_visit_path(event.client, event), :remote => true) do %>
-      <div class="circle_icon" style="left:<%=getEventLocationPercentage(@events, event).to_s %>%;background-color:#F4BB3A;">
-        <p class="circle_text"><%= event.getDateString() %></p>
+  <% if event == @events.first %>
+    <% if event.isVisit() %>
+      <%= link_to(client_visit_path(event.client, event), :remote => true) do %>
+        <div class="circle_icon" style="float:left; background-color:#F4BB3A;">
+          <p class="circle_text"><%= event.getDateString() %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="circle_icon" style="left:left; background-color:#F4BB3A;">
+        <p class="circle_text"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></p>
       </div>
     <% end %>
-  <% else %>
-    <div class="circle_icon" style="left:<%=getEventLocationPercentage(@events, event).to_s %>%;background-color:#F4BB3A;">
-      <p class="circle_text"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></p>
-    </div>
+
+  <% elsif event == @events.last %>
+    <% if event.isVisit() %>
+      <%= link_to(client_visit_path(event.client, event), :remote => true) do %>
+        <div class="circle_icon" style="float:right; background-color:#F4BB3A;">
+          <p class="circle_text"><%= event.getDateString() %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="circle_icon" style="float:right; background-color:#F4BB3A;">
+        <p class="circle_text"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></p>
+      </div>
+    <% end %>
+
+  <% else %>
+    <% if event.isVisit() %>
+      <%= link_to(client_visit_path(event.client, event), :remote => true) do %>
+        <div class="circle_icon" style="left:<%=getEventLocationPercentage(@events, event).to_s %>%;background-color:#F4BB3A;">
+          <p class="circle_text"><%= event.getDateString() %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="circle_icon" style="left:<%=getEventLocationPercentage(@events, event).to_s %>%;background-color:#F4BB3A;">
+        <p class="circle_text"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></p>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
