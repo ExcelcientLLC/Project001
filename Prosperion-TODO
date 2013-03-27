@@ -1,0 +1,28 @@
+Header
+- Change font on the header
+
+Client Page
+- Last Name Searching -- Alec
+
+Visit Edit Page
+- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- Chris
+- Validation of Goal entry data -- Chris
+
+Snapshot Page
+- Sorting Image Dates properly, so the last date shows up at the end -- DONE
+- Add Image alongside Date Text -- Kirk
+- Mark the Visit currently being looked at -- Alec
+- Adding extra icons for To Dos and Percentage Bars from Prosperion -- Kirk
+
+Graph Page
+- Properly show header -- Kyle
+- Formatting on Title -- Kyle
+- Button for Back -- Kyle
+
+Goal Category Page
+- Fix Back Button -- Alec
+
+Printing
+- Formatting for Printing
+- Print all goals
+    - Use Goal Index page
