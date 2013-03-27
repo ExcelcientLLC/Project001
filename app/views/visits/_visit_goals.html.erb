@@ -7,7 +7,7 @@
       <!-- Progress Bubble -->
         <div style="height:50%;">
           <div class="visit_goals_progress_arrow_box" style="left:<%= (getGoalProgressPercent(goal) - 3.8).to_s %>%;">
-            <%= link_to image_tag("Arrow_thing.png", size:"38x30") %>
+            <%= link_to image_tag("pb_percent.png", size:"38x30") %>
           </div>
           <div class="visit_goals_progress_arrow_box_text" style="left:<%= (getGoalProgressPercent(goal) - 2.8).to_s %>%;">
             <%= getGoalProgressPercent(goal).to_s %>%

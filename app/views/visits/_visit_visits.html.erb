@@ -8,7 +8,8 @@
       <% end %>
     <% else %>
       <div class="circle_icon" style="left:left; background-color:#F4BB3A;">
-        <p class="circle_text"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></p>
+        <p class="circle_text"><%= event.getDateString() %></p>
+        <div class="circle_picture"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></div>
       </div>
     <% end %>
 
@@ -21,7 +22,8 @@
       <% end %>
     <% else %>
       <div class="circle_icon" style="float:right; background-color:#F4BB3A;">
-        <p class="circle_text"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></p>
+        <p class="circle_text"><%= event.getDateString() %></p>
+        <div class="circle_picture"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></div>
       </div>
     <% end %>
 
@@ -34,7 +36,8 @@
       <% end %>
     <% else %>
       <div class="circle_icon" style="left:<%=getEventLocationPercentage(@events, event).to_s %>%;background-color:#F4BB3A;">
-        <p class="circle_text"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></p>
+        <p class="circle_text"><%= event.getDateString() %></p>
+        <div class="circle_picture"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></div>
       </div>
     <% end %>
   <% end %>
