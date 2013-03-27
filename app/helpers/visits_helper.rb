@@ -33,10 +33,14 @@ module VisitsHelper
             return 0
         end
 
-        span = end_event.date - start_event.date
-        diff = event.date - start_event.date
+        if event == end_event
+            return 100
+        end
 
-        return ((diff.to_i*95)/span.to_i)-15
+        span = end_event.getDate() - start_event.getDate()
+        diff = event.getDate() - start_event.getDate()
+
+        return (diff.to_i*100)/span.to_i
     end
 
     def getGoalProgress(goal)

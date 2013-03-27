@@ -7,4 +7,16 @@ class Visit < ActiveRecord::Base
   
   has_many :goals
   has_many :to_dos
+
+  def getDate
+    return :visit_date
+  end
+
+  def getDateString
+    if event.date.to_date == DateTime.now.to_date
+      return "Today"
+    else
+      return event.date.strftime("%B %Y")
+    end
+  end
 end
