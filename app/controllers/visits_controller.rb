@@ -138,15 +138,15 @@ class VisitsController < ApplicationController
 
     client.visits.each do |visit|
       event = Event.new(visit.visit_date, visit, nil)
-      events << event
+      events << visit
     end
 
     client.goals.each do |goal|
       event = Event.new(goal.target_date, nil, goal.goal_category)
-      events << event
+      events << goal
     end
 
-    return events.sort! { |a,b| a.date <=> b.date }
+    return events.sort! { |a,b| a.getDate() <=> b.getDate() }
   end
 
   def copyGoalsAndToDos(visit, client)

@@ -121,4 +121,21 @@ class Goal < ActiveRecord::Base
     retval.push([getFirstGoalVisitDate(), 0])
     retval.push([self.target_date, self.target_value])
   end
+
+  def isVisit
+    return false
+  end
+
+  def getDate
+    return target_date
+  end
+
+  def getDateString
+    date = getDate()
+    if date.to_date == DateTime.now.to_date
+      return "Today"
+    else
+      return date.strftime("%B %Y")
+    end
+  end
 end
