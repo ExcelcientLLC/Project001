@@ -46,7 +46,7 @@ div.timeline
 	position:relative;
 	width:95%;
 	height:11px;
-	background-color:#196483;
+	background-color:#097197;
 	border-radius:8px;
 	margin:0 auto;
 	margin-top: 15px;
@@ -62,7 +62,7 @@ div.circle_icon
 	border-radius:10px;
 	background-color:white;
 
-	border: 2px solid #196483;
+	border: 2px solid #097197;
 }
 p.circle_text
 {
@@ -182,4 +182,6 @@ div.todo_checkbox
      of hyperlinks and removing the navigation. */
   a {dispaly: inherit !important; text-decoration: none !important;}
   nav {display: none;}
+
+  
 }
