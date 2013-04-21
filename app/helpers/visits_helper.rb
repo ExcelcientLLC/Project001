@@ -60,4 +60,8 @@ module VisitsHelper
         return "Reaching goal of $%d in %d" % [goal.target_value, goal.target_date.year]
     end
 
+    def getVisitSubmitText(visit)
+        return visit.new_record? ? "Create New Visit" : "Update Visit Date"
+    end
+
 end

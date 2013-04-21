@@ -1,2 +1,5 @@
-$('#visit_form').html("<%= escape_javascript(render 'form') %>");
+$('#visit_form').html("<div class='arrow'></div>")
+$('#visit_form').append("<%= escape_javascript(render 'form') %>");
+$('#visit_form').append("<div class='arrow'>")
 $('#visit_form').append("<%= escape_javascript(button_to_function 'Back', 'location.reload()') %>");
+$('#visit_form').append("</div>")
