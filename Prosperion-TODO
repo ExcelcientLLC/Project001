@@ -5,7 +5,8 @@ Client Page
 - Last Name Searching -- Alec
 
 Visit Edit Page
-- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- Chris
+- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- DONE
+- CLeanup Visit Page
 - Validation of Goal entry data -- Chris
 
 Snapshot Page
@@ -13,6 +14,7 @@ Snapshot Page
 - Add Image alongside Date Text -- Kirk
 - Mark the Visit currently being looked at -- Alec
 - Adding extra icons for To Dos and Percentage Bars from Prosperion -- Kirk
+- Last visit is not placed properly, it's a bug I'm having in my Timeline (Chris)
 
 Graph Page
 - Properly show header -- Kyle
