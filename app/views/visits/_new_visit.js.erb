@@ -1,2 +1,2 @@
 $('#visit_form').html("<%= escape_javascript(render 'form') %>");
-
+$('#visit_form').append("<%= escape_javascript(button_to_function 'Back', 'location.reload()') %>");
