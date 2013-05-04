@@ -74,13 +74,8 @@ class VisitsController < ApplicationController
   # POST /clients/:client_id/visits.json
   def create
     @visit = Visit.new(params[:visit])
-    @visit.visit_date = Date.today.to_time_in_current_zone
     @visit.client = Client.find(params[:client_id])
     @goal_categories = GoalCategory.all
-
-    #puts "Calling copyGoalsAndToDos"
-    #copyGoalsAndToDos(@visit, @visit.client)
-    #puts "Done Calling copyGoalsAndToDos"
 
     respond_to do |format|
       if @visit.save

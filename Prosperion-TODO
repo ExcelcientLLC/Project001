@@ -5,7 +5,9 @@ Client Page
 - Last Name Searching -- Alec
 
 Visit Edit Page
-- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- Chris
+- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- DONE
+- Fix formatting of Visit Update/Create Form -- Chris
+- Fix bug with Visit/Goal ordering on timeline == Chris
 - Validation of Goal entry data -- Chris
 
 Snapshot Page
