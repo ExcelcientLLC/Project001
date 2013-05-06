@@ -64,5 +64,15 @@ module VisitsHelper
     def getVisitSubmitText(visit)
         return visit.new_record? ? "Create New Visit" : "Update Visit Date"
     end
-
+    
+    def getStylePosition(events, event)
+        if event == events.first
+            return "left:left;"
+        elsif event == events.last
+            return "float:right;"
+        else
+            return "left:%s%%;" % getEventLocationPercentage(events, event).to_s
+        end
+    end
+    
 end
