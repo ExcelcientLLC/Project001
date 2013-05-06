@@ -1,18 +1,12 @@
 <% @events.each do |event| %>
   <% if event.isVisit() %>
     <%= link_to(client_visit_path(event.client, event), :remote => true) do %>
-      <% if event == @visit %>
-        <div class="circle_icon" style="<%=getStylePosition(@events, event) %>;background-color:#fdb813;">
-          <p class="circle_text"><%= event.getDateString() %></p>
-        </div>
-      <% else %>
-        <div class="circle_icon" style="<%=getStylePosition(@events, event) %>">
-          <p class="circle_text"><%= event.getDateString() %></p>
-        </div>
-      <% end %>
+      <div class="circle_icon" style="<%=getStylePosition(@events, event) %>;<%=getBackgroundColor(event, @visit) %>">
+        <p class="circle_text"><%= event.getDateString() %></p>
+      </div>
     <% end %>
   <% else %>
-    <div class="circle_icon" style="<%=getStylePosition(@events, event) %>;">
+    <div class="circle_icon" style="<%=getStylePosition(@events, event) %>">
       <p class="circle_text"><%= event.getDateString() %></p>
       <div class="circle_picture"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></div>
     </div>
