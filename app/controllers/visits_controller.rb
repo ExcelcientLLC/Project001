@@ -73,6 +73,7 @@ class VisitsController < ApplicationController
         format.json { render json: @visit, status: :created, location: @visit }
       else
         prepareShow()
+        @visit = @visits.last
         format.html { render action: "show" }
         format.json { render json: @visit.errors, status: :unprocessable_entity }
       end
@@ -113,7 +114,6 @@ class VisitsController < ApplicationController
     @client = Client.find(params[:client_id])
     @visits = getSortedVisits(@client)
     @form_visit = @visit
-    @visit = @visits.last
     @goal = Goal.new
     @to_do = ToDo.new
     @goal_categories = GoalCategory.all
