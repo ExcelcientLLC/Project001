@@ -92,7 +92,7 @@ class GoalsController < ApplicationController
       else
         format.html { redirect_to client_visits_path(@goal.client) }
         format.json { render json: @goal.errors, status: :unprocessable_entity }
-        format.js
+        format.js   { render "show" }
       end
     end
   end
