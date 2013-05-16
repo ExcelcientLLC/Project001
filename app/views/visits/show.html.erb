@@ -3,9 +3,21 @@
 
 <div class="admin_body">
 
+<% if @visit.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@visit.errors.count, "error") %> prohibited this Visit from being saved:</h2>
+
+    <ul>
+    <% @visit.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="sub_header">
   <div id="visit_form">
-    <% if @visit != @client.visits.first %>
+    <% if hasVisit(@client.visits, @form_visit) and @visit != @client.visits.first %>
       <div class="arrow">
         <%= link_to image_tag("Go-previous.svg.png", size: "28x28"), [@client, previous_visit(@client.visits, @visit)] %>
       </div>
@@ -15,10 +27,14 @@
 
     <div class="arrow">
       <!-- <%= button_to_function 'Back', 'location.reload()' %> -->
-      <% if @visit != @client.visits.last  %>
-        <%= link_to image_tag("Go-next.svg", size: "28x28"), [@client, next_visit(@client.visits, @visit)] %>
+      <% if hasVisit(@client.visits, @form_visit) %>
+        <% if @visit != @client.visits.last  %>
+          <%= link_to image_tag("Go-next.svg", size: "28x28"), [@client, next_visit(@client.visits, @visit)] %>
+        <% else %>
+          <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_path(@form_visit.client), :remote => true %>
+        <% end %>
       <% else %>
-        <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_path(@form_visit.client), :remote => true %>
+        <%= button_to 'Back', client_visit_path(@client, @visit) %>
       <% end %>
     </div>
   </div>

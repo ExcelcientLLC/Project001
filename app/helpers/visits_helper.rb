@@ -1,12 +1,25 @@
 module VisitsHelper
+    def hasVisit(visits, visit)
+      visit_id = visits.index(visit)
+      return visit_id != nil
+    end
+
     def previous_visit(visits, visit)
         visit_id = visits.index(visit)
-        return visits[visit_id-1]
+        if visit_id == nil
+          return visits.last
+        else
+          return visits[visit_id-1]
+        end
     end
     
     def next_visit(visits, visit)
         visit_id = visits.index(visit)
-        return visits[visit_id+1]
+        if visit_id == nil
+          return visits.last
+        else
+          return visits[visit_id+1]
+        end
     end
 
     def tryToAddVisitSpacer(visits, visit) 
