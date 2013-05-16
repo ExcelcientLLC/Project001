@@ -3,18 +3,6 @@
 
 <div class="admin_body">
 
-<% if @visit.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@visit.errors.count, "error") %> prohibited this Visit from being saved:</h2>
-
-    <ul>
-    <% @visit.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <div class="sub_header">
   <div id="visit_form">
     <% if hasVisit(@client.visits, @form_visit) and @visit != @client.visits.first %>
