@@ -53,23 +53,17 @@ class GoalsController < ApplicationController
     @client = Client.find(params[:client_id])
     @goal.client = @client
     @goal_categories = GoalCategory.all
-    #@goal_state = GoalState.new()
-
-    #@goal_state.setup(@goal.current_value, @goal.current_expenditures, @visit, @goal)
-    #@goal.setPresentGoalState(@goal_state)
 
     respond_to do |format|
       if @goal.save
         saveGoalState(@goal.current_value, @goal.current_expenditures, @visit, @goal)
-        #@goal_state.goal = @goal
-        #@goal_state.save
         format.html { redirect_to client_visits_path(@goal.visit.client), notice: 'Goal was successfully created.' }
         format.json { render json: @goal, status: :created, location: @goal }
         format.js
       else
-        format.html { redirect_to client_visits_path(@todo.visit.client) }
+        format.html { render "new" }
         format.json { render json: @goal.errors, status: :unprocessable_entity }
-        format.js
+        format.js   { render "new" }
       end
     end
   end
