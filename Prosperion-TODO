@@ -1,32 +1,32 @@
 Header
-- Change font on the header
+	- Change font on the header
 
 Client Page
-- Last Name Searching -- Alec
+	- Last Name Searching -- Alec
 
 Visit Edit Page
-- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- DONE
-- Fix formatting of Visit Update/Create Form -- Chris
-- Fix bug with Visit/Goal ordering on timeline -- DONE
-- Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Chris
-- Validation of Goal entry data -- Done
-- Properly format Error blocks
+-	- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- DONE
+	- Fix formatting of Visit Update/Create Form -- Chris
+-	- Fix bug with Visit/Goal ordering on timeline -- DONE
+	- Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Chris
+-	- Validation of Goal entry data -- DONE
+-	- Properly format Error blocks -- DONE
 
 Snapshot Page
-- Sorting Image Dates properly, so the last date shows up at the end -- DONE
-- Add Image alongside Date Text -- Kirk
-- Mark the Visit currently being looked at -- Alec
-- Adding extra icons for To Dos and Percentage Bars from Prosperion -- Kirk
+-	- Sorting Image Dates properly, so the last date shows up at the end -- DONE
+-	- Add Image alongside Date Text -- DONE? O.o
+-	- Mark the Visit currently being looked at -- DONE
+	- Adding extra icons for To Dos and Percentage Bars from Prosperion -- Kirk
 
 Graph Page
-- Properly show header -- Kyle
-- Formatting on Title -- Kyle
-- Button for Back -- Kyle
+	- Properly show header -- Kyle
+	- Formatting on Title -- Kyle
+-	- Button for Back -- DONE
 
 Goal Category Page
-- Fix Back Button -- Alec
+	- Fix Back Button -- Alec
 
 Printing
-- Formatting for Printing
-- Print all goals
-    - Use Goal Index page
+	- Formatting for Printing
+	- Print all goals
+	    - Use Goal Index page
