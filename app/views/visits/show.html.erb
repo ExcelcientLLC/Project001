@@ -22,7 +22,7 @@
           <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_path(@form_visit.client), :remote => true %>
         <% end %>
       <% else %>
-        <%= button_to 'Back', client_visit_path(@client, @visit) %>
+        <%= button_to 'Back', client_visit_path(@client, @visit), :method => 'get' %>
       <% end %>
     </div>
   </div>
