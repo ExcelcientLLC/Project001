@@ -29,6 +29,8 @@ class VisitsController < ApplicationController
     @goal_categories = GoalCategory.all
     @events = generateEvents(@client)
 
+    cookies[:last_visit] = @visit.id
+
     @client.goals.each do |goal|
       goal.prepareGoalState(@visit)
     end
