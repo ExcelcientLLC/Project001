@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% @title = "GRAPH" %>
 <%= render 'common/header' %>
-<div class="admin_body">
+<p id="notice"><%= notice %></p><div class="admin_body">
   <div style="height:50px;width:100%"></div>
 <%= jqplot 400, 950,  @goal.getJQPlotCompatibleData(),
     :axes => {
