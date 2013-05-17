@@ -1,7 +1,7 @@
 class Visit < ActiveRecord::Base
   attr_accessible :visit_date, :client
 
-  #validates_uniqueness_of :visit_date
+  validates_uniqueness_of :visit_date, :scope => [:client_id]
   
   belongs_to :client
   
