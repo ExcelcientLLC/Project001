@@ -9,7 +9,8 @@ Visit Edit Page
 - Fix formatting of Visit Update/Create Form -- Chris
 - Fix bug with Visit/Goal ordering on timeline -- DONE
 - Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Chris
-- Validation of Goal entry data -- Chris
+- Validation of Goal entry data -- Done
+- Properly format Error blocks
 
 Snapshot Page
 - Sorting Image Dates properly, so the last date shows up at the end -- DONE
