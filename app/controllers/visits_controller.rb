@@ -21,6 +21,7 @@ class VisitsController < ApplicationController
   # GET /clients/:client_id/visits/1.json
   def show
     @visit = Visit.find(params[:id])
+    cookies[:last_visit] = @visit.id
     prepareShow()
 
     respond_to do |format|

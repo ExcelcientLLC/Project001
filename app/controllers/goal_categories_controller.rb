@@ -5,6 +5,7 @@ class GoalCategoriesController < ApplicationController
     @goal_categories = GoalCategory.all
     @goal_category = GoalCategory.new
 
+    @last_visit = Visit.find(cookies[:last_visit].to_i)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,7 +30,6 @@ class GoalCategoriesController < ApplicationController
   # GET /goal_categories/new.json
   def new
     @goal_category = GoalCategory.new
-
     respond_to do |format|
       format.js # new.js.erb
     end
@@ -41,6 +41,7 @@ class GoalCategoriesController < ApplicationController
     #@goal_category = GoalCategory.create( params[:goal_category] )
     @goal_categories = GoalCategory.all
     @goal_category = GoalCategory.new(params[:goal_category])
+    @last_visit = Visit.find(cookies[:last_visit].to_i)
 
     respond_to do |format|
       #puts for`mat

@@ -2,7 +2,7 @@ Header
 	- Change font on the header
 
 Client Page
-	- Last Name Searching -- Alec
+	- Last Name Searching -- Done
 
 Visit Edit Page
 -	- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- DONE
@@ -24,9 +24,9 @@ Graph Page
 -	- Button for Back -- DONE
 
 Goal Category Page
-	- Fix Back Button -- Alec
+	- Fix Back Button -- DONE
 
 Printing
 	- Formatting for Printing
-	- Print all goals
+	    - Print all goals  -- Alec
 	    - Use Goal Index page
