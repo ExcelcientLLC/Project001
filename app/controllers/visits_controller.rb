@@ -63,13 +63,17 @@ class VisitsController < ApplicationController
   # POST /clients/:client_id/visits
   # POST /clients/:client_id/visits.json
   def create
-    @visit = Visit.new(params[:visit])
+    #@visit = Visit.new(params[:visit])
+    @visit = Visit.new
+    @visit.visit_date = Date.today.to_time_in_current_zone
     @client = Client.find(params[:client_id])
     @visit.client = @client
     @goal_categories = GoalCategory.all
     
     respond_to do |format|
-      if @visit.save
+      
+      if tryToSaveNewVisit(@visit)
+      #if visit.save
         format.html { redirect_to client_visit_path(@visit.client, @visit), notice: 'Visit was successfully created.' }
         format.json { render json: @visit, status: :created, location: @visit }
       else
@@ -159,10 +163,7 @@ class VisitsController < ApplicationController
   end
 
   def copyGoals(visit, lastVisit)
-    puts "Copying Visit Goals"
-    puts lastVisit.goals.length
     lastVisit.goals.each do |goal|
-      puts goal.name
       new_goal = goal.dup
       new_goal.visit = visit
       new_goal.save()
@@ -170,15 +171,18 @@ class VisitsController < ApplicationController
   end
 
   def copyToDos(visit, lastVisit)
-    puts "Copying Visit To Dos"
-    puts lastVisit.to_dos.length
     lastVisit.to_dos.each do |to_do|
-      puts to_do.title
       new_to_do = to_do.dup
       new_to_do.visit = visit
       new_to_do.save()
     end
   end
   
+  def tryToSaveNewVisit(visit)
+    while not visit.save
+      visit.visit_date = visit.visit_date + 1.days
+    end
+    return true
+  end
   
 end
