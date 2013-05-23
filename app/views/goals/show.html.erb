@@ -1,13 +1,13 @@
-<% @title = "GRAPH" %>
+<% @title = @goal.name %>
 <%= render 'common/header' %>
 <p id="notice"><%= notice %></p><div class="admin_body">
-  <div style="height:50px;width:100%"></div>
-<%= jqplot 400, 950,  @goal.getJQPlotCompatibleData(),
+  <div style="height:20px;width:100%"></div>
+<%= jqplot 500, 950,  @goal.getJQPlotCompatibleData(),
     :axes => {
       	:xaxis => {:label => 'Date', :renderer => "$.jqplot.DateAxisRenderer", :min => @goal.goal_states.first.visit.visit_date, :max => @goal.target_date, :tickOptions => {:formatString => '%Y-%m-%d', :tickInterval => "1 month" }  }, 
       	:yaxis => {:label => 'Contributed', :min => 0, :max =>@goal.target_value } 
     },
-    :title => @goal.name,
+    #:title => @goal.name,
     :legend => {:show => true, :location => 'se'},
     :axesDefaults => {:tickOptions => {:showGridline => true}},
     :grid => {:shadow => false, :drawGridLines => true} ,
