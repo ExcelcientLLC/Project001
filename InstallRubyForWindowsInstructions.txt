@@ -1,0 +1,7 @@
+Download RubyInstaller from rubyinstaller.org
+    - Version 1.9 for Windows
+Open Windows Terminal
+Navigate to your Rails Server root
+Run 'bundle install'
+Run 'rake db:migrate'
+Run 'rails server'
