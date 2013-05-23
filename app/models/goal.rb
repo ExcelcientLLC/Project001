@@ -5,6 +5,8 @@ class Goal < ActiveRecord::Base
   validates_presence_of :target_date
   validates_presence_of :target_value
   validates_presence_of :current_value
+  #max characters drive visibility of title on graph page under low resolution
+  validates_length_of :name, :maximum => 25
   
   has_many :goal_states
   belongs_to :client

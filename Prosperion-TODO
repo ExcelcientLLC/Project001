@@ -2,7 +2,7 @@ Header
 	- Change font on the header
 
 Client Page
-	- Last Name Searching -- Done
+-	- Last Name Searching -- DONE
 
 Visit Edit Page
 -	- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- DONE
@@ -19,12 +19,12 @@ Snapshot Page
 	- Adding extra icons for To Dos and Percentage Bars from Prosperion -- Kirk
 
 Graph Page
--	- Properly show header -- Kyle
-	- Formatting on Title -- Kyle
+-	- Properly show header -- DONE
+-	- Formatting on Title -- DONE
 -	- Button for Back -- DONE
 
 Goal Category Page
-	- Fix Back Button -- DONE
+-	- Fix Back Button -- DONE
 
 Printing
 	- Formatting for Printing
