@@ -9,9 +9,12 @@ import win32service
 import win32event
 
 class AppServerSvc (win32serviceutil.ServiceFramework):
-    _svc_name_ = "TestService"
-    _svc_display_name_ = "Some Display Name"
-    _svc_description_ = "Some Description"
+    _svc_name_ = "Prosperion Server"
+    _svc_display_name_ = "Prosperion Server"
+    _svc_description_ = "Proseperion Server from Excelcient LLC"
+    
+    PROSPERION_DIR = r"C:\dev\Excelcient\Prosperion"
+    RUBY_BIN_DIR = r"C:\Ruby193\bin"
 
     def __init__(self,args):
         win32serviceutil.ServiceFramework.__init__(self,args)
@@ -26,14 +29,14 @@ class AppServerSvc (win32serviceutil.ServiceFramework):
         self.writeToFile("Stopping Process")
         self.running = False
         if self.process is not None:
-            pid_file = open(r"C:\dev\Excelcient\Prosperion\tmp\pids\server.pid")
+            pid_filename = os.path.join(self.PROSPERION_DIR, r"tmp\pids\server.pid")
+            pid_file = open(pid_filename)
             pid = pid_file.readlines()[0].strip()
             pid_file.close()
             self.writeToFile("Process Killed: {0}".format(pid))
             subprocess.call(["taskkill", "/F", "/T", "/PID", "{0}".format(pid)])
             self.writeToFile("Process Killed")
-            os.remove(r"C:\dev\Excelcient\Prosperion\tmp\pids\server.pid")
-            #self.process.wait()
+            os.remove(pid_filename)
         self.file.close()
 
     def SvcDoRun(self):
@@ -45,18 +48,16 @@ class AppServerSvc (win32serviceutil.ServiceFramework):
 
     def main(self):
         self.writeToFile("Starting main")
-        os.chdir(r"C:\dev\Excelcient\Prosperion")
+        os.chdir(self.PROSPERION_DIR)
         self.writeToFile("Changed directory")
-        self.process = subprocess.Popen([r"C:\Ruby193\bin\rails.bat", "server"], stdin=subprocess.PIPE, stderr=self.file)
+        self.process = subprocess.Popen([os.path.join(self.RUBY_BIN_DIR, "rails.bat"), "server"], stdin=subprocess.PIPE, stderr=self.file)
         self.writeToFile("Started Rails Process")
         self.running = True
         while self.running:
             self.process.wait()
         
     def writeToFile(self, line):
-        #file = open(r"C:\temp.txt", 'a')
         self.file.write("{0}\n".format(line))
-        #file.close()
 
 if __name__ == '__main__':
     win32serviceutil.HandleCommandLine(AppServerSvc)
