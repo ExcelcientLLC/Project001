@@ -50,7 +50,7 @@ class AppServerSvc (win32serviceutil.ServiceFramework):
         self.writeToFile("Starting main")
         os.chdir(self.PROSPERION_DIR)
         self.writeToFile("Changed directory")
-        self.process = subprocess.Popen([os.path.join(self.RUBY_BIN_DIR, "rails.bat"), "server"], stdin=subprocess.PIPE, stderr=self.file)
+        self.process = subprocess.Popen([os.path.join(self.RUBY_BIN_DIR, "rails.bat"), "server"], stdin=subprocess.PIPE, stdout=self.file, stderr=self.file)
         self.writeToFile("Started Rails Process")
         self.running = True
         while self.running:
