@@ -17,3 +17,5 @@
 
 Gemfile.lock
 .sass-cache
+
+*.pyc
