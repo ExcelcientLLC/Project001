@@ -1,12 +1,14 @@
+
 // Place all the styles related to the Visits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.visits_list_set
+body{
+    div.visits_list_set
 {
-	width:45%;
-	margin: 15px;
-	float:left;
+  width:45%;
+  margin: 15px;
+  float:left;
 }
 
 div.arrow
@@ -16,76 +18,76 @@ div.arrow
 }
 div.visits_date
 {
-	margin:12px;
-	float:left;
+  margin:12px;
+  float:left;
 }
 
 div.visits_action_items
 {
-	margin:12px;
-	float:left;
+  margin:12px;
+  float:left;
 }
 
 div.visits_header
 {
-	width:100%;
-	float:left;
-	height:50px;
+  width:100%;
+  float:left;
+  height:50px;
 }
 
 div.vistits_right_header_element
 {
-	float: right;
-	margin-top: 12px;
-	margin-bottom: 12px;
-	
+  float: right;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  
 }
 
 div.timeline
 {
-	position:relative;
-	width:95%;
-	height:11px;
-	background-color:#097197;
-	border-radius:8px;
-	margin:0 auto;
-	margin-top: 15px;
+  position:relative;
+  width:95%;
+  height:11px;
+  background-color:#097197;
+  border-radius:8px;
+  margin:0 auto;
+  margin-top: 15px;
 }
 div.circle_icon
 {
-	position:relative;
-	float:left;
-	top:-3px;
+  position:relative;
+  float:left;
+  top:-3px;
 
-	height:15px;
-	width:15px;
-	border-radius:10px;
-	background-color:white;
+  height:15px;
+  width:15px;
+  border-radius:10px;
+  background-color:white;
 
-	border: 2px solid #097197;
+  border: 2px solid #097197;
 }
 p.circle_text
 {
-	position:relative;
-//	bottom:35px;
-	bottom:50px;
+  position:relative;
+//  bottom:35px;
+  bottom:50px;
 
-	font-family:"Georgia", sans-serif;
-	font-weight:900;
-//	color:#000000;
-	color:#999999;
+  font-family:"Georgia", sans-serif;
+  font-weight:900;
+//  color:#000000;
+  color:#999999;
 
-	white-space: nowrap;
+  white-space: nowrap;
 
-	transform:rotate(300deg);
-	-webkit-transform:rotate(300deg);
-	-moz-transform:rotate(300deg);
+  transform:rotate(300deg);
+  -webkit-transform:rotate(300deg);
+  -moz-transform:rotate(300deg);
 }
 div.circle_picture
 {
-	position:relative;
-	bottom:63px;
-	left:4px;
+  position:relative;
+  bottom:63px;
+  left:4px;
 }
 div.visit_goals
 {
@@ -178,18 +180,23 @@ div.todo_checkbox
   border: 1px solid #000000;
   box-shadow: 1px 1px 2px #444444;
 }
-
-
-/* In CSS, not JavaScript */
-@page {
-  size: landscape;
+  
+  
 }
 
-@media print {
-  /* Define print-specific styles here, for example toning down the decoration
-     of hyperlinks and removing the navigation. */
-  a {dispaly: inherit !important; text-decoration: none !important;}
-  nav {display: none;}
 
-  
+
+@media print {
+  @page {
+    size: landscape;
+  }
+  #print_page {
+    display: none;
+  }
+  #client_link {
+    display: none;
+  }
+  #goals_link {
+    display: none;
+  }
 }
