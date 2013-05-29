@@ -9,9 +9,9 @@ import win32service
 import win32event
 
 class AppServerSvc (win32serviceutil.ServiceFramework):
-    _svc_name_ = "Prosperion Server"
-    _svc_display_name_ = "Prosperion Server"
-    _svc_description_ = "Proseperion Server from Excelcient LLC"
+    _svc_name_ = "Client Management Server"
+    _svc_display_name_ = "Client Management Server"
+    _svc_description_ = "Prosperion Client Management Server from Excelcient LLC"
     
     PROSPERION_DIR = r"C:\dev\Excelcient\Prosperion"
     RUBY_BIN_DIR = r"C:\Ruby193\bin"
