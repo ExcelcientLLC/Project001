@@ -188,7 +188,7 @@ div.todo_checkbox
 @media print {
   /* Define print-specific styles here, for example toning down the decoration
      of hyperlinks and removing the navigation. */
-  a {dispaly: inherit !important; text-decoration: none !important;}
+  a {display: inherit !important; text-decoration: none !important;}
   nav {display: none;}
 
   
