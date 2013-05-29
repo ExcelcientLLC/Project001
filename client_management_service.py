@@ -13,8 +13,8 @@ class AppServerSvc (win32serviceutil.ServiceFramework):
     _svc_display_name_ = "Client Management Server"
     _svc_description_ = "Prosperion Client Management Server from Excelcient LLC"
     
-    PROSPERION_DIR = r"C:\dev\Excelcient\Prosperion"
-    RUBY_BIN_DIR = r"C:\Ruby193\bin"
+    PROSPERION_DIR = r"C:\ClientManagementServer"
+    RUBY_BIN_DIR = r"C:\RailsInstaller\Ruby1.9.3\bin"
 
     def __init__(self,args):
         win32serviceutil.ServiceFramework.__init__(self,args)
