@@ -19,6 +19,6 @@ Gemfile.lock
 .sass-cache
 
 *.pyc
-python-2.7.msi
-rubyinstaller-1.9.2-p290.exe
+*.msi
+*.exe
 ClientManagementServer

@@ -3,7 +3,7 @@ set PYTHON_DIR="C:\Python27"
 set RUBY_BIN_DIR="C:\Ruby193\bin"
 
 %~p0\python-2.7.msi
-%~p0\rubyinstaller-1.9.2-p290.exe
+%~p0\railsinstaller-2.2.1.exe
 
 mkdir %CLIENT_MANAGEMENT_SERVER_DIR%
 xcopy /s %~p0\ClientManagementServer %CLIENT_MANAGEMENT_SERVER_DIR% 
