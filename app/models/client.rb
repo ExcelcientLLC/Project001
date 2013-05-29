@@ -16,6 +16,12 @@ class Client < ActiveRecord::Base
 
     return goals
   end
+  
+  def getSortedVisits()
+    visits = self.visits
+    visits.sort! { |a,b| a.visit_date <=> b.visit_date }
+    return visits
+  end
 
   #def self.search(search)
 #    if search
