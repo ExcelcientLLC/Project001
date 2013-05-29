@@ -9,9 +9,9 @@ set RUBY_BIN_DIR="C:\RailsInstaller\Ruby1.9.3\bin"
 mkdir %CLIENT_MANAGEMENT_SERVER_DIR%
 xcopy /s %~p0\ClientManagementServer %CLIENT_MANAGEMENT_SERVER_DIR% 
 
-REM cd %CLIENT_MANAGEMENT_SERVER_DIR%
-REM START /B %RUBY_BIN_DIR%\bundle.bat install
-REM %RUBY_BIN_DIR%\rake.bat db:migrate
+cd %CLIENT_MANAGEMENT_SERVER_DIR%
+CALL %RUBY_BIN_DIR%\bundle.bat install
+CALL %RUBY_BIN_DIR%\rake.bat db:migrate
 
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py --startup manual install
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py start

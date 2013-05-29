@@ -11,4 +11,5 @@ cp -r db $RAILS_APP_DIR/
 cp Gemfile.windows $RAILS_APP_DIR/Gemfile
 cp -r lib $RAILS_APP_DIR/
 cp -r public $RAILS_APP_DIR/
+cp -r Rakefile $RAILS_APP_DIR/
 cp -r script $RAILS_APP_DIR/
