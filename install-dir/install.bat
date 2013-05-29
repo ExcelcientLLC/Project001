@@ -2,7 +2,7 @@ set CLIENT_MANAGEMENT_SERVER_DIR="C:\ClientManagementServer"
 set PYTHON_DIR="C:\Python27"
 set RUBY_BIN_DIR="C:\Ruby193\bin"
 
-%~p0\python-2.7.msi
+%~p0\python-2.7.5.msi
 %~p0\railsinstaller-2.2.1.exe
 
 mkdir %CLIENT_MANAGEMENT_SERVER_DIR%
