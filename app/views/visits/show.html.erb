@@ -5,9 +5,9 @@
 
 <div class="sub_header">
   <div id="visit_form">
-    <% if @visit != @client.visits.first %>
+    <% if hasVisit(@client.visits, @form_visit) and @visit != @client.visits.first %>
       <div class="arrow">
-        <%= link_to image_tag("Go-previous.svg.png", size: "28x28"), [@client, previous_visit(@client.visits, @visit)] %>
+        <%= link_to image_tag("Go-previous.png", size: "28x28"), [@client, previous_visit(@client.visits, @visit)] %>
       </div>
     <% end %>
 
@@ -15,10 +15,15 @@
 
     <div class="arrow">
       <!-- <%= button_to_function 'Back', 'location.reload()' %> -->
-      <% if @visit != @client.visits.last  %>
-        <%= link_to image_tag("Go-next.svg", size: "28x28"), [@client, next_visit(@client.visits, @visit)] %>
+      <% if hasVisit(@client.visits, @form_visit) %>
+        <% if @visit != @client.visits.last  %>
+          <%= link_to image_tag("Go-next.png", size: "28x28"), [@client, next_visit(@client.visits, @visit)] %>
+        <% else %>
+          <!-- <%= link_to image_tag("Nuvola_Red_Plus.png", size: "28x28"), new_client_visit_path(@form_visit.client), :remote => true %> -->
+          <%= link_to image_tag("Nuvola_Red_Plus.png", size: "28x28"), client_visits_path(@form_visit.client), :method => "post" %>
+        <% end %>
       <% else %>
-        <%= link_to image_tag("Nuvola_Red_Plus.svg", size: "28x28"), new_client_visit_path(@form_visit.client), :remote => true %>
+        <%= button_to 'Back', client_visit_path(@client, @visit), :method => 'get' %>
       <% end %>
     </div>
   </div>

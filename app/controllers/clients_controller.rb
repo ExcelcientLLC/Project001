@@ -95,7 +95,6 @@ class ClientsController < ApplicationController
   def newVisitOnCreate(client)
     visit = Visit.new
     visit.visit_date = Date.today.to_time_in_current_zone
-    puts visit.visit_date
     visit.client = client
     visit.save
   end

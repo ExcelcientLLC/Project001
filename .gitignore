@@ -17,3 +17,8 @@
 
 Gemfile.lock
 .sass-cache
+
+*.pyc
+*.msi
+*.exe
+ClientManagementServer
