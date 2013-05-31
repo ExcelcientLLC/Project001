@@ -36,7 +36,7 @@ module Paperclip
     # The convert method runs the convert binary with the provided arguments.
     # See Paperclip.run for the available options.
     def convert(arguments = "", local_options = {})
-      Paperclip.run('"C:\Program Files (x86)\ImageMagick-6.8.5-Q16\convert.exe"', arguments, local_options)
+      Paperclip.run('"%s\convert.exe"' % Paperclip.options[:command_path], arguments, local_options)
     end
 
     # The identify method runs the identify binary with the provided arguments.
