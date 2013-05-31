@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   # Comment this out to allow logging to stdout/stderr
   # This is added, because Windows services have no stdout/stderr
   before_filter {
-    $stdout = $stderr = StdOutLogger.new
+    #$stdout = $stderr = StdOutLogger.new
   }
 end

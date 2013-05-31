@@ -43,6 +43,8 @@ class GoalCategoriesController < ApplicationController
     @goal_category = GoalCategory.new(params[:goal_category])
     @last_visit = Visit.find(cookies[:last_visit].to_i)
 
+    puts Paperclip.options[:command_path]
+    
     respond_to do |format|
       #puts for`mat
       if @goal_category.save
