@@ -19,7 +19,6 @@ cd %CLIENT_MANAGEMENT_SERVER_DIR%
 CALL %RUBY_BIN_DIR%\bundle.bat install
 CALL %RUBY_BIN_DIR%\rake.bat db:migrate
 
-echo %STARTING_DIR%
 copy %STARTING_DIR%\processor.rb %RUBY_DIR%\lib\ruby\gems\1.9.1\gems\paperclip-3.2.1\lib\paperclip\
 
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py --startup manual install
