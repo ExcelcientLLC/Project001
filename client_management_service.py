@@ -8,9 +8,9 @@ import win32serviceutil
 import win32service
 import win32event
 
-class AppServerSvc (win32serviceutil.ServiceFramework):
-    _svc_name_ = "My Server"
-    _svc_display_name_ = "My Server"
+class ProsperionClientManagementServerService (win32serviceutil.ServiceFramework):
+    _svc_name_ = "Client Management Server"
+    _svc_display_name_ = "Client Management Server"
     _svc_description_ = "Prosperion Client Management Server from Excelcient LLC"
     
     PROSPERION_DIR = r"C:\ClientManagementServer"
@@ -62,4 +62,4 @@ class AppServerSvc (win32serviceutil.ServiceFramework):
         self.stdoutFile.write("{0}\n".format(line))
 
 if __name__ == '__main__':
-    win32serviceutil.HandleCommandLine(AppServerSvc)
+    win32serviceutil.HandleCommandLine(ProsperionClientManagementServerService )
