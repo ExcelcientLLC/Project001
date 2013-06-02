@@ -37,3 +37,13 @@ Internet explorer quirks
 -	- Borders around all images - DONE
 	- images (left, right arrow, plus) are not scaling down and instead just top corners are rendering
 	- text on timeline is not rotating
+
+    
+Issues to fix for Beta:
+- New button image looks blotchy
+- Font for header is incorrect on windows
+- Extra header area that is colored
+- Text on Timeline is horizontal in IE -- DONE
+
+Issues to fix at some point
+- User cannot delete a visit
