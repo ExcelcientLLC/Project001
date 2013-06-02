@@ -36,10 +36,10 @@ module VisitsHelper
     end
 
     def getEventDateString(event)
-      if event.date.to_date == DateTime.now.to_date
+      if event.getDate == DateTime.now.to_date
         return "Today"
       else
-        return event.date.strftime("%B %Y")
+        return event.getDate.strftime("%b %Y")
       end
     end
 
