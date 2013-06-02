@@ -1,5 +1,5 @@
 Header
-	- Change font on the header
+	- Change font on the header -- DONE
 
 Client Page
 -	- Last Name Searching -- DONE
@@ -18,7 +18,7 @@ Snapshot Page
 -	- Adding extra icons for To Dos and Percentage Bars from Prosperion -- DONE
     - Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Kirk
 	- Adjust icons to be square as images
-	- Long month names are running into header -- Alec
+	- Long month names are running into header -- Done
 
 Graph Page
 -	- Properly show header -- DONE
@@ -31,7 +31,7 @@ Goal Category Page
 Printing
 	- Formatting for Printing
 	    - Print all goals  -- Alec
-	    - Use Goal Index page
+	    - Use Goal Index page -- Chris
 
 Internet explorer quirks
 -	- Borders around all images - DONE
