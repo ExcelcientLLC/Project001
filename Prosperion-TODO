@@ -36,7 +36,7 @@ Printing
 Internet explorer quirks
 -	- Borders around all images - DONE
 	- images (left, right arrow, plus) are not scaling down and instead just top corners are rendering
-	- text on timeline is not rotating
+	- text on timeline is not rotating -- DONE
 
     
 Issues to fix for Beta:
@@ -44,6 +44,8 @@ Issues to fix for Beta:
 - Font for header is incorrect on windows
 - Extra header area that is colored
 - Text on Timeline is horizontal in IE -- DONE
+- 100% is cut off on a Goal View on the Timeline
+    - Looks like the text is just not centered in the image at all on Windows
 
 Issues to fix at some point
 - User cannot delete a visit
