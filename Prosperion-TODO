@@ -18,7 +18,7 @@ Snapshot Page
 -	- Adding extra icons for To Dos and Percentage Bars from Prosperion -- DONE
     - Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Kirk
 	- Adjust icons to be square as images
-	- Long month names are running into header
+	- Long month names are running into header -- Alec
 
 Graph Page
 -	- Properly show header -- DONE
@@ -36,14 +36,16 @@ Printing
 Internet explorer quirks
 -	- Borders around all images - DONE
 	- images (left, right arrow, plus) are not scaling down and instead just top corners are rendering
-	- text on timeline is not rotating
+	- text on timeline is not rotating -- DONE
 
     
 Issues to fix for Beta:
 - New button image looks blotchy
-- Font for header is incorrect on windows
-- Extra header area that is colored
+- Font for header is incorrect on windows -- DONE
+- Extra header area that is colored -- DONE
 - Text on Timeline is horizontal in IE -- DONE
+- 100% is cut off on a Goal View on the Timeline -- DONE
+    - Looks like the text is just not centered in the image at all on Windows
 
 Issues to fix at some point
 - User cannot delete a visit
