@@ -54,7 +54,9 @@ module VisitsHelper
       diff = event.getDate() - start_event.getDate()
 
       percentage = (diff.to_i*100)/span.to_i
-      return percentage*0.95
+      puts event.getDate()
+      puts percentage
+      return percentage*0.92
     end
 
     def getGoalProgress(goal)
@@ -82,7 +84,7 @@ module VisitsHelper
       if event == events.first
           return "left:left;"
       elsif event == events.last
-          return "float:right;"
+          return "left:92%;"
       else
           return "left:%s%%;" % getEventLocationPercentage(events, event).to_s
       end
