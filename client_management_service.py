@@ -44,8 +44,8 @@ class ProsperionClientManagementServerService (win32serviceutil.ServiceFramework
         servicemanager.LogMsg(servicemanager.EVENTLOG_INFORMATION_TYPE,
                               servicemanager.PYS_SERVICE_STARTED,
                               (self._svc_name_,''))
-        self.stdoutFile = open(r'C:\temp.txt', 'w')
-        self.stderrFile = open(r'C:\tempError.txt', 'w')
+        self.stdoutFile = open(os.path.join(self.PROSPERION_DIR, r"log\service.stdout.log"), 'w')
+        self.stderrFile = open(os.path.join(self.PROSPERION_DIR, r"log\service.stderr.log"), 'w')
         self.main()
 
     def main(self):
