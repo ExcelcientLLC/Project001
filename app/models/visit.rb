@@ -16,12 +16,4 @@ class Visit < ActiveRecord::Base
     return visit_date
   end
 
-  def getDateString
-    date = getDate()
-    if date.to_date == DateTime.now.to_date
-      return "Today"
-    else
-      return date.strftime("%B %Y")
-    end
-  end
 end

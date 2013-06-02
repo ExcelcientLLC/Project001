@@ -220,18 +220,24 @@
     }
     div.title_text p
     {
+      margin:0px;
       float:right;
       color:white;
       font-weight:bold;
-      font-size:40px;
+      font-size:58px;
       font-family:impact, sans-serif;
     }
     div.admin_body
-{
-  height: 500px;
-  width: 960px;
-  margin: 0px auto;
-}
+    {
+      height: 500px;
+      width: 960px;
+      margin: 0px auto;
+    }
+    img
+    {
+      border-style:none;
+      -ms-interpolation-mode: bicubic;
+    }
           
   }
   
