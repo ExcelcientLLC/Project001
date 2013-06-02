@@ -1,33 +1,31 @@
-<h1>Listing goals</h1>
+<% @title = "Goals" %>
+<%= render 'common/header' %>
+<p id="notice"><%= notice %></p><div class="admin_body">
 
-<table>
-  <tr>
-    <th>Target date</th>
-    <th>Target value</th>
-    <th>Current value</th>
-    <th>Target expenditures</th>
-    <th>Current expenditures</th>
-    <th>Complete</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @goals.each do |goal| %>
-  <tr>
-    <td><%= goal.target_date %></td>
-    <td><%= goal.target_value %></td>
-    <td><%= goal.current_value %></td>
-    <td><%= goal.target_expenditures %></td>
-    <td><%= goal.current_expenditures %></td>
-    <td><%= goal.complete %></td>
-    <td><%= link_to 'Show', goal %></td>
-    <td><%= link_to 'Edit', edit_goal_path(goal) %></td>
-    <td><%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% @goals.each do |goal| %> 
+  <div style="height:20px;width:100%"></div>
+  <%= jqplot 500, 950,  goal.getJQPlotCompatibleData(),
+    :axes => {
+        :xaxis => {:label => 'Date', :renderer => "$.jqplot.DateAxisRenderer", :min => goal.goal_states.first.visit.visit_date, :max => goal.target_date, :tickOptions => {:formatString => '%Y-%m-%d', :tickInterval => "1 month" }  }, 
+        :yaxis => {:label => 'Contributed', :min => 0, :max =>goal.target_value } 
+    },
+    :title => goal.name,
+    :legend => {:show => true, :location => 'se'},
+    :axesDefaults => {:tickOptions => {:showGridline => true}},
+    :grid => {:shadow => false, :drawGridLines => true} ,
+    :series => [
+        {:label => 'Remaining contributions'}, 
+        {:label => 'Amount Contributed to Date', :color => '#b90938'}, 
+        {:label => 'Target Contributed to Date', :color =>'#cccccc', :shadow => false}
+    ]
+  %>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Goal', new_goal_path %>
+<div class="sub_header_right">
+  <div class="sub_header_right_element", id="back_button">
+    <%= button_to 'Back', client_visits_path(@visit.client), :method => 'get' %>
+  </div>
+  <div class="sub_header_right_element", id="print_page">
+    <%= button_to_function("Print this Page", "javascript:print()")%>
+  </div>
+</div>
