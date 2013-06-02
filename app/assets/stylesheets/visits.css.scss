@@ -3,8 +3,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
+/* In CSS, not JavaScript */
 body{
-    div.visits_list_set
+  div.visits_list_set
 {
   width:45%;
   margin: 15px;
@@ -186,17 +190,4 @@ div.todo_checkbox
 
 
 
-@media print {
-  @page {
-    size: landscape;
-  }
-  #print_page {
-    display: none;
-  }
-  #client_link {
-    display: none;
-  }
-  #goals_link {
-    display: none;
-  }
-}
+  
