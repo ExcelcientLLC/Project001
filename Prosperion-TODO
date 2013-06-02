@@ -40,7 +40,7 @@ Internet explorer quirks
 
     
 Issues to fix for Beta:
-- New button image looks blotchy
+- New button image looks blotchy -- DONE (scaled down the image)
 - Font for header is incorrect on windows -- DONE
 - Extra header area that is colored -- DONE
 - Text on Timeline is horizontal in IE -- DONE
