@@ -99,6 +99,8 @@
       transform:rotate(300deg);
       -webkit-transform:rotate(300deg);
       -moz-transform:rotate(300deg);
+      -ms-transform: rotate(300deg);
+      -o-transform: rotate(300deg);
     }
     div.circle_picture
     {
@@ -212,11 +214,11 @@
     div.title_text
     {
       float:right;
-      padding:12px;
+      margin:0px
 
-      transform:scale(0.6, 1.3) translate(105px, -50px);
+      /*transform:scale(0.6, 1.3) translate(105px, -50px);
       -ms-transform:scale(0.6, 1.3) translate(105px, -50px);
-      -webkit-transform:scale(0.6, 1.3) translate(105px, -50px);
+      -webkit-transform:scale(0.6, 1.3) translate(105px, -50px);*/
     }
     div.title_text p
     {
