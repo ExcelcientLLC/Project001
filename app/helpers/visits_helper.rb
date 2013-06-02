@@ -1,4 +1,9 @@
 module VisitsHelper
+    
+    def getRightMostOffset(events)
+        return 1.0-(events.length)*0.0125
+    end
+    
     def hasVisit(visits, visit)
       visit_id = visits.index(visit)
       return visit_id != nil
@@ -56,7 +61,7 @@ module VisitsHelper
       percentage = (diff.to_i*100)/span.to_i
       puts event.getDate()
       puts percentage
-      return percentage*0.92
+      return percentage*getRightMostOffset(events)
     end
 
     def getGoalProgress(goal)
@@ -84,7 +89,7 @@ module VisitsHelper
       if event == events.first
           return "left:left;"
       elsif event == events.last
-          return "left:92%;"
+          return "left:%s%%;" % (getRightMostOffset(events)*100).to_s
       else
           return "left:%s%%;" % getEventLocationPercentage(events, event).to_s
       end
