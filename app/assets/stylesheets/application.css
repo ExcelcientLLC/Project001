@@ -56,4 +56,5 @@ div.title_text p
 img
 {
 	border-style:none;
+  -ms-interpolation-mode: bicubic;
 }
