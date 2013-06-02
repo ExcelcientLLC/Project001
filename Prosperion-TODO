@@ -42,7 +42,7 @@ Internet explorer quirks
 Issues to fix for Beta:
 - New button image looks blotchy
 - Font for header is incorrect on windows
-- Extra header area that is colored
+- Extra header area that is colored -- DONE
 - Text on Timeline is horizontal in IE -- DONE
 - 100% is cut off on a Goal View on the Timeline
     - Looks like the text is just not centered in the image at all on Windows
