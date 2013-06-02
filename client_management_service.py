@@ -8,7 +8,7 @@ import win32serviceutil
 import win32service
 import win32event
 
-class AppServerSvc (win32serviceutil.ServiceFramework):
+class ProsperionClientManagementServerService (win32serviceutil.ServiceFramework):
     _svc_name_ = "Client Management Server"
     _svc_display_name_ = "Client Management Server"
     _svc_description_ = "Prosperion Client Management Server from Excelcient LLC"
@@ -37,27 +37,29 @@ class AppServerSvc (win32serviceutil.ServiceFramework):
             subprocess.call(["taskkill", "/F", "/T", "/PID", "{0}".format(pid)])
             self.writeToFile("Process Killed")
             os.remove(pid_filename)
-        self.file.close()
+        self.stdoutFile.close()
+        self.stderrFile.close()
 
     def SvcDoRun(self):
         servicemanager.LogMsg(servicemanager.EVENTLOG_INFORMATION_TYPE,
                               servicemanager.PYS_SERVICE_STARTED,
                               (self._svc_name_,''))
-        self.file = open(r'C:\temp.txt', 'w')
+        self.stdoutFile = open(os.path.join(self.PROSPERION_DIR, r"log\service.stdout.log"), 'w')
+        self.stderrFile = open(os.path.join(self.PROSPERION_DIR, r"log\service.stderr.log"), 'w')
         self.main()
 
     def main(self):
         self.writeToFile("Starting main")
         os.chdir(self.PROSPERION_DIR)
         self.writeToFile("Changed directory")
-        self.process = subprocess.Popen([os.path.join(self.RUBY_BIN_DIR, "rails.bat"), "server"], stdin=subprocess.PIPE, stderr=self.file)
+        self.process = subprocess.Popen([os.path.join(self.RUBY_BIN_DIR, "rails.bat"), "server"], stdin=subprocess.PIPE, stdout=self.stdoutFile, stderr=self.stderrFile)
         self.writeToFile("Started Rails Process")
         self.running = True
         while self.running:
             self.process.wait()
         
     def writeToFile(self, line):
-        self.file.write("{0}\n".format(line))
+        self.stdoutFile.write("{0}\n".format(line))
 
 if __name__ == '__main__':
-    win32serviceutil.HandleCommandLine(AppServerSvc)
+    win32serviceutil.HandleCommandLine(ProsperionClientManagementServerService )

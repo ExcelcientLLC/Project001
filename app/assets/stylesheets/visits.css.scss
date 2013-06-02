@@ -86,6 +86,8 @@ p.circle_text
   transform:rotate(300deg);
   -webkit-transform:rotate(300deg);
   -moz-transform:rotate(300deg);
+  -ms-transform: rotate(300deg);
+  -o-transform: rotate(300deg);
 }
 div.circle_picture
 {

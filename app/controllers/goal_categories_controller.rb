@@ -42,9 +42,8 @@ class GoalCategoriesController < ApplicationController
     @goal_categories = GoalCategory.all
     @goal_category = GoalCategory.new(params[:goal_category])
     @last_visit = Visit.find(cookies[:last_visit].to_i)
-
+    
     respond_to do |format|
-      #puts for`mat
       if @goal_category.save
         @goal_categories = GoalCategory.all
         format.html { render :index } #, notice: 'Goal category was successfully created.' }

@@ -8,7 +8,6 @@ Visit Edit Page
 -	- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- DONE
 -	- Fix formatting of Visit Update/Create Form -- DONE
 -	- Fix bug with Visit/Goal ordering on timeline -- DONE
-	- Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Kirk
 -	- Validation of Goal entry data -- DONE
 -	- Properly format Error blocks -- DONE
 
@@ -17,6 +16,7 @@ Snapshot Page
 -	- Add Image alongside Date Text -- DONE
 -	- Mark the Visit currently being looked at -- DONE
 -	- Adding extra icons for To Dos and Percentage Bars from Prosperion -- DONE
+    - Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Kirk
 	- Adjust icons to be square as images
 	- Long month names are running into header
 
@@ -37,3 +37,13 @@ Internet explorer quirks
 -	- Borders around all images - DONE
 	- images (left, right arrow, plus) are not scaling down and instead just top corners are rendering
 	- text on timeline is not rotating
+
+    
+Issues to fix for Beta:
+- New button image looks blotchy
+- Font for header is incorrect on windows
+- Extra header area that is colored
+- Text on Timeline is horizontal in IE -- DONE
+
+Issues to fix at some point
+- User cannot delete a visit
