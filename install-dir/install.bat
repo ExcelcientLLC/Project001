@@ -1,10 +1,12 @@
-set CLIENT_MANAGEMENT_SERVER_DIR="C:\ClientManagementServer"
-set PYTHON_DIR="C:\Python27"
-set RUBY_DIR="C:\RailsInstaller\Ruby1.9.3"
+set DRIVE=C:
+
+set CLIENT_MANAGEMENT_SERVER_DIR=%DRIVE%\ClientManagementServer
+set PYTHON_DIR=%DRIVE%\Python27\
+set RUBY_DIR=%DRIVE%\RailsInstaller\Ruby1.9.3
 set RUBY_BIN_DIR=%RUBY_DIR%\bin
 
 set STARTING_DIR=%~p0
-
+    
 %~p0\python-2.7.5.msi
 %~p0\pywin32-218.win32-py2.7.exe
 %~p0\ImageMagick-6.8.5-8-Q16-x86-static.exe
