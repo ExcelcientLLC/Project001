@@ -1,7 +1,11 @@
 <% @client.getVisibleGoals(@visit).each do |goal| %>
     <div class="visit_goals">
       <div class="visit_goals_picture">
-        <%= link_to image_tag(goal.goal_category.avatar.url(:medium), size:"50x50"), client_visit_goal_path(@client, @visit, goal)%>
+        <% if goal.goal_category.nil? %>
+          <!-- Do Some Magic -->
+        <% else %>
+          <%= link_to image_tag(goal.goal_category.avatar.url(:medium), size:"50x50"), client_visit_goal_path(@client, @visit, goal)%>
+        <% end %>
       </div>
       <div class="visit_goals_progress">
       <!-- Progress Bubble -->
@@ -27,7 +31,7 @@
 
       <!-- Footer Text -->
         <div class="visit_goals_progress_footer">
-          <div class="visit_goals_progress_footer_left"><%= GoalCategory.find(goal.goal_category_id).name %></div>
+          <div class="visit_goals_progress_footer_left"><%= goal.getCategoryName %></div>
           <div class="visit_goals_progress_footer_right"><%= getGoalEndDate(goal) %></div>
         </div>
       </div>
