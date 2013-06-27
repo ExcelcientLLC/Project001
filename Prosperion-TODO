@@ -29,10 +29,10 @@ Goal Category Page
 - Fix Back Button -- DONE
 
 Printing
-	- Formatting for Printing
-	    - Print all goals  -- DONE
-  - Goal Collection
-	    - Use Goal Index page -- DONE
+- Formatting for Printing
+- Print all goals  -- DONE
+- Goal Collection
+- Use Goal Index page -- DONE
 
 Internet explorer quirks
 - Borders around all images - DONE
@@ -57,7 +57,7 @@ Issues to fix at some point
 - To Do List moved to the right and To Do Form moved down
 - Scrunched goal-category images on Timeline/Snapshot -- Done
 - Timeline last goal placement not accurate on different resolution monitors
--  Even in landscape mode print cuts off the right side of the page
+- Even in landscape mode print cuts off the right side of the page
 - Searching not working...? -- DONE
 - Rename Search to Filter..? -- DONE
 - All year boxes need to be extended to 2050 or beyond -- DONE
