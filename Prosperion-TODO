@@ -1,32 +1,32 @@
 Header
-	- Change font on the header -- DONE
+- Change font on the header -- DONE
 
 Client Page
--	- Last Name Searching -- DONE
+- Last Name Searching -- DONE
 
 Visit Edit Page
--	- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- DONE
--	- Fix formatting of Visit Update/Create Form -- DONE
--	- Fix bug with Visit/Goal ordering on timeline -- DONE
--	- Validation of Goal entry data -- DONE
--	- Properly format Error blocks -- DONE
+- Cleanup how Updating Visit Date works so it feels more obvious what it was doing -- DONE
+- Fix formatting of Visit Update/Create Form -- DONE
+- Fix bug with Visit/Goal ordering on timeline -- DONE
+- Validation of Goal entry data -- DONE
+- Properly format Error blocks -- DONE
 
 Snapshot Page
--	- Sorting Image Dates properly, so the last date shows up at the end -- DONE
--	- Add Image alongside Date Text -- DONE
--	- Mark the Visit currently being looked at -- DONE
--	- Adding extra icons for To Dos and Percentage Bars from Prosperion -- DONE
-    - Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Kirk
-	- Adjust icons to be square as images
-	- Long month names are running into header -- Done
+- Sorting Image Dates properly, so the last date shows up at the end -- DONE
+- Add Image alongside Date Text -- DONE
+- Mark the Visit currently being looked at -- DONE
+- Adding extra icons for To Dos and Percentage Bars from Prosperion -- DONE
+- Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Kirk
+- Adjust icons to be square as images -- Done 
+- Long month names are running into header -- Done
 
 Graph Page
--	- Properly show header -- DONE
--	- Formatting on Title -- DONE
--	- Button for Back -- DONE
+- Properly show header -- DONE
+- Formatting on Title -- DONE
+- Button for Back -- DONE
 
 Goal Category Page
--	- Fix Back Button -- DONE
+- Fix Back Button -- DONE
 
 Printing
 	- Formatting for Printing
@@ -35,14 +35,14 @@ Printing
 	    - Use Goal Index page -- DONE
 
 Internet explorer quirks
--	- Borders around all images - DONE
-	- images (left, right arrow, plus) are not scaling down and instead just top corners are rendering
-	- text on timeline is not rotating -- DONE
+- Borders around all images - DONE
+- images (left, right arrow, plus) are not scaling down and instead just top corners are rendering -- DONE
+- text on timeline is not rotating -- DONE
 
 Server
-  - Setup server script to run in production -- DONE
-  - Cleaner configuration for the installer -- CML
-  - Uninstall script -- CML
+- Setup server script to run in production -- DONE
+- Cleaner configuration for the installer -- CML
+- Uninstall script -- CML
     
 Issues to fix for Beta:
 - New button image looks blotchy -- DONE (scaled down the image)
@@ -50,11 +50,16 @@ Issues to fix for Beta:
 - Extra header area that is colored -- DONE
 - Text on Timeline is horizontal in IE -- DONE
 - 100% is cut off on a Goal View on the Timeline -- DONE
-    - Looks like the text is just not centered in the image at all on Windows
+- Looks like the text is just not centered in the image at all on Windows
 
 Issues to fix at some point
 - User cannot delete a visit
 - To Do List moved to the right and To Do Form moved down
-- Scrunched goal-category images on Timeline/Snapshot
+- Scrunched goal-category images on Timeline/Snapshot -- Done
 - Timeline last goal placement not accurate on different resolution monitors
+-  Even in landscape mode print cuts off the right side of the page
+- Searching not working...? -- DONE
 - Rename Search to Filter..? -- DONE
+- All year boxes need to be extended to 2050 or beyond -- DONE
+- Need a textbox that allows us to add/edit disclaimers
+
