@@ -29,15 +29,20 @@ Goal Category Page
 -	- Fix Back Button -- DONE
 
 Printing
-	- Formatting for Printing
-	    - Print all goals  -- Done
-	    - Use Goal Index page -- Done
+ - Formatting for Printing
+ - Print all goals  -- Done
+ - Use Goal Index page -- Done
+ - Goal Collection
 
 Internet explorer quirks
 -	- Borders around all images - DONE
 	- images (left, right arrow, plus) are not scaling down and instead just top corners are rendering
 	- text on timeline is not rotating -- DONE
 
+Server
+  - Setup server script to run in production -- DONE
+  - Cleaner configuration for the installer -- CML
+  - Uninstall script -- CML
     
 Issues to fix for Beta:
 - New button image looks blotchy -- DONE (scaled down the image)
@@ -52,4 +57,5 @@ Issues to fix at some point
 - To Do List moved to the right and To Do Form moved down
 - Scrunched goal-category images on Timeline/Snapshot
 - Timeline last goal placement not accurate on different resolution monitors
-- Searching not working...?
+- Searching not working...? -- DONE
+- Rename Search to Filter..? -- DONE

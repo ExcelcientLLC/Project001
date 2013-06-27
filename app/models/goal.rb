@@ -135,5 +135,17 @@ class Goal < ActiveRecord::Base
   def getDate
     return target_date
   end
+  
+  def hasGoalCategory
+    return !goal_category.nil?
+  end
+  
+  def getCategoryName
+    if hasGoalCategory
+      return goal_category.name
+    else 
+      return ""
+    end
+  end
 
 end

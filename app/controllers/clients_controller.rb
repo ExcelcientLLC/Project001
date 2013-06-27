@@ -4,7 +4,12 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.search(params[:search]).order(sort_column + " " + sort_direction)
+    puts params
+    puts params[:filter]
+    if not params[:filter]
+      params[:filter_text] = ""
+    end
+    @clients = Client.search(params[:filter_text]).order(sort_column + " " + sort_direction)    
     @client = Client.new
 
     respond_to do |format|

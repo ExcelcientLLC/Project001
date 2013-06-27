@@ -2,9 +2,13 @@
   <div style='height: 50px; width: 100%;'>
     <div class="visit_goals">
       <div class="visit_goals_picture">
-        <div style='height: 50px; width: 50px')
-        <%= link_to image_tag(goal.goal_category.avatar.url(:medium), :style => 'max-height: 50px; max-width: 50px; position: absolute; left: 50%; top: 50%;'), client_visit_goal_path(@client, @visit, goal)%>
-        </div>
+        <% if goal.goal_category.nil? %>
+          <!-- Do Some Magic -->
+        <% else %>
+          <div style='height: 50px; width: 50px')
+            <%= link_to image_tag(goal.goal_category.avatar.url(:medium), :style => 'max-height: 50px; max-width: 50px; position: absolute; left: 50%; top: 50%;'), client_visit_goal_path(@client, @visit, goal)%>
+          </div>
+        <% end %>
       </div>
       <div class="visit_goals_progress">
       <!-- Progress Bubble -->
@@ -30,7 +34,7 @@
 
       <!-- Footer Text -->
         <div class="visit_goals_progress_footer">
-          <div class="visit_goals_progress_footer_left"><%= GoalCategory.find(goal.goal_category_id).name %></div>
+          <div class="visit_goals_progress_footer_left"><%= goal.getCategoryName %></div>
           <div class="visit_goals_progress_footer_right"><%= getGoalEndDate(goal) %></div>
         </div>
       </div>
