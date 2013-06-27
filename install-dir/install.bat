@@ -18,6 +18,7 @@ xcopy /s %~p0\ClientManagementServer %CLIENT_MANAGEMENT_SERVER_DIR%
 echo %STARTING_DIR%
 
 cd %CLIENT_MANAGEMENT_SERVER_DIR%
+CALL setx RAILS_ENV "production" /M
 CALL %RUBY_BIN_DIR%\bundle.bat install
 CALL %RUBY_BIN_DIR%\rake.bat db:migrate
 
