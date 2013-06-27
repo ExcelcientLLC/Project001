@@ -1,7 +1,7 @@
 module VisitsHelper
     
     def getRightMostOffset(events)
-        return 1.0-(events.length)*0.0125
+      return 1.0-(events.length)*0.0125
     end
     
     def hasVisit(visits, visit)
@@ -10,29 +10,29 @@ module VisitsHelper
     end
 
     def previous_visit(visits, visit)
-        visit_id = visits.index(visit)
-        if visit_id == nil
-          return visits.last
-        else
-          return visits[visit_id-1]
-        end
+      visit_id = visits.index(visit)
+      if visit_id == nil
+        return visits.last
+      else
+        return visits[visit_id-1]
+      end
     end
     
     def next_visit(visits, visit)
-        visit_id = visits.index(visit)
-        if visit_id == nil
-          return visits.last
-        else
-          return visits[visit_id+1]
-        end
+      visit_id = visits.index(visit)
+      if visit_id == nil
+        return visits.last
+      else
+        return visits[visit_id+1]
+      end
     end
 
     def tryToAddVisitSpacer(visits, visit) 
-        if visit != visits.last
-            return "---"
-        else
-            return ""
-        end
+      if visit != visits.last
+          return "---"
+      else
+          return ""
+      end
     end
 
     def getEventDateString(event)
@@ -59,8 +59,6 @@ module VisitsHelper
       diff = event.getDate() - start_event.getDate()
 
       percentage = (diff.to_i*100)/span.to_i
-      puts event.getDate()
-      puts percentage
       return percentage*getRightMostOffset(events)
     end
 
