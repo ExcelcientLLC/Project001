@@ -40,7 +40,7 @@ Internet explorer quirks
 	- text on timeline is not rotating -- DONE
 
 Server
-  - Setup server script to run in production -- CML
+  - Setup server script to run in production -- DONE
   - Cleaner configuration for the installer -- CML
   - Uninstall script -- CML
     
@@ -57,4 +57,4 @@ Issues to fix at some point
 - To Do List moved to the right and To Do Form moved down
 - Scrunched goal-category images on Timeline/Snapshot
 - Timeline last goal placement not accurate on different resolution monitors
-- Searching not working...?
+- Rename Search to Filter..? -- DONE
