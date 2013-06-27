@@ -21,6 +21,7 @@ cd %CLIENT_MANAGEMENT_SERVER_DIR%
 CALL setx RAILS_ENV "production" /M
 CALL %RUBY_BIN_DIR%\bundle.bat install
 CALL %RUBY_BIN_DIR%\rake.bat db:migrate
+CALL %RUBY_BIN_DIR%\rake.bat assets:precompile
 
 copy %STARTING_DIR%\processor.rb %RUBY_DIR%\lib\ruby\gems\1.9.1\gems\paperclip-3.2.1\lib\paperclip\
 
