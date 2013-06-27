@@ -11,7 +11,7 @@
       <% if event.goal_category.nil? %>
         <!-- Do Some Magic -->
       <% else %>
-        <div class="circle_picture"><%= image_tag(event.goal_category.avatar.url(:medium), size:"16x16") %></div>
+        <div class="circle_picture"><%= image_tag(event.goal_category.avatar.url(:medium), style:"max-height: 16px; max-width: 16px;") %></div>
       <% end %>
     </div>
   <% end %>
