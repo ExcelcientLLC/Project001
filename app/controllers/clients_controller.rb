@@ -7,9 +7,9 @@ class ClientsController < ApplicationController
     puts params
     puts params[:filter]
     if not params[:filter]
-      params[:search] = ""
+      params[:filter_text] = ""
     end
-    @clients = Client.search(params[:search]).order(sort_column + " " + sort_direction)    
+    @clients = Client.search(params[:filter_text]).order(sort_column + " " + sort_direction)    
     @client = Client.new
 
     respond_to do |format|
