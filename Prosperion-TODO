@@ -17,7 +17,7 @@ Snapshot Page
 -	- Mark the Visit currently being looked at -- DONE
 -	- Adding extra icons for To Dos and Percentage Bars from Prosperion -- DONE
     - Ensure Visit/Goal Events cannot overlap, particularly goals and visits on the same day -- Kirk
-	- Adjust icons to be square as images
+	- Adjust icons to be square as images -- Alec 
 	- Long month names are running into header -- Done
 
 Graph Page
@@ -30,8 +30,8 @@ Goal Category Page
 
 Printing
 	- Formatting for Printing
-	    - Print all goals  -- Alec
-	    - Use Goal Index page -- Chris
+	    - Print all goals  -- Done
+	    - Use Goal Index page -- Done
 
 Internet explorer quirks
 -	- Borders around all images - DONE

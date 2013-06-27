@@ -1,7 +1,10 @@
 <% @client.getVisibleGoals(@visit).each do |goal| %>
+  <div style='height: 50px; width: 100%;'>
     <div class="visit_goals">
       <div class="visit_goals_picture">
-        <%= link_to image_tag(goal.goal_category.avatar.url(:medium), size:"50x50"), client_visit_goal_path(@client, @visit, goal)%>
+        <div style='height: 50px; width: 50px')
+        <%= link_to image_tag(goal.goal_category.avatar.url(:medium), :style => 'max-height: 50px; max-width: 50px; position: absolute; left: 50%; top: 50%;'), client_visit_goal_path(@client, @visit, goal)%>
+        </div>
       </div>
       <div class="visit_goals_progress">
       <!-- Progress Bubble -->
@@ -34,4 +37,5 @@
 
       <div class="visit_goals_monthly"><b>$<%= goal.target_expenditures %></b> per month</div>
     </div>
+  </div>
 <% end %>
