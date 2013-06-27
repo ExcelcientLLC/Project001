@@ -31,13 +31,18 @@ Goal Category Page
 Printing
 	- Formatting for Printing
 	    - Print all goals  -- Alec
-	    - Use Goal Index page -- Chris
+  - Goal Collection
+	    - Use Goal Index page -- DONE
 
 Internet explorer quirks
 -	- Borders around all images - DONE
 	- images (left, right arrow, plus) are not scaling down and instead just top corners are rendering
 	- text on timeline is not rotating -- DONE
 
+Server
+  - Setup server script to run in production -- CML
+  - Cleaner configuration for the installer -- CML
+  - Uninstall script -- CML
     
 Issues to fix for Beta:
 - New button image looks blotchy -- DONE (scaled down the image)
