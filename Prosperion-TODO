@@ -29,10 +29,10 @@ Goal Category Page
 - Fix Back Button -- DONE
 
 Printing
-- Formatting for Printing -- DONE
-- Print all goals  -- Done
-- Use Goal Index page -- Done
-- Goal Collection -- Done
+- Formatting for Printing
+- Print all goals  -- DONE
+- Goal Collection
+- Use Goal Index page -- DONE
 
 Internet explorer quirks
 - Borders around all images - DONE
@@ -60,6 +60,6 @@ Issues to fix at some point
 - Even in landscape mode print cuts off the right side of the page
 - Searching not working...? -- DONE
 - Rename Search to Filter..? -- DONE
-- All year boxes need to be extended to 2050 or beyond -- Done
-- Need a textbox that allows us to add/edit disclaimers 
+- All year boxes need to be extended to 2050 or beyond -- DONE
+- Need a textbox that allows us to add/edit disclaimers
 
