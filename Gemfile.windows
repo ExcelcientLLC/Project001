@@ -41,3 +41,4 @@ gem 'execjs'
 gem 'cocaine', '0.3.2'
 gem "paperclip"
 gem 'jqplot-rails'
+gem 'mongrel', '>= 1.2.0.pre'
