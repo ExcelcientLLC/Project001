@@ -52,7 +52,7 @@ class ProsperionClientManagementServerService (win32serviceutil.ServiceFramework
         self.writeToFile("Starting main")
         os.chdir(self.PROSPERION_DIR)
         self.writeToFile("Changed directory")
-        self.process = subprocess.Popen([os.path.join(self.RUBY_BIN_DIR, "rails.bat"), "server"], stdin=subprocess.PIPE, stdout=self.stdoutFile, stderr=self.stderrFile)
+        self.process = subprocess.Popen([os.path.join(self.RUBY_BIN_DIR, "rails.bat"), "server", "mongrel"], stdin=subprocess.PIPE, stdout=self.stdoutFile, stderr=self.stderrFile)
         self.writeToFile("Started Rails Process")
         self.running = True
         while self.running:
