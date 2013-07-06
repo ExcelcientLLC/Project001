@@ -29,6 +29,9 @@
   </div>
   
   <div class="sub_header_right">
+    <div class="sub_header_right_element" style="margin-left:12px">
+        <%= deleteImageButton client_visit_path(@visit.client, @visit), "Are you sure you want to delete this visit?" %>
+    </div>
     <div class="sub_header_right_element">
       <%= button_to "Client List", clients_path, :method => :get %>
     </div>
