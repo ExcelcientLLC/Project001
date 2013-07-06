@@ -19,7 +19,7 @@ class Visit < ActiveRecord::Base
   end
 
   def last_visit?
-    errors.add(:base, "Cannot delete a Client's last Visit") unless client.visits.count == 0
+    errors.add(:base, "Cannot delete a Client's last Visit") unless client.visits.count > 1
     errors.blank? #return false, to not destroy the element, otherwise, it will delete.
   end
   
