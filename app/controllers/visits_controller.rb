@@ -109,9 +109,14 @@ class VisitsController < ApplicationController
     @visit = Visit.find(params[:id])
     @visit.destroy
     @goal_categories = GoalCategory.all
+    
+    unless @visit.errors.any?
+        @visit = @visit.client.visits.last
+    end
+    prepareShow()
 
     respond_to do |format|
-      format.html { redirect_to client_visits_path(@visit.client) }
+      format.html { render :show }
       format.json { head :no_content }
     end
   end

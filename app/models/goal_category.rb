@@ -13,8 +13,7 @@ class GoalCategory < ActiveRecord::Base
   before_destroy :category_with_goals?
   
   def category_with_goals?
-        errors.add(:base, "Cannot delete Goal Category with active Goals") unless goals.count == 0
-
-        errors.blank? #return false, to not destroy the element, otherwise, it will delete.
-    end
+    errors.add(:base, "Cannot delete Goal Category with active Goals") unless goals.count == 0
+    errors.blank? #return false, to not destroy the element, otherwise, it will delete.
+  end
 end

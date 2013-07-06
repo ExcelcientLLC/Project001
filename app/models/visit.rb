@@ -7,6 +7,8 @@ class Visit < ActiveRecord::Base
   
   has_many :goals
   has_many :to_dos
+  
+  before_destroy :last_visit?
 
   def isVisit
     return true
@@ -16,4 +18,9 @@ class Visit < ActiveRecord::Base
     return visit_date
   end
 
+  def last_visit?
+    errors.add(:base, "Cannot delete a Client's last Visit") unless client.visits.count == 0
+    errors.blank? #return false, to not destroy the element, otherwise, it will delete.
+  end
+  
 end

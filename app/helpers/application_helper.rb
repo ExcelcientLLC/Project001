@@ -5,8 +5,8 @@ module ApplicationHelper
     link_to title, params.merge(:sort => column, :direction => direction)
   end
   
-  def deleteImageButton(destination, message)
-    link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), destination, method: :delete, remote: true, confirm: message
+  def deleteImageButton(destination, message, remote=true)
+    link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), destination, method: :delete, :remote => remote, confirm: message
   end
   
   def newImageButton(destination, remote=true, method='get')
