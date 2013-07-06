@@ -2,6 +2,7 @@ class Goal < ActiveRecord::Base
   attr_accessible :complete, :target_date, :target_expenditures, :target_value, :client, :goal_category_id, :name, :current_value, :current_expenditures
   attr_accessor :current_value, :current_expenditures
   
+  validates_presence_of :goal_category_id
   validates_presence_of :target_date
   validates_presence_of :target_value
   validates_presence_of :current_value
