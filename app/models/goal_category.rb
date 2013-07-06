@@ -9,4 +9,12 @@ class GoalCategory < ActiveRecord::Base
   validates_attachment_presence :avatar
   validates_attachment_size :avatar, :less_than => 5.megabytes
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
+  
+  before_destroy :category_with_goals?
+  
+  def category_with_goals?
+        errors.add(:base, "Cannot delete Goal Category with active Goals") unless goals.count == 0
+
+        errors.blank? #return false, to not destroy the element, otherwise, it will delete.
+    end
 end

@@ -83,9 +83,13 @@ class GoalCategoriesController < ApplicationController
     @goal_category = GoalCategory.find(params[:id])
     @goal_category.destroy
     @goal_categories = GoalCategory.all
-    @goal_category = GoalCategory.new
+    
+    unless @goal_category.errors.any?
+        @goal_category = GoalCategory.new
+    end
 
     respond_to do |format|
+      format.html { }
       format.json { head :no_content }
       format.js
     end
