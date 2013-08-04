@@ -5,7 +5,7 @@
         <% if goal.goal_category.nil? %>
           <!-- Do Some Magic -->
         <% else %>
-          <div style='height: 50px; width: 50px')
+          <div style='height: 50px; width: 50px')>
             <%= link_to image_tag(goal.goal_category.avatar.url(:medium), :style => 'max-height: 50px; max-width: 50px; position: absolute; left: 50%; top: 50%;'), client_visit_goal_path(@client, @visit, goal)%>
           </div>
         <% end %>
