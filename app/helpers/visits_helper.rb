@@ -1,39 +1,35 @@
 module VisitsHelper
     
-    def getRightMostOffset(events)
-      return 1.0-(events.length)*0.0125
-    end
-    
-    def hasVisit(visits, visit)
-      visit_id = visits.index(visit)
-      return visit_id != nil
+    def hasItem(items, item)
+      item_id = items.index(item)
+      return item_id != nil
     end
 
-    def previous_visit(visits, visit)
-      visit_id = visits.index(visit)
-      if visit_id == nil
-        return visits.last
+    def previous_item(items, item)
+      item_id = items.index(item)
+      if item_id == nil
+        return items.last
       else
-        return visits[visit_id-1]
+        return items[item_id-1]
       end
     end
     
-    def next_visit(visits, visit)
-      visit_id = visits.index(visit)
-      if visit_id == nil
-        return visits.last
+    def next_item(items, item)
+      item_id = items.index(item)
+      if item_id == nil
+        return items.last
       else
-        return visits[visit_id+1]
+        return items[item_id+1]
       end
     end
 
-    def tryToAddVisitSpacer(visits, visit) 
-      if visit != visits.last
-          return "---"
-      else
-          return ""
-      end
-    end
+    # def tryToAddVisitSpacer(visits, visit) 
+    #   if visit != visits.last
+    #       return "---"
+    #   else
+    #       return ""
+    #   end
+    # end
 
     def getEventDateString(event)
       if event.getDate == DateTime.now.to_date
@@ -48,18 +44,40 @@ module VisitsHelper
       end_event = events.last
 
       if event == start_event
-          return 0
-      end
-
-      if event == end_event
-          return 100
+        @lastPercent = -1;
+        return -1
       end
 
       span = end_event.getDate() - start_event.getDate()
       diff = event.getDate() - start_event.getDate()
 
-      percentage = (diff.to_i*100)/span.to_i
-      return percentage*getRightMostOffset(events)
+      percentage = (diff.to_i*100)/span.to_i - 1
+      if (@lastPercent > percentage - 2) 
+        percentage = @lastPercent + 2
+      end
+      @lastPercent = percentage
+      return percentage#*getRightMostOffset(events)
+    end
+
+    def constructEventLocations(events)
+      @lastPercent = -1
+      @positions = constructEventLocationsRecursive(events, events.first)
+      @positions = @positions.reverse
+      return @positions
+      #return positions.reverse
+    end
+
+    def constructEventLocationsRecursive(events, event)
+      percentage = getEventLocationPercentage(events, event)
+      if event == events.last
+        return [99]
+      end
+      positions = constructEventLocationsRecursive(events, next_item(events, event))
+      if (percentage + 2 > positions.last) 
+        percentage = positions.last - 2
+      end
+      positions.push(percentage)
+      return positions
     end
 
     def getGoalProgress(goal)
@@ -86,10 +104,10 @@ module VisitsHelper
     def getStylePosition(events, event)
       if event == events.first
           return "left:left;"
-      elsif event == events.last
-          return "left:%s%%;" % (getRightMostOffset(events)*100).to_s
+      #elsif event == events.last
+      #    return "left:%s%%;" % (getRightMostOffset(events)*100).to_s
       else
-          return "left:%s%%;" % getEventLocationPercentage(events, event).to_s
+          return "left:%s%%;" % @positions[events.index(event)]
       end
     end
     
