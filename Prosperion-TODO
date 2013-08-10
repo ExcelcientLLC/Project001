@@ -42,7 +42,7 @@ Internet explorer quirks
 Server
 - Setup server script to run in production -- DONE
 - Cleaner configuration for the installer -- CML
-- Uninstall script -- CML
+- Uninstall script -- DONE
     
 Issues to fix for Beta:
 - New button image looks blotchy -- DONE (scaled down the image)
