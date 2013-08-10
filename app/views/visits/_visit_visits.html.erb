@@ -1,3 +1,4 @@
+<% constructEventLocations(@events) %>
 <% @events.each do |event| %>
   <% if event.isVisit() %>
     <%= link_to(client_visit_path(event.client, event), :remote => true) do %>
