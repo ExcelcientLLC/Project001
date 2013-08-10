@@ -102,13 +102,13 @@ module VisitsHelper
     end
     
     def getStylePosition(events, event)
-      if event == events.first
-          return "left:left;"
-      #elsif event == events.last
-      #    return "left:%s%%;" % (getRightMostOffset(events)*100).to_s
-      else
+      # if event == events.first
+      #     return "left:left;"
+      # #elsif event == events.last
+      # #    return "left:%s%%;" % (getRightMostOffset(events)*100).to_s
+      # else
           return "left:%s%%;" % @positions[events.index(event)]
-      end
+      # end
     end
     
     def getBackgroundColor(event, currentVisit)
