@@ -9,7 +9,7 @@ class Goal < ActiveRecord::Base
   #max characters drive visibility of title on graph page under low resolution
   validates_length_of :name, :maximum => 25
   
-  has_many :goal_states
+  has_many :goal_states, :dependent => :destroy
   belongs_to :client
   belongs_to :goal_category
 

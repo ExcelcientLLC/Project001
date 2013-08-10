@@ -1,8 +1,8 @@
 class Client < ActiveRecord::Base
   attr_accessible :address, :city, :comment, :email, :first_name, :last_name, :phone, :state, :zip
   
-  has_many :visits
-  has_many :goals
+  has_many :visits, :dependent => :destroy
+  has_many :goals, :dependent => :destroy
 
   def getVisibleGoals(visit)
     goals = []

@@ -5,7 +5,8 @@ class Visit < ActiveRecord::Base
   
   belongs_to :client
   
-  has_many :goals
+  #has_many :goals
+  has_many :goal_states, :dependent => :destroy
   has_many :to_dos
   
   before_destroy :last_visit?
