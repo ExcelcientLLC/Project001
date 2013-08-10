@@ -1,0 +1,53 @@
+<!--HEADER-->
+<% @title = "Presets" %>
+<%= render 'common/header' %>
+ 
+<!--Main body-->
+<div class=admin_body >
+ 
+<!--Client List-->
+  <div style="width:100%">
+    <div class='client_list' id="goalcategory_list">
+      <%= render '/goal_categories/goalcategory_list_form' %>
+    </div>
+
+    <div class="sub_header_right">
+      <div class="sub_header_right_element">
+        <%= button_to "Client List", clients_path, :method => :get %>
+      </div>
+      <div class="sub_header_right_element">
+        <%= button_to "Back",  client_visit_path(@last_visit.client, @last_visit), :method => :get %>
+      </div>
+    </div>
+   
+
+  <!--Create Client-->
+
+    <div class="detail_view" id="goalcategory">
+      <h1> Goal Category  </h1>
+      <%= render '/goal_categories/form' %>
+    </div>
+  </div>
+  
+  <div style="width:100%">
+    <div class='client_list' id="goalcategory_list">
+      <%= render '/disclaimers/disclaimer_list_form' %>
+    </div>
+
+    <div class="sub_header_right">
+      <div class="sub_header_right_element">
+        <%= button_to "Client List", clients_path, :method => :get %>
+      </div>
+      <div class="sub_header_right_element">
+        <%= button_to "Back",  client_visit_path(@last_visit.client, @last_visit), :method => :get %>
+      </div>
+    </div>
+
+  <!--Create Client-->
+    <div class="detail_view" id="goalcategory">
+      <h1> Presets  </h1>
+      <%= render '/disclaimers/form' %>
+    </div>
+  </div>
+</div>
+			      
