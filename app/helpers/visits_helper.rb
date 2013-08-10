@@ -44,14 +44,14 @@ module VisitsHelper
       end_event = events.last
 
       if event == start_event
-        @lastPercent = -1;
-        return -1
+        @lastPercent = -0.8;
+        return -0.8
       end
 
       span = end_event.getDate() - start_event.getDate()
       diff = event.getDate() - start_event.getDate()
 
-      percentage = (diff.to_i*100)/span.to_i - 1
+      percentage = (diff.to_i*100)/span.to_i - 0.8
       if (@lastPercent > percentage - 2) 
         percentage = @lastPercent + 2
       end
