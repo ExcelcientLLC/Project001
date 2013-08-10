@@ -43,24 +43,21 @@ module VisitsHelper
       start_event = events.first
       end_event = events.last
 
-      if event == start_event
-        @lastPercent = -0.8;
-        return -0.8
-      end
+      # if event == start_event
+      #   @lastPercent = -0.8;
+      #   return -0.8
+      # end
 
       span = end_event.getDate() - start_event.getDate()
       diff = event.getDate() - start_event.getDate()
 
-      percentage = (diff.to_i*100)/span.to_i - 0.8
-      if (@lastPercent > percentage - 2) 
-        percentage = @lastPercent + 2
-      end
-      @lastPercent = percentage
+      percentage = (diff.to_i*100)/span.to_i
       return percentage#*getRightMostOffset(events)
     end
 
     def constructEventLocations(events)
-      @lastPercent = -1
+      @lastPercent = -5
+      @offset = -0.8
       @positions = constructEventLocationsRecursive(events, events.first)
       @positions = @positions.reverse
       return @positions
@@ -69,14 +66,19 @@ module VisitsHelper
 
     def constructEventLocationsRecursive(events, event)
       percentage = getEventLocationPercentage(events, event)
+      if (@lastPercent > percentage - 2) 
+        percentage = @lastPercent + 2
+      end
+      @lastPercent = percentage
+
       if event == events.last
-        return [99]
+        return [100 + @offset]
       end
       positions = constructEventLocationsRecursive(events, next_item(events, event))
       if (percentage + 2 > positions.last) 
         percentage = positions.last - 2
       end
-      positions.push(percentage)
+      positions.push(percentage + @offset)
       return positions
     end
 
