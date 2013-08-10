@@ -1,0 +1,23 @@
+<div class='list_header'>
+  <h1>Disclaimers</h1>
+</div>
+<div class=add>
+  <%= newImageButton new_disclaimer_path %>
+</div>
+
+<div>
+  <div>
+      <div class="table_header_full">Name</div>
+  </div>
+  <div>
+    <% if @disclaimers %>
+      <% @disclaimers.sort_by{|disclaimers| disclaimers.name}.each do |disclaimer| %>
+        <%= link_to(goal_category_path(disclaimer), :remote => true) do %>
+          <div class="element">
+              <div class="table_body_full"><%= disclaimer.name %></div>
+          </div>
+        <%end%>
+      <% end %>
+    <%end%>
+  </div>
+</div>
