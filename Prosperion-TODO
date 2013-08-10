@@ -53,7 +53,7 @@ Issues to fix for Beta:
 - Looks like the text is just not centered in the image at all on Windows -- DONE
 
 Issues to fix at some point
-- User cannot delete a visit
+- User cannot delete a visit -- DONE
 - To Do List moved to the right and To Do Form moved down
 - Scrunched goal-category images on Timeline/Snapshot -- Done
 - Timeline last goal placement not accurate on different resolution monitors
