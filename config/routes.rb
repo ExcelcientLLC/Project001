@@ -2,6 +2,8 @@ Prosperion2012::Application.routes.draw do
 
   
 
+  resources :disclaimers
+
     resources :clients, :except => [:edit] do
         resources :visits do
             resources :goals, :except => [:edit]
@@ -9,6 +11,7 @@ Prosperion2012::Application.routes.draw do
             resources :to_dos, :except => [:edit]
         end
     end
+    resources :presets
     resources :goal_categories
 
   # The priority is based upon order of creation:
