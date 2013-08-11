@@ -114,8 +114,8 @@ div.visit_goals_picture
 div.visit_goals_progress
 {
   position:relative;
-  float:left;
-  width:60%
+  margin-left:150px;
+  margin-right:150px
 }
 div.visit_goals_progress_arrow_box
 {
@@ -162,11 +162,13 @@ div.visit_goals_progress_footer_right
 div.visit_goals_monthly
 {
   position:relative;
-  float:left;
-  margin-top:18px;
-  margin-left:20px;
-  width:15%
+  float:right;
+  margin-top:30px;
+  margin-left:10px;
+  margin-right:10px;
+  width:120px
 }
+
 div.visit_todos
 {
   position:relative;
