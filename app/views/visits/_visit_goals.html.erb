@@ -18,14 +18,14 @@
       <!-- Progress Bubble -->
         <div style="height:50%;">
           <div  style="position:absolute;left:<%= (getGoalProgressPercent(goal)).to_s %>%;">
-          <div class="visit_goals_progress_arrow_box" style="left:-19px">
-            <%= link_to image_tag("pb_percent.png", size:"38x30") %>
-          </div>
-          <div class="visit_goals_progress_arrow_box_text" style="left:-19px">
-            <p style="text-align:center;margin:0px;padding:0px;width:38px;">
-              <%= getGoalProgressPercent(goal).to_s %>%
-            </p>
-          </div>            
+            <div class="visit_goals_progress_arrow_box" style="left:-19px">
+              <%= link_to image_tag("pb_percent.png", size:"38x30") %>
+            </div>
+            <div class="visit_goals_progress_arrow_box_text" style="left:-19px">
+              <p style="text-align:center;margin:0px;padding:0px;width:38px;">
+                <%= getGoalProgressPercent(goal).to_s %>%
+              </p>
+            </div>            
           </div>
         </div>
         <div style="margin-bottom:13px;"> &nbsp; </div>
