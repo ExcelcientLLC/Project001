@@ -1,0 +1,6 @@
+<%= render 'disclaimer_list' %>
+<% if @goal_category.errors.any? %>
+    <%= render 'disclaimer' %>
+<% else %>
+    <%= render 'new_disclaimer' %>
+<% end %>

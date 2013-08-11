@@ -34,18 +34,9 @@
       <%= render '/disclaimers/disclaimer_list_form' %>
     </div>
 
-    <div class="sub_header_right">
-      <div class="sub_header_right_element">
-        <%= button_to "Client List", clients_path, :method => :get %>
-      </div>
-      <div class="sub_header_right_element">
-        <%= button_to "Back",  client_visit_path(@last_visit.client, @last_visit), :method => :get %>
-      </div>
-    </div>
-
   <!--Create Client-->
     <div class="detail_view" id="goalcategory">
-      <h1> Presets  </h1>
+      <h1> Dislclaimers  </h1>
       <%= render '/disclaimers/form' %>
     </div>
   </div>
