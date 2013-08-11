@@ -1,6 +1,7 @@
 <% @client.getVisibleGoals(@visit).each do |goal| %>
   <div style='height: 50px; width: 100%;'>
     <div class="visit_goals">
+      
       <div class="visit_goals_picture">
         <% if goal.goal_category.nil? %>
           <!-- Do Some Magic -->
@@ -10,6 +11,9 @@
           </div>
         <% end %>
       </div>
+      
+      <div class="visit_goals_monthly"><b>$<%= goal.target_expenditures %></b> per month</div>
+      
       <div class="visit_goals_progress">
       <!-- Progress Bubble -->
         <div style="height:50%;">
@@ -40,8 +44,6 @@
           <div class="visit_goals_progress_footer_right"><%= getGoalEndDate(goal) %></div>
         </div>
       </div>
-
-      <div class="visit_goals_monthly"><b>$<%= goal.target_expenditures %></b> per month</div>
     </div>
   </div>
 <% end %>
