@@ -52,11 +52,12 @@ div.timeline
   position:relative;
   width:95%;
   height:11px;
-  background-color:#097197;
+  background-color:#1144AA;
   border-radius:4px;
   margin:0 auto;
   margin-top: 15px;
 }
+
 div.circle_icon
 {
   position:absolute;
@@ -68,7 +69,7 @@ div.circle_icon
   border-radius:10px;
   background-color:white;
 
-  border: 2px solid #097197;
+  border: 2px solid #1144AA;
 }
 p.circle_text
 {
@@ -131,18 +132,30 @@ div.visit_goals_progress_arrow_box_text
 }
 div.visit_goals_progress_emptybar
 {
-  height:15%;
+  height: 16px;
   background-color:#C7C7C7;
-  border-radius:8px;
+  border-radius:5px;
   z-index:0;
 }
 div.visit_goals_progress_fullbar
 {
-  background-color:#B1CE72;
+  background-color:#00C90D;
+  height: 16px;
   position:absolute;
-  border-radius:8px;
+  border-radius:5px;
   z-index:5;
-  margin-top:-18px;
+  margin-top:-16px;
+}
+div.visit_goals_progress_gloss
+{
+  height: 10px;
+  position:absolute;
+  padding-left: -4px;
+  padding-right: -4px;
+  border-radius:5px;
+  z-index: 6;
+  margin-top:-16px;
+  background-color:#39E444
 }
 div.visit_goals_progress_footer
 {

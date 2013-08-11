@@ -115,7 +115,7 @@ module VisitsHelper
     
     def getBackgroundColor(event, currentVisit)
       if event == currentVisit
-        return "background-color:#fdb813;"
+        return "background-color:#F3FD00;"
       else
         return ""
       end

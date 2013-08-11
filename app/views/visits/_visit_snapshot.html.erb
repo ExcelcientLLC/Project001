@@ -1,13 +1,15 @@
 <!-- Timeline -->
-<div class="timeline" style="margin-top:100px;margin-bottom:10px;">
+<div class="timeline" style="margin-top:80px;margin-bottom:10px;">
   <%= render 'visit_visits' %>
 </div>
 
 <!-- Main Content Box -->
 <div style="overflow:hidden;position:relative;">
-  <div id="split_bar" style="width:8px; background-color:#097197; border-radius:8px; position:absolute; left:120px; z-index:2; height:100%"></div>
+  <div id="split_bar" style="width:8px; background-color:#1144AA; border-radius:8px; position:absolute; left:120px; z-index:2; height:100%">
+  </div>
   <div class="goals_box" style="width:70%; position:relative; float:left;">
-  <div style="float:right; margin-right:9.5%;"><h2><%= image_tag("cash.png", size:"25x25") %>&nbsp;Spending</h2></div>
+  <div style="width:130px;height:30px;float:right">
+    <h2><%= image_tag("cash.png", size:"25x25") %>&nbsp;Spending</h2></div>
     <%= render 'visit_goals' %>
   </div>
   <div class="todo_box" style="margin-left:1%; width:26%; position:relative; float:left;">
@@ -28,3 +30,4 @@
     <%= button_to "Goal Graphs", client_visit_goals_path(@client, @visit), :method => :get %>
   </div>
 </div>
+
