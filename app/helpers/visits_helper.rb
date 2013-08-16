@@ -50,8 +50,16 @@ module VisitsHelper
 
       span = end_event.getDate() - start_event.getDate()
       diff = event.getDate() - start_event.getDate()
-
-      percentage = (diff.to_i*100)/span.to_i
+      
+      if span == 0
+        if event == start_event
+          percentage = 0
+        elsif event == end_event
+          percentage = 100
+        end
+      else
+        percentage = (diff.to_i*100)/span.to_i
+      end
       return percentage#*getRightMostOffset(events)
     end
 
