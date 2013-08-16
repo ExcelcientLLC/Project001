@@ -42,10 +42,13 @@ class DisclaimersController < ApplicationController
   # POST /disclaimers
   # POST /disclaimers.json
   def create
+  
     @disclaimer = Disclaimer.new(params[:disclaimer])
+    @disclaimers = Disclaimer.all
 
     respond_to do |format|
       if @disclaimer.save
+        @disclaimers = Disclaimer.all
         format.html { redirect_to presets_path, notice: 'Disclaimer was successfully created.' }
         format.json { render json: @disclaimer, status: :created, location: @disclaimer }
         format.js
@@ -61,6 +64,7 @@ class DisclaimersController < ApplicationController
   # PUT /disclaimers/1.json
   def update
     @disclaimer = Disclaimer.find(params[:id])
+    @disclaimers = Disclaimer.all
 
     respond_to do |format|
       if @disclaimer.update_attributes(params[:disclaimer])
@@ -80,6 +84,8 @@ class DisclaimersController < ApplicationController
   def destroy
     @disclaimer = Disclaimer.find(params[:id])
     @disclaimer.destroy
+    @disclaimers = Disclaimer.all
+    @disclaimer = Disclaimer.new
 
     respond_to do |format|
       format.html { redirect_to disclaimers_url }
