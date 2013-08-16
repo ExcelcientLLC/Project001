@@ -1,8 +1,4 @@
-<% if @disclaimer.new_record? %>
-  <h1>New Disclaimer</h1>
-<% else %>
-  <h1>Editing Disclaimer</h1>
-<% end %>
+<h1><%= distinguishMessageForRecord @disclaimer, "New Disclaimer", "Editing Disclaimer" %></h1>
 
 <%= form_for(@disclaimer, :url => [@presets, @disclaimer], :remote => true) do |f| %>
   <% if @disclaimer.errors.any? %>
