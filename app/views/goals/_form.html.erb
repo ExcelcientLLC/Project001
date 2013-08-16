@@ -1,3 +1,5 @@
+<%= modelFormHeader @goal %>
+
 <%= form_for(@goal, :url => [@visit.client, @visit, @goal], :remote => true) do |f| %>
   <% if @goal.errors.any? %>
     <div id="error_explanation">
@@ -88,4 +90,10 @@
       <%= f.submit %>
     </div>
  </div>
+<% end %>
+
+<% if not @goal.new_record? %>
+  <div class=delete_format>
+    <%= deleteImageButton client_visit_goal_path(@visit.client, @visit, @goal), "Are you sure you want to delete this goal?" %>
+  </div>
 <% end %>
