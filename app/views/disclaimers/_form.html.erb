@@ -1,3 +1,9 @@
+<% if @disclaimer.new_record? %>
+  <h1>New Disclaimer</h1>
+<% else %>
+  <h1>Editing Disclaimer</h1>
+<% end %>
+
 <%= form_for(@disclaimer, :url => [@presets, @disclaimer], :remote => true) do |f| %>
   <% if @disclaimer.errors.any? %>
     <div id="error_explanation">

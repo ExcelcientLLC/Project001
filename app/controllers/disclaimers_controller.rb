@@ -30,6 +30,7 @@ class DisclaimersController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @disclaimer }
+      format.js
     end
   end
 
@@ -65,9 +66,11 @@ class DisclaimersController < ApplicationController
       if @disclaimer.update_attributes(params[:disclaimer])
         format.html { redirect_to @disclaimer, notice: 'Disclaimer was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @disclaimer.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
