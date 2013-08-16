@@ -12,7 +12,7 @@
   <div>
     <% if @disclaimers %>
       <% @disclaimers.sort_by{|disclaimers| disclaimers.name}.each do |disclaimer| %>
-        <%= link_to(goal_category_path(disclaimer), :remote => true) do %>
+        <%= link_to(disclaimer_path(disclaimer), :remote => true) do %>
           <div class="element">
               <div class="table_body_full"><%= disclaimer.name %></div>
           </div>
