@@ -46,11 +46,11 @@ class GoalCategoriesController < ApplicationController
     respond_to do |format|
       if @goal_category.save
         @goal_categories = GoalCategory.all
-        format.html { render :index } #, notice: 'Goal category was successfully created.' }
+        format.html { redirect_to presets_path, notice: 'Goal category was successfully created.' }
         format.json { render json: @goal_category, status: :created, location: @goal_category }
       	format.js
       else
-        #format.html { render action: "new" }
+        format.html { redirect_to presets_path, notice: 'Goal category was successfully created.' }
         format.json { render json: @goal_category.errors, status: :unprocessable_entity }
 	      format.js
       end

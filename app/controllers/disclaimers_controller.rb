@@ -16,7 +16,7 @@ class DisclaimersController < ApplicationController
     @disclaimer = Disclaimer.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      #format.html # show.html.erb
       format.json { render json: @disclaimer }
     end
   end
@@ -44,10 +44,10 @@ class DisclaimersController < ApplicationController
 
     respond_to do |format|
       if @disclaimer.save
-        format.html { redirect_to @disclaimer, notice: 'Disclaimer was successfully created.' }
+        format.html { redirect_to presets_path, notice: 'Disclaimer was successfully created.' }
         format.json { render json: @disclaimer, status: :created, location: @disclaimer }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to presets_path, notice: 'Disclaimer was successfully created.' }
         format.json { render json: @disclaimer.errors, status: :unprocessable_entity }
       end
     end
