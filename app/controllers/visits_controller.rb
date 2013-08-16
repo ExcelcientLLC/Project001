@@ -111,8 +111,16 @@ class VisitsController < ApplicationController
     @goal_categories = GoalCategory.all
     
     unless @visit.errors.any?
-        @visit = @visit.client.visits.last
+      @visit = @visit.client.visits.last
     end
+    
+    @client = Client.find(params[:client_id])
+    @client.goals.each do |goal|
+      if goal.goal_states.empty?
+        goal.destroy()
+      end
+    end
+    
     prepareShow()
 
     respond_to do |format|

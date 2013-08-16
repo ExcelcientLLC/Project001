@@ -6,3 +6,10 @@
 <div id='snapshot'>
   <%= render 'visit_snapshot' %>
 </div>
+
+<% if Disclaimer.first.nil? %>
+<%else%>
+<div style="position:fixed;bottom:0;z-index:100;text-align:center">
+  <%= Disclaimer.first.body %>
+</div>
+<%end%>

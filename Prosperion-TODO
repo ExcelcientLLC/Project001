@@ -31,7 +31,7 @@ Goal Category Page
 Printing
 - Formatting for Printing
 - Print all goals  -- DONE
-- Goal Collection
+- Goal Collection -- DONE
 - Use Goal Index page -- DONE
 
 Internet explorer quirks
@@ -42,7 +42,7 @@ Internet explorer quirks
 Server
 - Setup server script to run in production -- DONE
 - Cleaner configuration for the installer -- CML
-- Uninstall script -- CML
+- Uninstall script -- DONE
     
 Issues to fix for Beta:
 - New button image looks blotchy -- DONE (scaled down the image)
@@ -50,14 +50,14 @@ Issues to fix for Beta:
 - Extra header area that is colored -- DONE
 - Text on Timeline is horizontal in IE -- DONE
 - 100% is cut off on a Goal View on the Timeline -- DONE
-- Looks like the text is just not centered in the image at all on Windows
+- Looks like the text is just not centered in the image at all on Windows -- DONE
 
 Issues to fix at some point
-- User cannot delete a visit
+- User cannot delete a visit -- DONE
 - To Do List moved to the right and To Do Form moved down
 - Scrunched goal-category images on Timeline/Snapshot -- Done
 - Timeline last goal placement not accurate on different resolution monitors
-- Even in landscape mode print cuts off the right side of the page
+- Even in landscape mode print cuts off the right side of the page -- DONE
 - Searching not working...? -- DONE
 - Rename Search to Filter..? -- DONE
 - All year boxes need to be extended to 2050 or beyond -- DONE
