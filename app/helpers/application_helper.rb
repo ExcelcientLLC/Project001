@@ -5,6 +5,12 @@ module ApplicationHelper
     link_to title, params.merge(:sort => column, :direction => direction)
   end
   
+  def modelFormHeader(record)
+    headerText = distinguishMessageForRecord(record, "New %s" % record.class.model_name, "Editting %s" % record.class.model_name)
+    headerHTML = "<h1>%s</h1>" % headerText
+    return headerHTML.html_safe
+  end
+  
   def distinguishMessageForRecord(record, newMessage, oldMessage)
     if record.new_record?
       return newMessage
