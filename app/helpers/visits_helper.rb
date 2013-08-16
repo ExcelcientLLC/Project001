@@ -54,7 +54,7 @@ module VisitsHelper
       if span == 0
         if event == start_event
           percentage = 0
-        elsif event == end_event
+        else
           percentage = 100
         end
       else
