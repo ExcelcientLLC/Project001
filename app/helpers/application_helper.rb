@@ -6,7 +6,7 @@ module ApplicationHelper
   end
   
   def modelFormHeader(record)
-    headerText = distinguishMessageForRecord(record, "New %s" % record.class.model_name, "Editting %s" % record.class.model_name)
+    headerText = distinguishMessageForRecord(record, "New %s" % record.class.model_name, "Editing %s" % record.class.model_name)
     headerHTML = "<h1>%s</h1>" % headerText
     return headerHTML.html_safe
   end
