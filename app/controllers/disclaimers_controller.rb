@@ -85,7 +85,7 @@ class DisclaimersController < ApplicationController
     @disclaimer = Disclaimer.find(params[:id])
     @disclaimer.destroy
     @disclaimers = Disclaimer.all
-    @disclaimer = Disclaimer.new
+    #@disclaimer = Disclaimer.new
 
     respond_to do |format|
       format.html { redirect_to disclaimers_url }
