@@ -54,7 +54,6 @@ Issues to fix for Beta:
 
 Issues to fix at some point
 - User cannot delete a visit -- DONE
-- To Do List moved to the right and To Do Form moved down
 - Scrunched goal-category images on Timeline/Snapshot -- Done
 - Timeline last goal placement not accurate on different resolution monitors
 - Even in landscape mode print cuts off the right side of the page -- DONE
@@ -63,3 +62,6 @@ Issues to fix at some point
 - All year boxes need to be extended to 2050 or beyond -- DONE
 - Need a textbox that allows us to add/edit disclaimers
 
+Issues to watch for
+- Goal Category unable to delete even when all goals are deleted
+- To Do List moved to the right and To Do Form moved down
