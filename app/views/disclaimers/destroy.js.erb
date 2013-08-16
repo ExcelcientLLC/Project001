@@ -1,7 +1,2 @@
 <%= render 'disclaimer_list' %>
-<% if @disclaimer.errors.any? %>
-    <%= render 'disclaimer' %>
-<% else %>
-    <% @disclaimer = Disclaimer.new %>
-    <%= render 'new_disclaimer' %>
-<% end %>
+<%= render 'disclaimer' %>

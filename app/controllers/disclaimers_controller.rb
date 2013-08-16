@@ -68,6 +68,7 @@ class DisclaimersController < ApplicationController
 
     respond_to do |format|
       if @disclaimer.update_attributes(params[:disclaimer])
+        @disclaimers = Disclaimer.all
         format.html { redirect_to @disclaimer, notice: 'Disclaimer was successfully updated.' }
         format.json { head :no_content }
         format.js
@@ -85,7 +86,10 @@ class DisclaimersController < ApplicationController
     @disclaimer = Disclaimer.find(params[:id])
     @disclaimer.destroy
     @disclaimers = Disclaimer.all
-    #@disclaimer = Disclaimer.new
+    
+    if @disclaimer.errors.empty?
+        @disclaimer = Disclaimer.new
+    end
 
     respond_to do |format|
       format.html { redirect_to disclaimers_url }
