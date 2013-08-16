@@ -83,6 +83,11 @@ class ToDosController < ApplicationController
     @visit = @to_do.visit
     @to_do.destroy
 
+    if @to_do.errors.empty?
+        @to_do = ToDo.new
+    end
+
+    
     respond_to do |format|
       format.html { redirect_to client_visits_path(@todo.visit.client) }
       format.json { head :no_content }

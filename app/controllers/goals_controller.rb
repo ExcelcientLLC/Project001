@@ -106,7 +106,10 @@ class GoalsController < ApplicationController
     @visit = Visit.find(params[:visit_id])
     @client = @goal.client
     @goal.destroy
-    @goal = Goal.new
+    
+    if @goal.errors.empty?
+        @goal = Goal.new
+    end
 
     respond_to do |format|
       format.html { redirect_to client_visits_path(@goal.visit.client) }
