@@ -56,6 +56,7 @@ Issues to fix at some point
 - User cannot delete a visit -- DONE
 - Scrunched goal-category images on Timeline/Snapshot -- Done
 - Timeline last goal placement not accurate on different resolution monitors
+- First Timeline event can be pushed off to the left
 - Even in landscape mode print cuts off the right side of the page -- DONE
 - Searching not working...? -- DONE
 - Rename Search to Filter..? -- DONE
