@@ -1,5 +1,5 @@
 class Visit < ActiveRecord::Base
-  attr_accessible :visit_date, :client
+  attr_accessible :visit_date, :client, :disclaimer_id
 
   validates_uniqueness_of :visit_date, :scope => [:client_id]
   

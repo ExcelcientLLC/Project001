@@ -41,6 +41,7 @@ class VisitsController < ApplicationController
     #@goal = Goal.new
     #@to_do = ToDo.new
     @goal_categories = GoalCategory.all
+    @disclaimers = Disclaimers.all
 
     #@client.goals.each do |goal|
     #  goal.prepareGoalState(@visit)
@@ -58,6 +59,7 @@ class VisitsController < ApplicationController
     @client = Client.find(params[:client_id])
     @visits = @client.visits
     @visit = Visit.find(params[:id])
+    @disclaimers = Disclaimers.all
   end
 
   # POST /clients/:client_id/visits
@@ -137,6 +139,7 @@ class VisitsController < ApplicationController
     @to_do = ToDo.new
     @goal_categories = GoalCategory.all
     @events = generateEvents(@client)
+    @disclaimers = Disclaimer.all
 
     @client.goals.each do |goal|
       goal.prepareGoalState(@visit)
