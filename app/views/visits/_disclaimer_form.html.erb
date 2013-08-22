@@ -11,10 +11,9 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label "Disclaimer" %>
-    <%= collection_select(:visit, :disclaimer_id, @disclaimers, :id, :name) %>
-    <%= f.submit "Save"%>
+  <div >
+    <%= collection_select(:visit, :disclaimer_id, @disclaimers, :id, :name, :style => "width:70px") %>
+    <%= f.submit "Update Disclaimer"%>
 
   </div>
 <% end %>

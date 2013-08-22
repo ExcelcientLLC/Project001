@@ -39,8 +39,6 @@
     <div class="sub_header_right_element">
       <%= button_to "Timeline", client_visits_path(@client), :method => :get %>
     </div>
-
-    <%= render 'disclaimer_form' %>
   </div>
 </div>
 
@@ -48,6 +46,9 @@
 <div style="width:100%">
 <div id="goal_list" class="visits_list_set">
 	<%= render :partial => '/goals/goal_list_form' %>
+</div>
+<div style="float: right; margin-right: 55px">
+<%= render 'disclaimer_form' %>
 </div>
 <div id="goal" class="detail_view">
 	<%= render :partial => '/goals/form' %>
