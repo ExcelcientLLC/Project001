@@ -65,11 +65,10 @@ module VisitsHelper
 
     def constructEventLocations(events)
       @lastPercent = -5
-      @offset = -0.3
+      @offset = -0.4
       @positions = constructEventLocationsRecursive(events, events.first)
       @positions = @positions.reverse
       return @positions
-      #return positions.reverse
     end
 
     def constructEventLocationsRecursive(events, event)
