@@ -1,14 +1,20 @@
-<div style="float:left;margin-left:5%"><h2><%= image_tag("recommendations.png", size:"25x25")%>&nbsp;To Do List</h2></div>
-<div style="height:60px;">&nbsp;</div>
-<% @visit.to_dos.each do |to_do| %>
-  <% unless to_do.complete %>
-    <div>
-      <div class="todo_checkbox"></div>
-      <div class="visit_todos">
-        <b><%= to_do.title %></b>
-        </br>
-        <%= to_do.description %>
+<div style="float:left;width:100%">
+  <div style="float:left;margin-left:5%"><h2><%= image_tag("recommendations.png", size:"25x25")%>&nbsp;To Do List</h2></div>
+</div>
+<div style="width:100%">
+  <div style="height:60px">
+    &nbsp;
+  </div>
+  <% @visit.to_dos.each do |to_do| %>
+    <% unless to_do.complete %>
+      <div>
+        <div class="todo_checkbox"></div>
+        <div class="visit_todos">
+          <b><%= to_do.title %></b>
+          </br>
+          <%= to_do.description %>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
