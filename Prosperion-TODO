@@ -70,5 +70,5 @@ Issues to watch for
 Issues to Fix For Install:
 - To Do Checkbox moves right when printing
 - Header Title moves down when printing -- DONE
-- If two events share the same day, one can be pushed off the edge
+- If two events share the same day, one can be pushed off the edge -- Fixed by shrinking offset. need to test this on lower resolution monitors to ensure it still works happily
 - Title for To Do can be too long that it goes off the page when printed -- Limited title size to 20 characters
