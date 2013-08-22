@@ -1,7 +1,7 @@
 <div style="float:left;margin-left:5%"><h2><%= image_tag("recommendations.png", size:"25x25")%>&nbsp;To Do List</h2></div>
 <div style="height:60px;">&nbsp;</div>
 <% @visit.to_dos.each do |to_do| %>
-  <% if not to_do.complete %>
+  <% unless to_do.complete %>
     <div>
       <div class="todo_checkbox"></div>
       <div class="visit_todos">
