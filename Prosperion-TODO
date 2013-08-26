@@ -74,3 +74,4 @@ Issues to Fix For Install:
 - Title for To Do can be too long that it goes off the page when printed -- Limited title size to 20 characters
 - Printing does not easily handle lots of Goals and To Dos especially when there are lots of both -- DONE
 - Printing does not handle multiple pages of Goal Graphs -- DONE
+- Discalimers look really odd because they overlap the vertical bar
