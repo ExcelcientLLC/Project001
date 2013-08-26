@@ -19,9 +19,7 @@
           {:label => 'Target Contributed to Date', :color =>'#cccccc', :shadow => false}
       ]
     %>
-    <% if @goals.index(goal)%2 == 1 %>
-      <div style="page-break-before:always"></div>
-    <% end %>
+    <%= tryToPageBreak @goals, goal, 2 %>
 <% end %>
 
 <div class="sub_header_right">

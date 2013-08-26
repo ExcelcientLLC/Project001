@@ -5,6 +5,13 @@ module ApplicationHelper
     link_to title, params.merge(:sort => column, :direction => direction)
   end
   
+  def tryToPageBreak(list, record, count)
+    if list.index(record)%count == count-1 and list.last != record
+      return "<div style=\"page-break-before:always\"></div>".html_safe
+    end
+    return ""
+  end
+  
   def modelFormHeader(record)
     modelName = titileizedModelName(record)
     headerText = distinguishMessageForRecord(record, "New %s" % modelName, "Editing %s" % modelName)

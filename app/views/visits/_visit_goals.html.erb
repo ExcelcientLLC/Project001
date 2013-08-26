@@ -48,7 +48,5 @@
       </div>
     </div>
   </div>
-  <% if @client.getVisibleGoals(@visit).index(goal)%5 == 4 %>
-    <div style="page-break-before:always"></div>
-  <% end %>
+  <%= tryToPageBreak @client.getVisibleGoals(@visit), goal, 5 %>
 <% end %>
