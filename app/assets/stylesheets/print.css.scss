@@ -21,6 +21,12 @@
 
   body
   {
+    div.page-break
+    {
+      display: block;
+      page-break-before: always;
+    }
+  
     div.visits_list_set
     {
       width:45%;
