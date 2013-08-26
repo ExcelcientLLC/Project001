@@ -4,7 +4,7 @@
 
 <% @goals.each do |goal| %>
     <div style="height:20px;width:100%"></div>
-    <%= jqplot 500*1/2, 950,  goal.getJQPlotCompatibleData(),
+    <%= jqplot 500*11/20, 950,  goal.getJQPlotCompatibleData(),
       :axes => {
           :xaxis => {:label => 'Date', :renderer => "$.jqplot.DateAxisRenderer", :min => goal.goal_states.first.visit.visit_date, :max => goal.target_date, :tickOptions => {:formatString => '%Y-%m-%d', :tickInterval => "1 month" }  }, 
           :yaxis => {:label => 'Contributed', :min => 0, :max =>goal.target_value } 
@@ -19,7 +19,7 @@
           {:label => 'Target Contributed to Date', :color =>'#cccccc', :shadow => false}
       ]
     %>
-    <%= tryToPageBreak @goals, goal, 2 %>
+    <%= tryToPageBreak @goals, goal, 2, 2 %>
 <% end %>
 
 <div class="sub_header_right">

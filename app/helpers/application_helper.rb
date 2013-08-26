@@ -5,9 +5,13 @@ module ApplicationHelper
     link_to title, params.merge(:sort => column, :direction => direction)
   end
   
-  def tryToPageBreak(list, record, count)
-    if list.index(record)%count == count-1 and list.last != record
-      return "<div style=\"page-break-before:always\"></div>".html_safe
+  def tryToPageBreak(list, record, countFirstPage, countAfter)
+    index = list.index(record) - countFirstPage
+    
+    if list.last != record
+      if index%countAfter == countAfter-1 # Takes advantage of the fact that index = -1 will return true regardless of mod base
+        return "<div style=\"page-break-before:always\"></div>".html_safe
+      end
     end
     return ""
   end
