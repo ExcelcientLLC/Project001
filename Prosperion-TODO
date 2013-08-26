@@ -72,5 +72,5 @@ Issues to Fix For Install:
 - Header Title moves down when printing -- DONE
 - If two events share the same day, one can be pushed off the edge -- Fixed by shrinking offset. Works well on widths of 1920 to 1024
 - Title for To Do can be too long that it goes off the page when printed -- Limited title size to 20 characters
-- Printing does not easily handle lots of Goals and To Dos especially when there are lots of both
-- Printing does not handle multiple pages of Goal Graphs
+- Printing does not easily handle lots of Goals and To Dos especially when there are lots of both -- DONE
+- Printing does not handle multiple pages of Goal Graphs -- DONE
