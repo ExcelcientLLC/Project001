@@ -1,13 +1,13 @@
 class Visit < ActiveRecord::Base
-  attr_accessible :visit_date, :client, :disclaimer_id
+  attr_accessible :visit_date, :client, :disclaimer, :disclaimer_id
 
   validates_uniqueness_of :visit_date, :scope => [:client_id]
 
   belongs_to :client
-  
-  #has_many :goals
+
   has_many :goal_states, :dependent => :destroy
   has_many :to_dos
+  belongs_to :disclaimer
   
   before_destroy :last_visit?
 

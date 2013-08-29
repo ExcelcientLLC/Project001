@@ -7,9 +7,9 @@
   <%= render 'visit_snapshot' %>
 </div>
 
-<% if Disclaimer.first.nil? %>
+<% if @visit.disclaimer.nil? %>
 <%else%>
 <div style="position:fixed;bottom:0;z-index:100;text-align:center">
-  <%= Disclaimer.first.body %>
+  <%= @visit.disclaimer.body %>
 </div>
 <%end%>
