@@ -96,8 +96,7 @@ module VisitsHelper
     end
 
     def getGoalProgressPercent(goal)
-      if goal.current_value == nil
-          puts "Goal Current Value is nil"
+      if goal.current_value == nil or goal.target_value == 0
           return 0
       else
           return (goal.current_value*100)/goal.target_value
