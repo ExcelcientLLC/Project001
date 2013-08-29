@@ -65,16 +65,16 @@ module VisitsHelper
 
     def constructEventLocations(events)
       @lastPercent = -5
-      @offset = -0.8
+      @offset = -0.4
       @positions = constructEventLocationsRecursive(events, events.first)
       @positions = @positions.reverse
       return @positions
-      #return positions.reverse
     end
 
     def constructEventLocationsRecursive(events, event)
       percentage = getEventLocationPercentage(events, event)
       if (@lastPercent > percentage - 2) 
+		puts "Pushing event forward"
         percentage = @lastPercent + 2
       end
       @lastPercent = percentage
@@ -83,7 +83,8 @@ module VisitsHelper
         return [100 + @offset]
       end
       positions = constructEventLocationsRecursive(events, next_item(events, event))
-      if (percentage + 2 > positions.last) 
+      if (percentage + 2 > positions.last)
+		puts "Pushing event back"
         percentage = positions.last - 2
       end
       positions.push(percentage + @offset)

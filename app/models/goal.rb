@@ -18,10 +18,6 @@ class Goal < ActiveRecord::Base
     beforeLastVisit = (visit.visit_date <= getLastGoalVisitDate())
     incomplete = !self.complete
 
-    puts "After First Visit", afterFirstVisit
-    puts "Before Last Visit", beforeLastVisit
-    puts "Incomplete Goal", incomplete
-
     return (afterFirstVisit and (incomplete or beforeLastVisit))
   end
 
