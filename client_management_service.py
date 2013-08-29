@@ -9,11 +9,12 @@ import win32service
 import win32event
 
 class ProsperionClientManagementServerService (win32serviceutil.ServiceFramework):
-    _svc_name_ = "Client Management Server"
-    _svc_display_name_ = "Client Management Server"
-    _svc_description_ = "Prosperion Client Management Server from Excelcient LLC"
+    server_name = "Client Management Server"
+    _svc_name_ = ProsperionClientManagementServerService.server_name
+    _svc_display_name_ = ProsperionClientManagementServerService.server_name
+    _svc_description_ = "Prosperion {0} from Excelcient LLC".format(ProsperionClientManagementServerService.server_name)
     
-    PROSPERION_DIR = r"C:\ClientManagementServer"
+    PROSPERION_DIR = r"C:\{0}".format(ProsperionClientManagementServerService.server_name.replace(' ', ''))
     RUBY_BIN_DIR = r"C:\RailsInstaller\Ruby1.9.3\bin"
 
     def __init__(self,args):
