@@ -17,6 +17,13 @@
     <%= render 'visit_todos' %>
   </div>
 </div>
+
+<% unless @visit.disclaimer.nil? %>
+  <div style="float:left;width:55%;text-align:center;margin-top:10px;margin-left:145px;text-wrap:none;">
+    <%= @visit.disclaimer.body %>
+  </div>
+<%end%>
+
 <div class="sub_header_right">
   <div class="sub_header_right_element", id="print_page">
     <%= button_to_function("Print this Page", "javascript:print()")%>
