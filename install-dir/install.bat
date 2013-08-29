@@ -1,3 +1,6 @@
+@echo off
+
+setlocal
 set DRIVE=C:
 
 set CLIENT_MANAGEMENT_SERVER_DIR=%DRIVE%\ClientManagementServer
@@ -16,6 +19,7 @@ mkdir %CLIENT_MANAGEMENT_SERVER_DIR%
 xcopy /s %~p0\ClientManagementServer %CLIENT_MANAGEMENT_SERVER_DIR% 
 
 echo %STARTING_DIR%
+SET PATH=%PATH%;%RUBY_BIN_DIR%
 
 cd %CLIENT_MANAGEMENT_SERVER_DIR%
 CALL setx RAILS_ENV "production" /M
@@ -27,4 +31,5 @@ copy %STARTING_DIR%\processor.rb %RUBY_DIR%\lib\ruby\gems\1.9.1\gems\paperclip-3
 
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py --startup manual install
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py restart
+endlocal
 pause

@@ -4,7 +4,7 @@ Constants
   - uninstall.bat, ln 3
   - start.bat, ln 3
   - stop.bat, ln 3
-  - client_management_service.py, ln 12
+  - client_management_service.py, ln 11
   
 - ImageMagick Installation Directory
   - paperclip.rb, ln 5
