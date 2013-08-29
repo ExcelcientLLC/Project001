@@ -22,4 +22,5 @@ Gemfile.lock
 *.msi
 *.exe
 ClientManagementServer
+gems
 /public/assets/
