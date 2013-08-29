@@ -24,3 +24,5 @@ To Change Rails Port
   - rails server -p [new port]
   
 Ruby MUST be in the PATH otehrwise bundle will not work
+
+To check if another prgram is using the required port, check log/service.stderr.log

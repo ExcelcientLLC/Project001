@@ -1,3 +1,5 @@
+@echo off
+
 set DRIVE=C:
 
 set CLIENT_MANAGEMENT_SERVER_DIR=%DRIVE%\ClientManagementServer
