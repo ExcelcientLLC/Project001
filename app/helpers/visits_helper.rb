@@ -74,7 +74,6 @@ module VisitsHelper
     def constructEventLocationsRecursive(events, event)
       percentage = getEventLocationPercentage(events, event)
       if (@lastPercent > percentage - 2) 
-		puts "Pushing event forward"
         percentage = @lastPercent + 2
       end
       @lastPercent = percentage
@@ -84,7 +83,6 @@ module VisitsHelper
       end
       positions = constructEventLocationsRecursive(events, next_item(events, event))
       if (percentage + 2 > positions.last)
-		puts "Pushing event back"
         percentage = positions.last - 2
       end
       positions.push(percentage + @offset)
@@ -96,6 +94,9 @@ module VisitsHelper
     end
 
     def getGoalProgressPercent(goal)
+      if goal.current_value == goal.target_value
+        return 100
+      end
       if goal.current_value == nil or goal.target_value == 0
           return 0
       else
