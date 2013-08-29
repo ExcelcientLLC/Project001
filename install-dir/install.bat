@@ -17,6 +17,7 @@ set STARTING_DIR=%~p0
 
 mkdir %CLIENT_MANAGEMENT_SERVER_DIR%
 xcopy /s %~p0\ClientManagementServer %CLIENT_MANAGEMENT_SERVER_DIR% 
+xcopy /s %~p0\gems %RUBY_DIR%\lib\ruby\gems
 
 echo %STARTING_DIR%
 SET PATH=%PATH%;%RUBY_BIN_DIR%

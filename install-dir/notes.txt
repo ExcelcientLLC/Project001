@@ -22,3 +22,5 @@ Constants
 
 To Change Rails Port
   - rails server -p [new port]
+  
+Ruby MUST be in the PATH otehrwise bundle will not work

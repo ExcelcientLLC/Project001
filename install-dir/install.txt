@@ -15,5 +15,5 @@ Common Issues:
 - If there is no Internet Connection during install,
   - Install Ruby & Rails
   - Let the install fail
-  - Copy the gems directory to RailsInstaller/Ruby193/lib/ruby
+  - Copy the gems directory to RailsInstaller/Ruby193/lib/ruby/gems/1.9.1
   - Re-run install.bat
