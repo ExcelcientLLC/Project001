@@ -3,7 +3,7 @@
 <%= form_for(@to_do, :url => [@visit.client, @visit, @to_do], :remote => true) do |f| %>
   <% if @to_do.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@to_do.errors.count, "error") %> prohibited this to_do from being saved:</h2>
+      <h2><%= pluralize(@to_do.errors.count, "error") %> prohibited this to do from being saved:</h2>
 
       <ul>
       <% @to_do.errors.full_messages.each do |msg| %>
