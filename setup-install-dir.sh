@@ -8,6 +8,7 @@ cp client_management_service.py $RAILS_APP_DIR/
 cp -r config $RAILS_APP_DIR/
 cp config.ru $RAILS_APP_DIR/
 cp -r db $RAILS_APP_DIR/
+rm $RAILS_APP_DIR/db/*.sqlite3
 cp Gemfile.windows $RAILS_APP_DIR/Gemfile
 cp -r lib $RAILS_APP_DIR/
 cp -r public $RAILS_APP_DIR/

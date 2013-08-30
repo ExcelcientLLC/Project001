@@ -1,0 +1,28 @@
+Constants
+- Server Name 
+  - install.bat, ln 3
+  - uninstall.bat, ln 3
+  - start.bat, ln 3
+  - stop.bat, ln 3
+  - client_management_service.py, ln 11
+  
+- ImageMagick Installation Directory
+  - paperclip.rb, ln 5
+  
+- Python Installation Directory
+  - install.bat, ln 4
+  - uninstall.bat, ln 4
+  - start.bat, ln 4
+  - stop.bat, ln 4
+  
+- Ruby Installation Directory
+  - install.bat, ln 5
+  - client_management_service.py, ln 18
+
+
+To Change Rails Port
+  - rails server -p [new port]
+  
+Ruby MUST be in the PATH otehrwise bundle will not work
+
+To check if another prgram is using the required port, check log/service.stderr.log

@@ -1,0 +1,19 @@
+Installation Steps:
+1. Copy the Prosperion Install directory to the desired machine.
+2. Run the install.bat script as Administrator. -- Should be installed after this step
+3. Verify Service appears in the machine's service list. (Accessed by Start Menu -> Search -> services.msc)
+4. Verify web app appears at http://localhost:3000
+
+Uninstall Steps:
+1. Run uninstall.bat as Administrator -- Should be uninstalled after this step
+
+Common Issues:
+- rake assets:precompile fails in execjs
+  - Usually caused by no Javascript runtime.
+  - Fixed by installing Node.js
+  
+- If there is no Internet Connection during install,
+  - Install Ruby & Rails
+  - Let the install fail
+  - Copy the gems directory to RailsInstaller/Ruby193/lib/ruby/gems/1.9.1
+  - Re-run install.bat

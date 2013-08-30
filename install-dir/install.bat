@@ -1,3 +1,31 @@
+@echo off
+
+:: BatchGotAdmin
+:-------------------------------------
+REM  --> Check for permissions
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+
+REM --> If error flag set, we do not have admin.
+if '%errorlevel%' NEQ '0' (
+    echo Requesting administrative privileges...
+    goto UACPrompt
+) else ( goto gotAdmin )
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+    set params = %*:"=""
+    echo UAC.ShellExecute "%~s0", "%params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
+
+    "%temp%\getadmin.vbs"
+    exit /B
+
+:gotAdmin
+    if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
+    pushd "%CD%"
+    CD /D "%~dp0"
+:--------------------------------------
+
+setlocal
 set DRIVE=C:
 
 set CLIENT_MANAGEMENT_SERVER_DIR=%DRIVE%\ClientManagementServer
@@ -14,8 +42,13 @@ set STARTING_DIR=%~p0
 
 mkdir %CLIENT_MANAGEMENT_SERVER_DIR%
 xcopy /s %~p0\ClientManagementServer %CLIENT_MANAGEMENT_SERVER_DIR% 
+copy %~p0\uninstall.bat %CLIENT_MANAGEMENT_SERVER_DIR%
+copy %~p0\start.bat %CLIENT_MANAGEMENT_SERVER_DIR%
+copy %~p0\stop.bat %CLIENT_MANAGEMENT_SERVER_DIR%
+xcopy /s %~p0\gems %RUBY_DIR%\lib\ruby\gems
 
 echo %STARTING_DIR%
+SET PATH=%PATH%;%RUBY_BIN_DIR%
 
 cd %CLIENT_MANAGEMENT_SERVER_DIR%
 CALL setx RAILS_ENV "production" /M
@@ -27,4 +60,5 @@ copy %STARTING_DIR%\processor.rb %RUBY_DIR%\lib\ruby\gems\1.9.1\gems\paperclip-3
 
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py --startup manual install
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py restart
+endlocal
 pause
