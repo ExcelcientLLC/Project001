@@ -1,7 +1,6 @@
 Prosperion2012::Application.routes.draw do
 
   
-
   resources :disclaimers
 
     resources :clients, :except => [:edit] do

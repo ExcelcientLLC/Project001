@@ -10,7 +10,7 @@
     <div class="table_header_full">Title</div>
   </div>
   <div class="tiny_table_body">
-  <% @visit.to_dos.each do |to_do| %>
+  <% @client.getVisibleToDos(@visit).each do |to_do| %>
     <%= link_to(client_visit_to_do_path(@visit.client, @visit, to_do), :remote => true) do %>
       <div class="element">
         <div class="table_body_full"><%= to_do.title %></div>

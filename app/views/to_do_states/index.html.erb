@@ -1,0 +1,23 @@
+<h1>Listing to_do_states</h1>
+
+<table>
+  <tr>
+    <th>Complete</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @to_do_states.each do |to_do_state| %>
+  <tr>
+    <td><%= to_do_state.complete %></td>
+    <td><%= link_to 'Show', to_do_state %></td>
+    <td><%= link_to 'Edit', edit_to_do_state_path(to_do_state) %></td>
+    <td><%= link_to 'Destroy', to_do_state, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New To do state', new_to_do_state_path %>

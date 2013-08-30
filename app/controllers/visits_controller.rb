@@ -10,6 +10,10 @@ class VisitsController < ApplicationController
     @client.goals.each do |goal|
       goal.prepareGoalState(@visit)
     end
+    
+    @client.to_dos.each do |to_do|
+      to_do.prepareToDoState(@visit)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -143,6 +147,10 @@ class VisitsController < ApplicationController
 
     @client.goals.each do |goal|
       goal.prepareGoalState(@visit)
+    end
+    
+    @client.to_dos.each do |to_do|
+      to_do.prepareToDoState(@visit)
     end
   end
   
