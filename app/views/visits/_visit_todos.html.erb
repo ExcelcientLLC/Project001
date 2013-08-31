@@ -5,7 +5,7 @@
   <div style="height:60px">
     &nbsp;
   </div>
-  <% @visit.to_dos.each do |to_do| %>
+  <% @client.getVisibleToDos(@visit).each do |to_do| %>
     <% unless to_do.complete %>
       <div>
         <div class="todo_checkbox"></div>
