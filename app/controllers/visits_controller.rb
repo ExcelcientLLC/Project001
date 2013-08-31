@@ -24,15 +24,28 @@ class VisitsController < ApplicationController
   # GET /clients/:client_id/visits/1
   # GET /clients/:client_id/visits/1.json
   def show
-    @visit = Visit.find(params[:id])
-    cookies[:last_visit] = @visit.id
-    prepareShow()
+    begin
+      @visit = Visit.find(params[:id])
+      cookies[:last_visit] = @visit.id
+      cookies[:last_client] = @visit.client.id
+      prepareShow()
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @visit }
-      format.js
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @visit }
+        format.js
+      end
+    rescue ActiveRecord::RecordNotFound
+      begin
+        @client = Client.find(cookies[:last_client].to_i)
+        redirect_to client_visit_path(@client, @client.getSortedVisits().last)
+      rescue ActiveRecord::RecordNotFound
+        redirect_to clients_path
+      end
     end
+    
+    
+    
   end
 
   # GET /clients/:client_id/visits/1/new
