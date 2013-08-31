@@ -6,17 +6,20 @@
     &nbsp;
   </div>
   <% @client.getVisibleToDos(@visit).each do |to_do| %>
-    <% unless to_do.complete %>
-      <div>
-        <div class="todo_checkbox"></div>
-        <div class="visit_todos">
-          <b><%= to_do.title %></b>
-          <br />
-          <%= to_do.description %>
-          <br />
-          &nbsp;
+    <div>
+      <!-- <div class="todo_checkbox"></div> -->
+      <%= form_for(to_do, :url => [@client, @visit, to_do], :remote => true)  do |f| %>
+        <div class="todo_checkbox">
+          <%= f.check_box :complete, :onclick =>'formSubmit(%d)' % to_do.id %>
         </div>
+      <% end %>
+      <div class="visit_todos">
+        <b><%= to_do.title %></b>
+        <br />
+        <%= to_do.description %>
+        <br />
+        &nbsp;
       </div>
-    <% end %>
+    </div>
   <% end %>
 </div>
