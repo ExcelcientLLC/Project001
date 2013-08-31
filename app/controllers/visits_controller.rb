@@ -26,8 +26,9 @@ class VisitsController < ApplicationController
   def show
     begin
       @visit = Visit.find(params[:id])
+      @client = Client.find(params[:client_id])
       cookies[:last_visit] = @visit.id
-      cookies[:last_client] = @visit.client.id
+      cookies[:last_client] = @client.id
       prepareShow()
 
       respond_to do |format|
@@ -37,14 +38,12 @@ class VisitsController < ApplicationController
       end
     rescue ActiveRecord::RecordNotFound
       begin
-        @client = Client.find(cookies[:last_client].to_i)
+        @client = Client.find(params[:client_id])
         redirect_to client_visit_path(@client, @client.getSortedVisits().last)
       rescue ActiveRecord::RecordNotFound
         redirect_to clients_path
       end
     end
-    
-    
     
   end
 
