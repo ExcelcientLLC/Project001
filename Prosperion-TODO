@@ -86,9 +86,9 @@ Issues for Final Install:
     - Make Client text larger
 - Model List & Forms 
     - Highlight currently selected item in list
-    - Change "New {Model}" to "Create {Model}" -- Chris
-    - Change "Editting {Model}" to "Update {Model}"  -- Chris
-    - Change New/Update Form Submit button to say Save -- Chris
+    - Change "New {Model}" to "Create {Model}" -- Chris -- DONE
+    - Change "Editting {Model}" to "Update {Model}"  -- Chris -- DONE
+    - Change New/Update Form Submit button to say Save -- Chris -- DONE
 - Client
     - Change Filter Button to Clear -- Chris
 - Visit
