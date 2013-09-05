@@ -1,4 +1,4 @@
-Header
+    Header
 - Change font on the header -- DONE
 
 Client Page
@@ -74,4 +74,48 @@ Issues to Fix For Install:
 - Title for To Do can be too long that it goes off the page when printed -- Limited title size to 20 characters
 - Printing does not easily handle lots of Goals and To Dos especially when there are lots of both -- DONE
 - Printing does not handle multiple pages of Goal Graphs -- DONE
-- Discalimers look really odd because they overlap the vertical bar
+- Discalimers look really odd because they overlap the vertical bar -- DONE
+
+Issues for Final Install:
+- General
+    - Change Goals button to Meetings -- Chris
+    - Add hover text to all buttons -- Chris
+- Header
+    - Change font on header title
+    - Make Header title smaller
+    - Make Client text larger
+- Model List & Forms 
+    - Highlight currently selected item in list
+    - Change "New {Model}" to "Create {Model}" -- Chris
+    - Change "Editting {Model}" to "Update {Model}"  -- Chris
+    - Change New/Update Form Submit button to say Save -- Chris
+- Client
+    - Change Filter Button to Clear -- Chris
+- Visit
+    - Update Visit Date button to Save Meeting
+    - Add Actual Delete Meeting Button
+- Goal
+    - Change Goal name to Goal
+    - Change Goal category to Category
+    - Change Monthly goal to Minnimum contribution
+    - Add field for monthly or annual minimmum contribution
+    - Add New Category Button to Goal Form
+- To Do
+    - Change To Do to Reccomendation
+- Disclaimer
+    - Switch to single disclaimer
+    - Automatically attach the discalimer to each Visit
+    - Remove Update Disclaimer box on Visit Show page
+- Presets
+    - Remove Disclaimer list
+    - Change Title to Goal Categories
+- Snapshot
+    - Change Goals to have a bar on the timeline rather than a circle
+    - Change Spending label to Minnimum Contribution
+    - Switch Goal target description (See Marked up pages)
+    - Change Goal Graphs Button to Graphs
+    - Change Discalimer font to be smaller and lighter (See Marked up pages)
+Goal Graphs
+    - Try to set number of goals per page when printing in portrait or landscape
+    - Have Target Contributions start at amount for first Goal State
+    - Update legend and graph colors (See Marked up pages)
