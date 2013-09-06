@@ -15,7 +15,15 @@
         <%= button_to "Client List", clients_path, :method => :get %>
       </div>
       <div class="sub_header_right_element">
-        <%= button_to "Back",  client_visit_path(@last_visit.client, @last_visit), :method => :get %>
+        <% if @last_visit.nil? %>
+          <% if @last_client.nil? %>
+            <%= button_to "Back",  clients_path, :method => :get %>
+          <% else %>
+            <%= button_to "Back",  client_visits_path(@last_client), :method => :get %>
+          <% end %>
+        <% else %>
+          <%= button_to "Back",  client_visit_path(@last_visit.client, @last_visit), :method => :get %>
+        <% end %>
       </div>
     </div>
    

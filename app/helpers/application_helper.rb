@@ -18,7 +18,7 @@ module ApplicationHelper
   
   def modelFormHeader(record)
     modelName = titileizedModelName(record)
-    headerText = distinguishMessageForRecord(record, "New %s" % modelName, "Editing %s" % modelName)
+    headerText = distinguishMessageForRecord(record, "Create %s" % modelName, "Update %s" % modelName)
     headerHTML = "<h1>%s</h1>" % headerText
     return headerHTML.html_safe
   end
@@ -33,7 +33,7 @@ module ApplicationHelper
   
   def submitButtonForRecord(form, record)
     modelName = titileizedModelName(record)
-    submitButtonWithDifferentMessages(form, record, "Create %s" % modelName, "Update %s" % modelName)
+    submitButtonWithDifferentMessages(form, record, "Save" % modelName, "Save" % modelName)
   end
   
   def submitButtonWithDifferentMessages(form, record, newMessage, oldMessage)

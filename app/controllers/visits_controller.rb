@@ -10,6 +10,10 @@ class VisitsController < ApplicationController
     @client.goals.each do |goal|
       goal.prepareGoalState(@visit)
     end
+    
+    @client.to_dos.each do |to_do|
+      to_do.prepareToDoState(@visit)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,15 +24,27 @@ class VisitsController < ApplicationController
   # GET /clients/:client_id/visits/1
   # GET /clients/:client_id/visits/1.json
   def show
-    @visit = Visit.find(params[:id])
-    cookies[:last_visit] = @visit.id
-    prepareShow()
+    begin
+      @visit = Visit.find(params[:id])
+      @client = Client.find(params[:client_id])
+      cookies[:last_visit] = @visit.id
+      cookies[:last_client] = @client.id
+      prepareShow()
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @visit }
-      format.js
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @visit }
+        format.js
+      end
+    rescue ActiveRecord::RecordNotFound
+      begin
+        @client = Client.find(params[:client_id])
+        redirect_to client_visit_path(@client, @client.getSortedVisits().last)
+      rescue ActiveRecord::RecordNotFound
+        redirect_to clients_path
+      end
     end
+    
   end
 
   # GET /clients/:client_id/visits/1/new
@@ -143,6 +159,10 @@ class VisitsController < ApplicationController
 
     @client.goals.each do |goal|
       goal.prepareGoalState(@visit)
+    end
+    
+    @client.to_dos.each do |to_do|
+      to_do.prepareToDoState(@visit)
     end
   end
   

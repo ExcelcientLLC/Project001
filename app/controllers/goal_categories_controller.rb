@@ -66,11 +66,11 @@ class GoalCategoriesController < ApplicationController
     respond_to do |format|
       if @goal_category.update_attributes(params[:goal_category])
         @goal_categories = GoalCategory.all
-        format.html { render :index } #, notice: 'Goal category was successfully updated.' }
+        format.html { redirect_to presets_path, notice: 'Goal category was successfully updated.' }
         format.json { head :no_content }
         format.js
       else
-        #format.html { render action: "edit" }
+        format.html { redirect_to presets_path, notice: 'Goal category failed to update.' }
         format.json { render json: @goal_category.errors, status: :unprocessable_entity }
         format.js
       end
