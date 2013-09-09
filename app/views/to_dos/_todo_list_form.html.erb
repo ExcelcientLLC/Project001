@@ -12,7 +12,7 @@
   <div class="tiny_table_body">
   <% @client.getVisibleToDos(@visit).each do |to_do| %>
     <%= link_to(client_visit_to_do_path(@visit.client, @visit, to_do), :remote => true) do %>
-      <div class="element">
+      <div class="element", style="<%= rowColor(@to_do, to_do) %>">
         <div class="table_body_full"><%= to_do.title %></div>
       </div>
     <% end %>

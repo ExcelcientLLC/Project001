@@ -14,6 +14,7 @@ class ToDosController < ApplicationController
   # GET /to_dos/1
   # GET /to_dos/1.json
   def show
+    @client = Client.find(params[:client_id])
     @to_do = ToDo.find(params[:id])
     @visit = Visit.find(params[:visit_id])
     @to_do.prepareToDoState(@visit)
@@ -28,6 +29,7 @@ class ToDosController < ApplicationController
   # GET /to_dos/new
   # GET /to_dos/new.json
   def new
+    @client = Client.find(params[:client_id])
     @to_do = ToDo.new
     @visit = Visit.find(params[:visit_id])
 
