@@ -78,7 +78,7 @@ Issues to Fix For Install:
 
 Issues for Final Install:
 - General
-    - Change Goals button to Meetings -- Chris
+    - Change Goals button to Meetings -- Chris -- DONE
     - Add hover text to all buttons -- Chris
 - Header
     - Change font on header title
@@ -88,7 +88,7 @@ Issues for Final Install:
     - Highlight currently selected item in list
     - Change "New {Model}" to "Create {Model}" -- Chris -- DONE
     - Change "Editting {Model}" to "Update {Model}"  -- Chris -- DONE
-    - Change New/Update Form Submit button to say Save -- Chris -- DONE
+    - Change New/Update Form Submit button to say Save -- Chris -- DONE, Needs some more styling to ensure it is always on a new line
 - Client
     - Change Filter Button to Clear -- Chris
 - Visit

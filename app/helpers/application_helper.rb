@@ -51,4 +51,8 @@ module ApplicationHelper
   def titileizedModelName(record)
     record.class.model_name.human.titleize
   end
+  
+  def goalButton(visit)
+    button_to "Meetings", client_visit_path(visit.client, visit), :method => :get
+  end
 end

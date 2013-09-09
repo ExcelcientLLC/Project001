@@ -32,7 +32,7 @@
     <%= button_to "Client List", clients_path, :method => :get %>
   </div>
   <div class="sub_header_right_element", id="goals_link">
-    <%= button_to "Goals", client_visit_path(@client, @visit), :method => :get %>
+    <%= goalButton @visit %>
   </div>
   <div class="sub_header_right_element", id="goals_link">
     <%= button_to "Goal Graphs", client_visit_goals_path(@client, @visit), :method => :get %>
