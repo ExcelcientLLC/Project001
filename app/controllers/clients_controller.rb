@@ -34,6 +34,7 @@ class ClientsController < ApplicationController
   # GET /clients/new
   # GET /clients/new.json
   def new
+    @clients = Client.all
     @client = Client.new
 
     respond_to do |format|

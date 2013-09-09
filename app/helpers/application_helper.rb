@@ -55,4 +55,12 @@ module ApplicationHelper
   def goalButton(visit)
     button_to "Meetings", client_visit_path(visit.client, visit), :method => :get
   end
+  
+  def rowColor(currentModel, model) 
+    if model == currentModel
+      return "background:gray;"
+    else
+      return "background-color:#B40A37;"
+    end
+  end
 end
