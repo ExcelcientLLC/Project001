@@ -90,7 +90,7 @@ Issues for Final Install:
     - Change "Editting {Model}" to "Update {Model}"  -- Chris -- DONE
     - Change New/Update Form Submit button to say Save -- Chris -- DONE, Needs some more styling to ensure it is always on a new line
 - Client
-    - Change Filter Button to Clear -- Chris
+    - Change Filter Button to Clear -- Chris -- DONE
 - Visit
     - Update Visit Date button to Save Meeting
     - Add Actual Delete Meeting Button
