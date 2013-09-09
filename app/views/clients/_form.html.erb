@@ -13,7 +13,7 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class=field>
     <div class=edit_label>
       <%= f.label :first_name %>
@@ -87,9 +87,11 @@
     </div>
   </div>
   
-  <div class=button_format>
-    <div class="actions">
-      <%= submitButtonForRecord(f, @client) %>
+  <div style="clear:left">
+    <div class=button_format>
+      <div class="actions">
+        <%= submitButtonForRecord(f, @client) %>
+      </div>
     </div>
   </div>
 <% end %>
