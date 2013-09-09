@@ -105,7 +105,7 @@ module VisitsHelper
     end
 
     def getGoalEndDate(goal)
-      return "Reaching goal of $%d in %d" % [goal.target_value, goal.target_date.year]
+      return "$%d goal by %d" % [goal.target_value, goal.target_date.year]
     end
 
     def getVisitSubmitText(visit)
