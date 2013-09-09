@@ -12,7 +12,7 @@
   <div>
     <% @goal_categories.sort_by{|goal_categories| goal_categories.name}.each do |goal_category| %>
       <%= link_to(goal_category_path(goal_category), :remote => true) do %>
-        <div class="element">
+        <div class="element", style="<%= rowColor(@goal_category, goal_category) %>">
             <div class="table_body_full"><%= goal_category.name %></div>
         </div>
       <%end%>
