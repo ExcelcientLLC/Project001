@@ -104,6 +104,6 @@
     <%= goalButton @client.getSortedVisits.last %>
   </div>  
   <div class=delete_format>
-    <%= deleteImageButton client_path(@client), "Are you sure you want to delete this client?" %>
+    <%= deleteImageButton client_path(@client), "Are you sure you want to delete this client?", @client %>
   </div>
 <% end %>

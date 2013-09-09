@@ -96,6 +96,6 @@
 
 <% if not @goal.new_record? %>
   <div class=delete_format>
-    <%= deleteImageButton client_visit_goal_path(@visit.client, @visit, @goal), "Are you sure you want to delete this goal?" %>
+    <%= deleteImageButton client_visit_goal_path(@visit.client, @visit, @goal), "Are you sure you want to delete this goal?", @goal %>
   </div>
 <% end %>

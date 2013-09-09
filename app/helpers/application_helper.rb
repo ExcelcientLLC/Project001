@@ -40,8 +40,8 @@ module ApplicationHelper
     return form.submit distinguishMessageForRecord(record, newMessage, oldMessage)
   end
   
-  def deleteImageButton(destination, message, remote=true)
-    link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), destination, method: :delete, :remote => remote, confirm: message
+  def deleteImageButton(destination, message, model, remote=true)
+    link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), destination, method: :delete, :remote => remote, confirm: message, :title => "Delete this %s" % titileizedModelName(model)
   end
   
   def newImageButton(destination, remote=true, method='get')

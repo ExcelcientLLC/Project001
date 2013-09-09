@@ -51,6 +51,6 @@
 
 <% if not @to_do.new_record? %>
   <div class=delete_format>
-    <%= deleteImageButton client_visit_to_do_path(@visit.client, @visit, @to_do), "Are you sure you want to delete this to do item?" %>
+    <%= deleteImageButton client_visit_to_do_path(@visit.client, @visit, @to_do), "Are you sure you want to delete this to do item?", @to_do %>
   </div>
 <% end %>

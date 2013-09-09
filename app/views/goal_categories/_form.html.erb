@@ -46,6 +46,6 @@
 
 <% if not @goal_category.new_record? %>
   <div class=delete_format>
-    <%= deleteImageButton goal_category_path(@goal_category), "Are you sure you want to delete this goal category?" %>
+    <%= deleteImageButton goal_category_path(@goal_category), "Are you sure you want to delete this goal category?", @goal_category %>
   </div>
 <% end %>
