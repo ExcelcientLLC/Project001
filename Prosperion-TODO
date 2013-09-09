@@ -85,7 +85,7 @@ Issues for Final Install:
     - Make Header title smaller -- DONE
     - Make Client text larger -- DONE
 - Model List & Forms 
-    - Highlight currently selected item in list
+    - Highlight currently selected item in list -- DONE
     - Change "New {Model}" to "Create {Model}" -- Chris -- DONE
     - Change "Editting {Model}" to "Update {Model}"  -- Chris -- DONE
     - Change New/Update Form Submit button to say Save -- Chris -- DONE
@@ -114,7 +114,7 @@ Issues for Final Install:
     - Change Goals to have a bar on the timeline rather than a circle
     - Change Spending label to Minnimum Contribution
     - Switch Goal target description (See Marked up pages)
-    - Change Goal Graphs Button to Graphs
+    - Change Goal Graphs Button to Graphs -- DONE
     - Change Discalimer font to be smaller and lighter (See Marked up pages)
 Goal Graphs
     - Try to set number of goals per page when printing in portrait or landscape
