@@ -44,8 +44,8 @@ module ApplicationHelper
     link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), destination, method: :delete, :remote => remote, confirm: message, :title => "Delete this %s" % titileizedModelName(model)
   end
   
-  def newImageButton(destination, remote=true, method='get')
-    link_to image_tag("Nuvola_Red_Plus_small.png", size: "28x28"), destination, :remote => remote, :method => method
+  def newImageButton(destination, model, remote=true, method='get')
+    link_to image_tag("Nuvola_Red_Plus_small.png", size: "28x28"), destination, :remote => remote, :method => method, :title => "Create new %s" % titileizedModelName(model)
   end
   
   def titileizedModelName(record)

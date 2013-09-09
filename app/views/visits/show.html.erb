@@ -18,7 +18,7 @@
         <% if @visit != @client.visits.last  %>
           <%= link_to image_tag("Go-next.png", size: "28x28"), [@client, next_item(@client.visits, @visit)] %>
         <% else %>
-          <%= newImageButton client_visits_path(@form_visit.client), false, :post %>
+          <%= newImageButton client_visits_path(@form_visit.client), @form_visit, false, :post %>
         <% end %>
       <% else %>
         <%= button_to 'Back', client_visit_path(@client, @visit), :method => 'get' %>
