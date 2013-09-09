@@ -82,8 +82,8 @@ Issues for Final Install:
     - Add hover text to all icons -- Chris -- DONE
 - Header
     - Change font on header title
-    - Make Header title smaller
-    - Make Client text larger
+    - Make Header title smaller -- DONE
+    - Make Client text larger -- DONE
 - Model List & Forms 
     - Highlight currently selected item in list
     - Change "New {Model}" to "Create {Model}" -- Chris -- DONE

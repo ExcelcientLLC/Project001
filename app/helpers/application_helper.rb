@@ -63,4 +63,12 @@ module ApplicationHelper
       return "background-color:#B40A37;"
     end
   end
+  
+  def getClientHeader(client)
+    html = ""
+    html << "<div class=\"client_title\">"
+    html << "<p>For %s %s</p>" % [client.first_name, client.last_name]
+    html << "</div>"
+    return html.html_safe
+  end
 end

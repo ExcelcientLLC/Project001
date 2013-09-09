@@ -41,8 +41,20 @@ div.title_text p
   float:right;
   color:white;
   font-weight:bold;
-  font-size:58px;
+  font-size:40px;
   font-family:impact, sans-serif;
+}
+
+div.client_title
+{
+  float:right;
+}
+div.client_title p
+{
+  float:right;
+  font-size:18px;
+  font-family:impact, sans-serif;
+  white-space: nowrap;
 }
 
 img
