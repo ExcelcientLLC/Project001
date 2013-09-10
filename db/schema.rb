@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830173456) do
+ActiveRecord::Schema.define(:version => 20130910165912) do
 
   create_table "clients", :force => true do |t|
     t.string   "first_name"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20130830173456) do
 
   create_table "goals", :force => true do |t|
     t.date     "target_date"
-    t.integer  "target_value"
+    t.integer  "goal_value"
     t.integer  "target_expenditures"
     t.boolean  "complete"
     t.datetime "created_at",          :null => false

@@ -1,10 +1,10 @@
 class Goal < ActiveRecord::Base
-  attr_accessible :complete, :target_date, :target_expenditures, :target_value, :client, :goal_category_id, :name, :current_value, :current_expenditures
+  attr_accessible :complete, :target_date, :target_expenditures, :goal_value, :client, :goal_category_id, :name, :current_value, :current_expenditures
   attr_accessor :current_value, :current_expenditures
   
   validates_presence_of :goal_category_id
   validates_presence_of :target_date
-  validates_presence_of :target_value
+  validates_presence_of :goal_value
   validates_presence_of :current_value
   #max characters drive visibility of title on graph page under low resolution
   validates_length_of :name, :maximum => 25
@@ -114,7 +114,7 @@ class Goal < ActiveRecord::Base
     retval = []
     last_goal = getLatestGoalState()
     retval.push([last_goal.visit.visit_date, last_goal.current_value])
-    retval.push([self.target_date, self.target_value])
+    retval.push([self.target_date, self.goal_value])
 
     return retval
   end
@@ -122,7 +122,7 @@ class Goal < ActiveRecord::Base
   def getJQPlotTargetContribution()
     retval = []
     retval.push([getFirstGoalVisitDate(), 0])
-    retval.push([self.target_date, self.target_value])
+    retval.push([self.target_date, self.goal_value])
   end
 
   def isVisit

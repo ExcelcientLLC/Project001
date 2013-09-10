@@ -8,7 +8,7 @@
 <div>
   <div>
     <div class="table_header_half">Name</div>
-    <div class="table_header_quarter">Target Value</div>
+    <div class="table_header_quarter">Goal Value</div>
     <div class="table_header_quarter">Target Date</div>
   </div>
   
@@ -17,7 +17,7 @@
       <%= link_to(client_visit_goal_path(@visit.client, @visit, goal), :remote => true) do %>
         <div class="element", style="<%= rowColor(@goal, goal) %>">
           <div class="table_body_half"><%= goal.name %></div>
-          <div class="table_body_quarter"> <%= number_to_currency(goal.target_value) %></div>
+          <div class="table_body_quarter"> <%= number_to_currency(goal.goal_value) %></div>
           <div class="table_body_quarter"><%= goal.target_date.to_date %></div>
         </div>
       <% end %>
