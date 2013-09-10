@@ -100,7 +100,7 @@ Issues for Final Install:
     - Change Goal category to Category
     - Change Monthly goal to Minnimum contribution
     - Add field for monthly or annual minimmum contribution
-    - Add New Category Button to Goal Form
+    - Add Admin Button to Goal Form
 - To Do
     - Change To Do to Reccomendation
 - Disclaimer
@@ -109,7 +109,7 @@ Issues for Final Install:
     - Remove Update Disclaimer box on Visit Show page
 - Presets
     - Remove Disclaimer list
-    - Change Title to Goal Categories
+    - Change Title to Admin -- DONE
 - Snapshot
     - Change Goals to have a bar on the timeline rather than a circle
     - Change Spending label to Minnimum Contribution -- DONE
