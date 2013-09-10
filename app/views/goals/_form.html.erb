@@ -64,6 +64,7 @@
     </div>
     <div class="edit_field">
       <%= f.number_field :minimum_contribution %>
+      <%= f.select :annual, options_for_select([["Monthly", false], ["Annually", true]]) %>
     </div>
   </div>
 
