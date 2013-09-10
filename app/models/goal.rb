@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-  attr_accessible :complete, :target_date, :target_expenditures, :goal_value, :client, :goal_category_id, :name, :current_value, :current_expenditures
+  attr_accessible :complete, :target_date, :goal_value, :client, :goal_category_id, :name, :current_value, :minimum_contribution, :annual
   attr_accessor :current_value, :current_expenditures
   
   validates_presence_of :goal_category_id
