@@ -34,15 +34,18 @@
       <%= f.file_field :avatar %> <br />
     </div>
   </div>
-  <div class=button_format>
-    <div class="actions">
-      <%= submitButtonForRecord(f, @goal_category) %>
+  
+  <div style="clear:left">
+    <div class=button_format>
+      <div class="actions">
+        <%= submitButtonForRecord(f, @goal_category) %>
+      </div>
     </div>
   </div>
 <% end %>
 
 <% if not @goal_category.new_record? %>
   <div class=delete_format>
-    <%= deleteImageButton goal_category_path(@goal_category), "Are you sure you want to delete this goal category?" %>
+    <%= deleteImageButton goal_category_path(@goal_category), "Are you sure you want to delete this goal category?", @goal_category %>
   </div>
 <% end %>

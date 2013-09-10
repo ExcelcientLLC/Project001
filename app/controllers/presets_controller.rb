@@ -8,8 +8,17 @@ class PresetsController < ApplicationController
     @disclaimers = Disclaimer.all
     @disclaimer = Disclaimer.new
     
-
-    @last_visit = Visit.find(cookies[:last_visit].to_i)
+    begin
+      @last_visit = Visit.find(cookies[:last_visit].to_i)
+    rescue ActiveRecord::RecordNotFound
+      @last_visit = nil 
+    end
+    
+    begin
+      @last_client = Client.find(cookies[:last_client].to_i)
+    rescue ActiveRecord::RecordNotFound
+      @last_client = nil 
+    end
 
     respond_to do |format|
       format.html # index.html.erb

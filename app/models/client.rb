@@ -3,6 +3,7 @@ class Client < ActiveRecord::Base
   
   has_many :visits, :dependent => :destroy
   has_many :goals, :dependent => :destroy
+  has_many :to_dos, :dependent => :destroy
 
   def getVisibleGoals(visit)
     goals = []
@@ -15,6 +16,19 @@ class Client < ActiveRecord::Base
     end
 
     return goals
+  end
+  
+  def getVisibleToDos(visit)
+    to_dos = []
+
+    self.to_dos.each() do |to_do|
+      if to_do.isVisibleAtVisit(visit)
+        to_do.prepareToDoState(visit)
+        to_dos.push(to_do)
+      end
+    end
+
+    return to_dos
   end
   
   def getSortedVisits()

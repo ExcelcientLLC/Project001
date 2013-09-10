@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Complete:</b>
+  <%= @to_do_state.complete %>
+</p>
+
+
+<%= link_to 'Edit', edit_to_do_state_path(@to_do_state) %> |
+<%= link_to 'Back', to_do_states_path %>

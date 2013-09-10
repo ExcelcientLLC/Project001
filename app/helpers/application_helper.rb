@@ -18,7 +18,7 @@ module ApplicationHelper
   
   def modelFormHeader(record)
     modelName = titileizedModelName(record)
-    headerText = distinguishMessageForRecord(record, "New %s" % modelName, "Editing %s" % modelName)
+    headerText = distinguishMessageForRecord(record, "Create %s" % modelName, "Update %s" % modelName)
     headerHTML = "<h1>%s</h1>" % headerText
     return headerHTML.html_safe
   end
@@ -33,22 +33,42 @@ module ApplicationHelper
   
   def submitButtonForRecord(form, record)
     modelName = titileizedModelName(record)
-    submitButtonWithDifferentMessages(form, record, "Create %s" % modelName, "Update %s" % modelName)
+    submitButtonWithDifferentMessages(form, record, "Save" % modelName, "Save" % modelName)
   end
   
   def submitButtonWithDifferentMessages(form, record, newMessage, oldMessage)
     return form.submit distinguishMessageForRecord(record, newMessage, oldMessage)
   end
   
-  def deleteImageButton(destination, message, remote=true)
-    link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), destination, method: :delete, :remote => remote, confirm: message
+  def deleteImageButton(destination, message, model, remote=true)
+    link_to image_tag("Nuvola_filesystems_trashcan_full.png", size: "40x40"), destination, method: :delete, :remote => remote, confirm: message, :title => "Delete this %s" % titileizedModelName(model)
   end
   
-  def newImageButton(destination, remote=true, method='get')
-    link_to image_tag("Nuvola_Red_Plus_small.png", size: "28x28"), destination, :remote => remote, :method => method
+  def newImageButton(destination, model, remote=true, method='get')
+    link_to image_tag("Nuvola_Red_Plus_small.png", size: "28x28"), destination, :remote => remote, :method => method, :title => "Create new %s" % titileizedModelName(model)
   end
   
   def titileizedModelName(record)
     record.class.model_name.human.titleize
+  end
+  
+  def goalButton(visit)
+    button_to "Meetings", client_visit_path(visit.client, visit), :method => :get
+  end
+  
+  def rowColor(currentModel, model) 
+    if model == currentModel
+      return "background:gray;"
+    else
+      return "background-color:#B40A37;"
+    end
+  end
+  
+  def getClientHeader(client)
+    html = ""
+    html << "<div class=\"client_title\">"
+    html << "<p>For %s %s</p>" % [client.first_name, client.last_name]
+    html << "</div>"
+    return html.html_safe
   end
 end

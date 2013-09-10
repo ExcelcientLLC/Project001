@@ -15,7 +15,7 @@
 
   <div class="field">
     <div class="edit_label">
-      <%= f.label "Goal Name" %><br/>
+      <%= f.label "Goal" %><br/>
     </div>
     <div class="edit_field">
       <%= f.text_field :name %>
@@ -24,7 +24,7 @@
 
   <div class="field">
     <div class="edit_label">
-      <%= f.label "Goal Category" %><br />
+      <%= f.label "Category" %><br />
     </div>
     <div class="edit_field">
       <%= collection_select(:goal, :goal_category_id, @goal_categories, :id, :name) %>
@@ -42,10 +42,10 @@
 
   <div class="field">
     <div class="edit_label">
-      <%= f.label :target_value %><!-- <br /> -->
+      <%= f.label :goal_value %><!-- <br /> -->
     </div>
     <div class="edit_field">
-      <%= f.number_field :target_value %>
+      <%= f.number_field :goal_value %>
     </div>
   </div>
 
@@ -60,40 +60,36 @@
 
   <div class="field">
     <div class="edit_label">
-      <%= f.label 'Monthly Goal' %><!-- <br /> -->
+      <%= f.label :minimum_contribution %><!-- <br /> -->
     </div>
     <div class="edit_field">
-      <%= f.number_field :target_expenditures %>
+      <%= f.number_field :minimum_contribution %>
+      <%= f.select :annual, options_for_select([["Monthly", false], ["Annually", true]]) %>
     </div>
   </div>
 
-  <div class="field">
-    <div class="edit_label">
-      <%= f.label 'Monthly Actual' %><!-- <br /> -->
-    </div>
-    <div class="edit_field">
-      <%= f.number_field :current_expenditures %>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="edit_label">
-      <%= f.label :complete %><!-- <br /> -->
-    </div>
-    <div class="edit_field">
-      <%= f.check_box :complete %>
+  <div style="clear:left">
+    <div class="field">
+      <div class="edit_label">
+        <%= f.label :complete %><!-- <br /> -->
+      </div>
+      <div class="edit_field">
+        <%= f.check_box :complete %>
+      </div>
     </div>
   </div>
   
-  <div class=button_format>
-    <div class="actions">
-      <%= f.submit %>
+  <div style="clear:left">
+    <div class=button_format>
+      <div class="actions">
+        <%= submitButtonForRecord(f, @goal) %>
+      </div>
     </div>
- </div>
+  </div>
 <% end %>
 
 <% if not @goal.new_record? %>
   <div class=delete_format>
-    <%= deleteImageButton client_visit_goal_path(@visit.client, @visit, @goal), "Are you sure you want to delete this goal?" %>
+    <%= deleteImageButton client_visit_goal_path(@visit.client, @visit, @goal), "Are you sure you want to delete this goal?", @goal %>
   </div>
 <% end %>

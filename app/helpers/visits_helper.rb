@@ -90,22 +90,38 @@ module VisitsHelper
     end
 
     def getGoalProgress(goal)
-      return "$%d%s$%d dollars" % [goal.current_value, " out of ", goal.target_value]
+      return "$%d%s$%d dollars" % [goal.current_value, " out of ", goal.goal_value]
+    end
+    
+    def getGoalContributionString(goal)
+      contributionString = "<b>$"
+      if goal.minimum_contribution
+        contributionString << goal.minimum_contribution.to_s
+      else
+        contributionString << "0"
+      end
+      contributionString << "</b> per "
+      if goal.annual
+        contributionString << "year"
+      else
+        contributionString << "month"
+      end
+      return contributionString.html_safe
     end
 
     def getGoalProgressPercent(goal)
-      if goal.current_value == goal.target_value
+      if goal.current_value == goal.goal_value
         return 100
       end
-      if goal.current_value == nil or goal.target_value == 0
+      if goal.current_value == nil or goal.goal_value == 0
           return 0
       else
-          return (goal.current_value*100)/goal.target_value
+          return (goal.current_value*100)/goal.goal_value
       end
     end
 
     def getGoalEndDate(goal)
-      return "Reaching goal of $%d in %d" % [goal.target_value, goal.target_date.year]
+      return "$%d goal by %d" % [goal.goal_value, goal.target_date.year]
     end
 
     def getVisitSubmitText(visit)

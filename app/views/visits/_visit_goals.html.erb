@@ -1,3 +1,7 @@
+<div style="width:100%">&nbsp;</div>
+<div style="width:100%">&nbsp;</div>
+<div style="width:100%">&nbsp;</div>
+
 <% @client.getVisibleGoals(@visit).each do |goal| %>
   <div style='height: 50px; width: 100%;'>
     <div class="visit_goals">
@@ -12,7 +16,7 @@
         <% end %>
       </div>
       
-      <div class="visit_goals_monthly"><b>$<%= goal.target_expenditures %></b> per month</div>
+      <div class="visit_goals_monthly"><%= getGoalContributionString(goal) %></div>
       
       <div class="visit_goals_progress">
       <!-- Progress Bubble -->

@@ -29,6 +29,7 @@ class GoalCategoriesController < ApplicationController
   # GET /goal_categories/new
   # GET /goal_categories/new.json
   def new
+    @goal_categories = GoalCategory.all
     @goal_category = GoalCategory.new
     respond_to do |format|
       format.js # new.js.erb

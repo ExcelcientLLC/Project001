@@ -1,4 +1,4 @@
-<% @title = "VISITS DETAIL" %>
+<% @title = "MEETINGS" %>
 <%= render 'common/header' %>
 
 <div class="admin_body">
@@ -7,7 +7,7 @@
   <div id="visit_form">
     <% if hasItem(@client.visits, @form_visit) and @visit != @client.visits.first %>
       <div class="arrow">
-        <%= link_to image_tag("Go-previous.png", size: "28x28"), [@client, previous_item(@client.visits, @visit)] %>
+        <%= link_to image_tag("Go-previous.png", size: "28x28"), [@client, previous_item(@client.visits, @visit)], :title => "Previous Meeting" %>
       </div>
     <% end %>
 
@@ -16,9 +16,9 @@
     <div class="arrow">
       <% if hasItem(@client.visits, @form_visit) %>
         <% if @visit != @client.visits.last  %>
-          <%= link_to image_tag("Go-next.png", size: "28x28"), [@client, next_item(@client.visits, @visit)] %>
+          <%= link_to image_tag("Go-next.png", size: "28x28"), [@client, next_item(@client.visits, @visit)], :title => "Next Meeting" %>
         <% else %>
-          <%= newImageButton client_visits_path(@form_visit.client), false, :post %>
+          <%= newImageButton client_visits_path(@form_visit.client), @form_visit, false, :post %>
         <% end %>
       <% else %>
         <%= button_to 'Back', client_visit_path(@client, @visit), :method => 'get' %>
@@ -28,13 +28,13 @@
   
   <div class="sub_header_right">
     <div class="sub_header_right_element" style="margin-left:12px">
-        <%= deleteImageButton client_visit_path(@visit.client, @visit), "Are you sure you want to delete this visit?", false %>
+        <%= deleteImageButton client_visit_path(@visit.client, @visit), "Are you sure you want to delete this visit?", @visit, false %>
     </div>
     <div class="sub_header_right_element">
       <%= button_to "Client List", clients_path, :method => :get %>
     </div>
     <div class="sub_header_right_element">
-      <%= button_to "Presets", presets_path, :method => :get %>
+      <%= button_to "Admin", presets_path, :method => :get %>
     </div>
     <div class="sub_header_right_element">
       <%= button_to "Timeline", client_visits_path(@client), :method => :get %>
