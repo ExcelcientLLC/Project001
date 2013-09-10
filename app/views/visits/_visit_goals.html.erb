@@ -16,7 +16,7 @@
         <% end %>
       </div>
       
-      <div class="visit_goals_monthly"><b>$<%= goal.minimum_contribution %></b> per month</div>
+      <div class="visit_goals_monthly"><%= getGoalContributionString(goal) %></div>
       
       <div class="visit_goals_progress">
       <!-- Progress Bubble -->

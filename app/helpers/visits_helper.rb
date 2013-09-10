@@ -92,6 +92,22 @@ module VisitsHelper
     def getGoalProgress(goal)
       return "$%d%s$%d dollars" % [goal.current_value, " out of ", goal.goal_value]
     end
+    
+    def getGoalContributionString(goal)
+      contributionString = "<b>$"
+      if goal.minimum_contribution
+        contributionString << goal.minimum_contribution.to_s
+      else
+        contributionString << "0"
+      end
+      contributionString << "</b> per "
+      if goal.annual
+        contributionString << "year"
+      else
+        contributionString << "month"
+      end
+      return contributionString.html_safe
+    end
 
     def getGoalProgressPercent(goal)
       if goal.current_value == goal.goal_value

@@ -100,7 +100,7 @@ Issues for Final Install:
     - Change Goal name to Goal -- DONE
     - Change Goal category to Category -- DONE
     - Change Target value to Goal value -- DONE
-    - Change Monthly goal to Minnimum contribution
+    - Change Monthly goal to Minnimum contribution -- DONE
     - Add field for monthly or annual minimmum contribution
 - To Do
     - Change To Do to Reccomendation
@@ -116,6 +116,7 @@ Issues for Final Install:
     - Change Spending label to Minnimum Contribution -- DONE
     - Switch Goal target description (See Marked up pages) -- DONE
     - Change Goal Graphs Button to Graphs -- DONE
+    - Change Goal Contribution amount text -- DONE
     - Change Discalimer font to be smaller and lighter (See Marked up pages)
 Goal Graphs
     - Try to set number of goals per page when printing in portrait or landscape
