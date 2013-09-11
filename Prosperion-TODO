@@ -92,6 +92,7 @@ Issues for Final Install:
 - Client
     - Change Filter Button to Clear -- Chris -- DONE
     - Clients are not sorted the first time you visit the page -- DONE
+    - Sorting explodes with 406 error when a client is selected
 - Visit
     - Update Visit Date button to Save Meeting -- DONE
     - Add Actual Delete Meeting Button -- DONE
@@ -111,6 +112,8 @@ Issues for Final Install:
     - Remove Update Disclaimer box on Visit Show page -- DONE
 - Presets
     - Remove Disclaimer list -- DONE
+    - Remove name from Disclaimer -- DONE
+    - Update Disclaimer form header -- DONE
     - Change Title to Admin -- DONE
 - Snapshot
     - Change Goals to have a bar on the timeline rather than a circle -- DONE, Color looks a bit odd -- Alec
