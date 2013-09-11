@@ -118,6 +118,8 @@ Issues for Final Install:
     - Change Goal Graphs Button to Graphs -- DONE
     - Change Goal Contribution amount text -- DONE
     - Change Discalimer font to be smaller and lighter (See Marked up pages) -- Alec
+    - When printing, Date goes over Header
+    - When printing, Last date goes off page
 Goal Graphs
     - Try to set number of goals per page when printing in portrait or landscape
     - Have Target Contributions start at amount for first Goal State
