@@ -91,6 +91,7 @@ Issues for Final Install:
     - Change New/Update Form Submit button to say Save -- Chris -- DONE
 - Client
     - Change Filter Button to Clear -- Chris -- DONE
+    - Clients are not sorted the first time you visit the page -- DONE
 - Visit
     - Update Visit Date button to Save Meeting -- DONE
     - Add Actual Delete Meeting Button -- DONE
