@@ -2,7 +2,9 @@ module ApplicationHelper
   def sortable(column, title = nil)
     title ||= column.titleize
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
-    link_to title, params.merge(:sort => column, :direction => direction)
+    new_params = params.merge(:sort => column, :direction => direction)
+    new_params["action"] = "index"
+    link_to title, new_params
   end
   
   def tryToPageBreak(list, record, countFirstPage, countAfter)

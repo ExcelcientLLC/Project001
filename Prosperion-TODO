@@ -92,7 +92,7 @@ Issues for Final Install:
 - Client
     - Change Filter Button to Clear -- Chris -- DONE
     - Clients are not sorted the first time you visit the page -- DONE
-    - Sorting explodes with 406 error when a client is selected
+    - Sorting explodes with 406 error when a client is selected -- DONE
 - Visit
     - Update Visit Date button to Save Meeting -- DONE
     - Add Actual Delete Meeting Button -- DONE
