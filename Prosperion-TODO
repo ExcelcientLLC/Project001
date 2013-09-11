@@ -110,7 +110,7 @@ Issues for Final Install:
     - Automatically attach the discalimer to each Visit -- DONE, by just always having the first disclaimer used
     - Remove Update Disclaimer box on Visit Show page -- DONE
 - Presets
-    - Remove Disclaimer list
+    - Remove Disclaimer list -- DONE
     - Change Title to Admin -- DONE
 - Snapshot
     - Change Goals to have a bar on the timeline rather than a circle -- DONE, Color looks a bit odd -- Alec

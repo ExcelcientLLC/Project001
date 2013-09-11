@@ -38,9 +38,3 @@
     </div>
   </div>
 <% end %>
-
-<% if not @disclaimer.new_record? %>
-  <div class=delete_format>
-    <%= deleteImageButton disclaimer_path(@disclaimer), "Are you sure you want to delete this disclaimer?", @disclaimer %>
-  </div>
-<% end %>

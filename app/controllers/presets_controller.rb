@@ -5,8 +5,7 @@ class PresetsController < ApplicationController
     @goal_categories = GoalCategory.all
     @goal_category = GoalCategory.new
 
-    @disclaimers = Disclaimer.all
-    @disclaimer = Disclaimer.new
+    @disclaimer = Disclaimer.get_disclaimer
     
     begin
       @last_visit = Visit.find(cookies[:last_visit].to_i)
