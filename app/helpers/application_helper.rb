@@ -16,8 +16,10 @@ module ApplicationHelper
     return ""
   end
   
-  def modelFormHeader(record)
-    modelName = titileizedModelName(record)
+  def modelFormHeader(record, modelName=nil)
+    if modelName.nil?
+      modelName = titileizedModelName(record)
+    end
     headerText = distinguishMessageForRecord(record, "Create %s" % modelName, "Update %s" % modelName)
     headerHTML = "<h1>%s</h1>" % headerText
     return headerHTML.html_safe
