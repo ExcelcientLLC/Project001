@@ -61,7 +61,7 @@ Issues to fix at some point
 - Searching not working...? -- DONE
 - Rename Search to Filter..? -- DONE
 - All year boxes need to be extended to 2050 or beyond -- DONE
-- Need a textbox that allows us to add/edit disclaimers
+- Need a textbox that allows us to add/edit disclaimers--DONE
 
 Issues to watch for
 - Goal Category unable to delete even when all goals are deleted
@@ -81,7 +81,7 @@ Issues for Final Install:
     - Change Goals button to Meetings -- Chris -- DONE
     - Add hover text to all icons -- Chris -- DONE
 - Header
-    - Change font on header title -- Alec
+    - Change font on header title -- Alec--DONE Enough To Run By
     - Make Header title smaller -- DONE
     - Make Client text larger -- DONE
 - Model List & Forms 
@@ -121,7 +121,7 @@ Issues for Final Install:
     - Switch Goal target description (See Marked up pages) -- DONE
     - Change Goal Graphs Button to Graphs -- DONE
     - Change Goal Contribution amount text -- DONE
-    - Change Discalimer font to be smaller and lighter (See Marked up pages) -- Alec
+    - Change Discalimer font to be smaller and lighter (See Marked up pages) -- Alec -- Done engough to run by
     - When printing, Date goes over Header
     - When printing, Last date goes off page
 Goal Graphs
