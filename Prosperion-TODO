@@ -78,43 +78,52 @@ Issues to Fix For Install:
 
 Issues for Final Install:
 - General
-    - Change Goals button to Meetings -- Chris
-    - Add hover text to all buttons -- Chris
+    - Change Goals button to Meetings -- Chris -- DONE
+    - Add hover text to all icons -- Chris -- DONE
 - Header
-    - Change font on header title
-    - Make Header title smaller
-    - Make Client text larger
+    - Change font on header title -- Alec
+    - Make Header title smaller -- DONE
+    - Make Client text larger -- DONE
 - Model List & Forms 
-    - Highlight currently selected item in list
+    - Highlight currently selected item in list -- DONE
     - Change "New {Model}" to "Create {Model}" -- Chris -- DONE
     - Change "Editting {Model}" to "Update {Model}"  -- Chris -- DONE
     - Change New/Update Form Submit button to say Save -- Chris -- DONE
 - Client
-    - Change Filter Button to Clear -- Chris
+    - Change Filter Button to Clear -- Chris -- DONE
+    - Clients are not sorted the first time you visit the page -- DONE
+    - Sorting explodes with 406 error when a client is selected -- DONE
 - Visit
-    - Update Visit Date button to Save Meeting
-    - Add Actual Delete Meeting Button
+    - Update Visit Date button to Save Meeting -- DONE
+    - Add Actual Delete Meeting Button -- DONE
+    - Change header to Meeting -- DONE
+    - Add Admin Button -- DONE
 - Goal
-    - Change Goal name to Goal
-    - Change Goal category to Category
-    - Change Monthly goal to Minnimum contribution
-    - Add field for monthly or annual minimmum contribution
-    - Add New Category Button to Goal Form
+    - Change Goal name to Goal -- DONE
+    - Change Goal category to Category -- DONE
+    - Change Target value to Goal value -- DONE
+    - Change Monthly goal to Minnimum contribution -- DONE
+    - Add field for monthly or annual minimmum contribution -- DONE
 - To Do
-    - Change To Do to Reccomendation
+    - Change To Do to Reccomendation -- DONE
 - Disclaimer
-    - Switch to single disclaimer
-    - Automatically attach the discalimer to each Visit
-    - Remove Update Disclaimer box on Visit Show page
+    - Switch to single disclaimer -- DONE
+    - Automatically attach the discalimer to each Visit -- DONE, by just always having the first disclaimer used
+    - Remove Update Disclaimer box on Visit Show page -- DONE
 - Presets
-    - Remove Disclaimer list
-    - Change Title to Goal Categories
+    - Remove Disclaimer list -- DONE
+    - Remove name from Disclaimer -- DONE
+    - Update Disclaimer form header -- DONE
+    - Change Title to Admin -- DONE
 - Snapshot
-    - Change Goals to have a bar on the timeline rather than a circle
-    - Change Spending label to Minnimum Contribution
-    - Switch Goal target description (See Marked up pages)
-    - Change Goal Graphs Button to Graphs
-    - Change Discalimer font to be smaller and lighter (See Marked up pages)
+    - Change Goals to have a bar on the timeline rather than a circle -- DONE, Color looks a bit odd -- Alec
+    - Change Spending label to Minnimum Contribution -- DONE
+    - Switch Goal target description (See Marked up pages) -- DONE
+    - Change Goal Graphs Button to Graphs -- DONE
+    - Change Goal Contribution amount text -- DONE
+    - Change Discalimer font to be smaller and lighter (See Marked up pages) -- Alec
+    - When printing, Date goes over Header
+    - When printing, Last date goes off page
 Goal Graphs
     - Try to set number of goals per page when printing in portrait or landscape
     - Have Target Contributions start at amount for first Goal State

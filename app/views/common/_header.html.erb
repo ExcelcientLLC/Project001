@@ -1,16 +1,12 @@
 <div class="header" style=" position: relative;">
   <%= link_to image_tag("prosperionLogo.png"), "/clients" %>
     <div style="float:right;">
-      <div style="color: #F4BB3A; float: right;width:100%;height:46px">
+      <div style="color: #F4BB3A; float: right;width:100%;height:54px">
       <% if @client && @client.first_name && @client.last_name %>
-        <div style="float:right;padding: 12px;">
-      	  <%= "For " + @client.first_name + " " + @client.last_name %>
-        </div>
+        <%= getClientHeader @client %>
       <% end %>
       <% if @goal && @goal.client && @goal.client.first_name && @goal.client.last_name %>
-        <div style="float:right;padding: 12px;">
-          <%= "For " + @goal.client.first_name + " " + @goal.client.last_name %>
-        </div>
+        <%= getClientHeader @goal.client %>
       <% end %>
       </div>
       <div class="title_text">

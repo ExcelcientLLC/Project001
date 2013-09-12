@@ -8,8 +8,13 @@
   <div id="split_bar" style="width:8px; background-color:#1144AA; border-radius:8px; position:absolute; left:120px; z-index:2; height:100%">
   </div>
   <div class="goals_box" style="width:70%; position:relative; float:left;">
-    <div style="height:30px;float:right">
-      <h2><%= image_tag("cash.png", size:"25x25") %>&nbsp;Spending</h2>
+    <div style="height:30px;float:right;text-align:center">
+      <div style="height:40px;float:left;vertical-align:center;margin-top:15px">
+        <%= image_tag("cash.png", size:"25x25") %>
+      </div>
+      <div style="float:right;margin-left:10px">
+        <h2>Minimum<br />Contribution</h2>
+      </div>
 	</div>
     <%= render 'visit_goals' %>
   </div>
@@ -18,9 +23,9 @@
   </div>
 </div>
 
-<% unless @visit.disclaimer.nil? %>
+<% unless @disclaimer.nil? %>
   <div style="float:left;width:55%;text-align:center;margin-top:10px;margin-left:145px;text-wrap:none;">
-    <%= @visit.disclaimer.body %>
+    <%= @disclaimer.body %>
   </div>
 <%end%>
 
@@ -32,10 +37,10 @@
     <%= button_to "Client List", clients_path, :method => :get %>
   </div>
   <div class="sub_header_right_element", id="goals_link">
-    <%= button_to "Goals", client_visit_path(@client, @visit), :method => :get %>
+    <%= goalButton @visit %>
   </div>
   <div class="sub_header_right_element", id="goals_link">
-    <%= button_to "Goal Graphs", client_visit_goals_path(@client, @visit), :method => :get %>
+    <%= button_to "Graphs", client_visit_goals_path(@client, @visit), :method => :get %>
   </div>
 </div>
 

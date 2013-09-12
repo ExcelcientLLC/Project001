@@ -89,12 +89,23 @@
 
       border: 2px solid #1144AA;
     }
+
+    div.line_icon
+    {
+      position:absolute;
+      float: left;
+      top:-3px;
+      height:15px;
+      width: 4px;
+      background-color: black; /* Line color */
+    }
+
     p.circle_text
     {
       position:relative;
     //  bottom:35px;
       bottom:50px;
-      font-size: 50%;
+
       font-family:"Georgia", sans-serif;
       font-weight:900;
     //  color:#000000;
@@ -111,8 +122,8 @@
     div.circle_picture
     {
       position:relative;
-      bottom:50px;
-      left:4px;
+      bottom:63px;
+      left:-3px;
     }
     div.visit_goals
     {

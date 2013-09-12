@@ -15,6 +15,8 @@ class GoalsController < ApplicationController
   # GET /goals/1
   # GET /goals/1.json
   def show
+    @client = Client.find(params[:client_id])
+    @goals = @client.goals
     @goal = Goal.find(params[:id])
     @goal_categories = GoalCategory.all
     @visit = Visit.find(params[:visit_id])
@@ -30,6 +32,8 @@ class GoalsController < ApplicationController
   # GET /goals/new
   # GET /goals/new.json
   def new
+    @client = Client.find(params[:client_id])
+    @goals = @client.goals
     @goal = Goal.new
     @goal_categories = GoalCategory.all
     @visit = Visit.find(params[:visit_id])

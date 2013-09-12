@@ -13,7 +13,7 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class=field>
     <div class=edit_label>
       <%= f.label :first_name %>
@@ -86,9 +86,12 @@
       <%= f.text_area :comment %>
     </div>
   </div>
-  <div class=button_format>
-    <div class="actions">
-      <%= submitButtonForRecord(f, @client) %>
+  
+  <div style="clear:left">
+    <div class=button_format>
+      <div class="actions">
+        <%= submitButtonForRecord(f, @client) %>
+      </div>
     </div>
   </div>
 <% end %>
@@ -98,9 +101,9 @@
     <%= button_to "Timeline", client_visits_path(@client), :method => :get %>
   </div>
   <div class=button_format>
-    <%= button_to "Goals", client_visit_path(@client, @client.getSortedVisits.last), :method => :get %>
+    <%= goalButton @client.getSortedVisits.last %>
   </div>  
   <div class=delete_format>
-    <%= deleteImageButton client_path(@client), "Are you sure you want to delete this client?" %>
+    <%= deleteImageButton client_path(@client), "Are you sure you want to delete this client?", @client %>
   </div>
 <% end %>

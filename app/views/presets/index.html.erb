@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<% @title = "Presets" %>
+<% @title = "Admin" %>
 <%= render 'common/header' %>
  
 <!-- Main body -->
@@ -34,14 +34,8 @@
     </div>
   </div>
   
-  <!-- Disclaimer List -->
   <div style="width:100%">
-    <div class='client_list' id="disclaimer_list">
-      <%= render '/disclaimers/disclaimer_list_form' %>
-    </div>
-
-  <!-- Disclaimer Form -->
-    <div class="detail_view" id="disclaimer">
+    <div class="detail_view_full" id="disclaimer">
       <%= render '/disclaimers/form' %>
     </div>
   </div>

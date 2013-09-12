@@ -6,6 +6,7 @@ class VisitsController < ApplicationController
     @visits = getSortedVisits(@client)
     @visit = @visits.last
     @events = generateEvents(@client)
+    @disclaimer = Disclaimer.get_disclaimer
 
     @client.goals.each do |goal|
       goal.prepareGoalState(@visit)
