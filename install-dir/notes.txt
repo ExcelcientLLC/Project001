@@ -1,9 +1,10 @@
 Constants
 - Server Name 
-  - install.bat, ln 3
-  - uninstall.bat, ln 3
-  - start.bat, ln 3
-  - stop.bat, ln 3
+  - install.bat, ln 31
+  - uninstall.bat, ln 31
+  - update.bat, ln 31
+  - start.bat, ln 30
+  - stop.bat, ln 30
   - client_management_service.py, ln 11
   
 - ImageMagick Installation Directory
