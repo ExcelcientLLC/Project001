@@ -27,7 +27,13 @@ div.header
   padding: 10px;
   float:top;
 }
-
+div.client_name
+{
+  color: #F4BB3A;
+  float: right;
+  width:100%;
+  height:54px;
+}
 div.title_text
 {
   float:right;

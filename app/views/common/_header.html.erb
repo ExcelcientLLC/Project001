@@ -1,7 +1,7 @@
 <div class="header" style=" position: relative;">
   <%= link_to image_tag("prosperionLogo.png"), "/clients" %>
     <div style="float:right;">
-      <div style="color: #F4BB3A; float: right;width:100%;height:54px">
+      <div class="client_name">
       <% if @client && @client.first_name && @client.last_name %>
         <%= getClientHeader @client %>
       <% end %>
