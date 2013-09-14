@@ -4,8 +4,7 @@
       <div class="client_name">
       <% if @client && @client.first_name && @client.last_name %>
         <%= getClientHeader @client %>
-      <% end %>
-      <% if @goal && @goal.client && @goal.client.first_name && @goal.client.last_name %>
+      <% elsif @goal && @goal.client && @goal.client.first_name && @goal.client.last_name %>
         <%= getClientHeader @goal.client %>
       <% end %>
       </div>
