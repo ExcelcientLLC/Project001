@@ -73,7 +73,6 @@ class ToDosController < ApplicationController
     puts params[:to_do]
     respond_to do |format|
       if @to_do.update_attributes(params[:to_do])
-        puts @to_do.complete
         @to_do.saveState(@visit)
       
         format.html { redirect_to client_visits_path(@to_do.client), notice: 'To do was successfully updated.' }
