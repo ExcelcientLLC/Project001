@@ -9,7 +9,7 @@
   <div>
       <div class="table_header_full">Name</div>
   </div>
-  <div>
+  <div class="short_table_body" style="height: 140px">
     <% @goal_categories.sort_by{|goal_categories| goal_categories.name}.each do |goal_category| %>
       <%= link_to(goal_category_path(goal_category), :remote => true) do %>
         <div class="element", style="<%= rowColor(@goal_category, goal_category) %>">
