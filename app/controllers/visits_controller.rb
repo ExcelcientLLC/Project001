@@ -28,6 +28,7 @@ class VisitsController < ApplicationController
     begin
       @visit = Visit.find(params[:id])
       @client = Client.find(params[:client_id])
+      @disclaimer = Disclaimer.get_disclaimer
       cookies[:last_visit] = @visit.id
       cookies[:last_client] = @client.id
       prepareShow()

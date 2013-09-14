@@ -37,14 +37,26 @@ set STARTING_DIR=%~p0
 
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py stop
 
-xcopy /s %~p0\ClientManagementServer %CLIENT_MANAGEMENT_SERVER_DIR% 
-xcopy /s %~p0\gems %RUBY_DIR%\lib\ruby\gems
+xcopy /s /Y %~p0\ClientManagementServer %CLIENT_MANAGEMENT_SERVER_DIR% 
+xcopy /s /Y %~p0\gems %RUBY_DIR%\lib\ruby\gems
 
 cd %CLIENT_MANAGEMENT_SERVER_DIR%
 CALL setx RAILS_ENV "production" /M
-CALL %RUBY_BIN_DIR%\bundle.bat install
-CALL %RUBY_BIN_DIR%\rake.bat db:migrate
-CALL %RUBY_BIN_DIR%\rake.bat assets:precompile
+
+IF NOT EXIST %STARTING_DIR%\gems GOTO NOGEMS
+    CALL %RUBY_BIN_DIR%\bundle.bat install
+:NOGEMS
+
+IF NOT EXIST %STARTING_DIR%\ClientManagementServer\db GOTO NODB
+    echo Updating Database
+    CALL %RUBY_BIN_DIR%\rake.bat db:migrate
+:NODB
+
+IF NOT EXIST %STARTING_DIR%\ClientManagementServer\app\assets GOTO NOASSETS
+    CALL %RUBY_BIN_DIR%\rake.bat assets:precompile
+:NOASSETS
 
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py restart
 endlocal
+
+pause
