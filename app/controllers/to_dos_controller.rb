@@ -50,7 +50,7 @@ class ToDosController < ApplicationController
 
     respond_to do |format|
       if @to_do.save
-        saveToDoState(@to_do.complete, @visit, @to_do)
+        @to_do.saveState(@visit)
         format.html { redirect_to client_visits_path(@to_do.client), notice: 'To do was successfully created.' }
         format.json { render json: @to_do, status: :created, location: @to_do }
         format.js
@@ -71,13 +71,7 @@ class ToDosController < ApplicationController
 
     respond_to do |format|
       if @to_do.update_attributes(params[:to_do])
-        @to_do_state = @to_do.getToDoStateForVisit(@visit)
-        if @to_do_state == nil
-          saveToDoState(@to_do.complete, @visit, @to_do)
-        else
-          @to_do_state.updateState(@to_do.complete)
-          @to_do_state.save
-        end
+        @to_do.saveState(@visit)
       
         format.html { redirect_to client_visits_path(@to_do.client), notice: 'To do was successfully updated.' }
         format.json { head :no_content }
