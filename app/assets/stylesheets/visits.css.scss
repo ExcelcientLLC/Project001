@@ -78,9 +78,10 @@ div.line_icon
   position:absolute;
   float: left;
   top:-3px;
-  height:15px;
-  width: 4px;
-  background-color: black; /* Line color */
+  border-radius:3px;
+  height:17px;
+  width: 8px;
+  background-color: #26972D; /* Line color */
 }
 
 p.circle_text
