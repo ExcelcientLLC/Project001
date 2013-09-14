@@ -94,6 +94,10 @@ module VisitsHelper
     end
     
     def getGoalContributionString(goal)
+      if goal.minimum_contribution.nil? or goal.minimum_contribution == 0
+        return ""
+      end
+    
       contributionString = "<b>$"
       if goal.minimum_contribution
         contributionString << goal.minimum_contribution.to_s
