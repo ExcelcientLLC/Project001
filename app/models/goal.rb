@@ -21,14 +21,26 @@ class Goal < ActiveRecord::Base
     return (afterFirstVisit and (incomplete or beforeLastVisit))
   end
 
-  def getFirstGoalVisitDate()
+  def getFirstVisit()
+    first_state = self.goal_states.first 
     first_date = self.goal_states.first.visit.visit_date
     self.goal_states.each do |goal_state|
       if first_date > goal_state.visit.visit_date
         first_date = goal_state.visit.visit_date
+        first_state = goal_state
       end
     end
-    return first_date
+
+    return first_state
+  end
+
+  def getFirstGoalVisitDate()
+    return getFirstVisit().visit.visit_date
+  end
+
+  def getFirstGoalValue()
+    first_state = getFirstVisit()
+    return first_state.current_value    
   end
 
   def getLastGoalVisitDate()
@@ -121,7 +133,7 @@ class Goal < ActiveRecord::Base
 
   def getJQPlotTargetContribution()
     retval = []
-    retval.push([getFirstGoalVisitDate(), 0])
+    retval.push([getFirstGoalVisitDate(), getFirstGoalValue()])
     retval.push([self.target_date, self.goal_value])
   end
 
