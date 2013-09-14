@@ -18,7 +18,8 @@
     <div class="visits_action_items">
       <%= submitButtonWithDifferentMessages f, @form_visit, "Save Meeting", "Save Meeting" %>
     </div>
-    <div class="visits_action_items">
-      <%= button_to "Delete Meeting", client_visit_path(@form_visit.client, @form_visit), :method => :delete, :confirm => "Are you sure you want to delete this visit?" %>
-    </div>
 <% end %>
+
+<div class="visits_action_items">
+  <%= button_to "Delete Meeting", client_visit_path(@form_visit.client, @form_visit), :method => :delete, :confirm => "Are you sure you want to delete this visit?" %>
+</div>

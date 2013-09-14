@@ -16,8 +16,11 @@ class ToDo < ActiveRecord::Base
   end
   
   def saveState(visit)
-    if self.complete
+    if self.complete == "1"
       self.visit = visit
+      self.save
+    else
+      self.visit = nil
       self.save
     end
   end
