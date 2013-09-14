@@ -1,16 +1,6 @@
 <%= form_for(@form_visit, :url => [@client, @form_visit])  do |f| %>
 
-  <% if @form_visit.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@form_visit.errors.count, "error") %> prohibited this visit from being saved:</h2>
-
-      <ul>
-      <% @form_visit.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
 
     <div class="visits_date">
       <%= f.date_select :visit_date %>

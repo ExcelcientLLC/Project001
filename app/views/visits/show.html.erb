@@ -5,6 +5,18 @@
 
 <div class="sub_header">
   <div id="visit_form">
+    <% if @form_visit.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@form_visit.errors.count, "error") %> prohibited this visit from being saved:</h2>
+
+        <ul>
+        <% @form_visit.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
     <% if hasItem(@client.visits, @form_visit) and @visit != @client.visits.first %>
       <div class="arrow">
         <%= link_to image_tag("Go-previous.png", size: "28x28"), [@client, previous_item(@client.visits, @visit)], :title => "Previous Meeting" %>
