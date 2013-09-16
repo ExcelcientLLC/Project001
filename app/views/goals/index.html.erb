@@ -6,7 +6,7 @@
     <div style="height:20px;width:100%"></div>
     <%= jqplot 500*11/20, 950,  goal.getJQPlotCompatibleData(),
       :axes => {
-          :xaxis => {:label => 'Date', :renderer => "$.jqplot.DateAxisRenderer", :min => goal.goal_states.first.visit.visit_date, :max =>getMaxDateForGoal(goal), :tickOptions => {:formatString => '%Y-%m-%d', :tickInterval => "1 month" }  }, 
+          :xaxis => {:label => 'Date', :renderer => "$.jqplot.DateAxisRenderer", :min => getMinDateForGoal(@goal), :max =>getMaxDateForGoal(goal), :tickOptions => {:formatString => '%Y-%m-%d', :tickInterval => "1 month" }  }, 
           :yaxis => {:label => 'Contributed', :min => 0, :max =>goal.goal_value } 
       },
       :title => goal.name,
