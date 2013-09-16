@@ -9,7 +9,15 @@ class ToDo < ActiveRecord::Base
   belongs_to :starting_visit, :class_name => "Visit"
   
   def isVisibleAtVisit(visit)
-    return ((self.visit.nil?) or (self.visit.visit_date >= visit.visit_date))
+    afterFirstVisit = (visit.visit_date >= self.starting_visit.visit_date)
+    incomplete = self.visit.nil?
+    if incomplete
+      beforeLastVisit = true
+    else
+      beforeLastVisit = (visit.visit_date <= self.visit.visit_date)
+    end
+
+    return (afterFirstVisit and (incomplete or beforeLastVisit))
   end
   
   def prepareToDoState(visit)
@@ -27,6 +35,7 @@ class ToDo < ActiveRecord::Base
     
     if self.starting_visit.nil? or self.starting_visit.visit_date > visit.visit_date
       self.starting_visit = visit
+      self.save
     end
   end
 end
