@@ -82,7 +82,7 @@ module VisitsHelper
         return [100 + @offset]
       end
       positions = constructEventLocationsRecursive(events, next_item(events, event))
-      if (percentage + 2 > positions.last)
+      if (percentage + 2 > positions.last-@offset)
         percentage = positions.last - 2
       end
       positions.push(percentage + @offset)
@@ -138,6 +138,8 @@ module VisitsHelper
       # #elsif event == events.last
       # #    return "left:%s%%;" % (getRightMostOffset(events)*100).to_s
       # else
+          puts "Index: %d" % events.index(event)
+          puts "Position: %s%%" % @positions[events.index(event)]
           return "left:%s%%;" % @positions[events.index(event)]
       # end
     end
