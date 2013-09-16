@@ -20,6 +20,11 @@ class ToDo < ActiveRecord::Base
     return (afterFirstVisit and (incomplete or beforeLastVisit))
   end
   
+  def isVisibleAtVisitTimeline(visit)
+    afterFirstVisit = (visit.visit_date >= self.starting_visit.visit_date)
+    return afterFirstVisit
+  end
+  
   def prepareToDoState(visit)
     self.complete = ((not (self.visit.nil?)) and (visit.visit_date >= self.visit.visit_date))
   end

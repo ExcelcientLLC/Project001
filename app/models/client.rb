@@ -44,6 +44,19 @@ class Client < ActiveRecord::Base
     return to_dos
   end
   
+  def getVisibleToDosTimeline(visit)
+    to_dos = []
+
+    self.to_dos.each() do |to_do|
+      if to_do.isVisibleAtVisitTimeline(visit)
+        to_do.prepareToDoState(visit)
+        to_dos.push(to_do)
+      end
+    end
+
+    return to_dos
+  end
+  
   def getSortedVisits()
     visits = self.visits
     visits.sort! { |a,b| a.visit_date <=> b.visit_date }
