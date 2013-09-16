@@ -2,7 +2,7 @@
 <div style="width:100%">&nbsp;</div>
 <div style="width:100%">&nbsp;</div>
 
-<% @client.getVisibleGoals(@visit).each do |goal| %>
+<% @client.getVisibleGoalsTimeline(@visit).each do |goal| %>
   <div style='height: 50px; width: 100%;'>
     <div class="visit_goals">
       
@@ -52,5 +52,5 @@
       </div>
     </div>
   </div>
-  <%= tryToPageBreak @client.getVisibleGoals(@visit), goal, 5, 8 %>
+  <%= tryToPageBreak @client.getVisibleGoalsTimeline(@visit), goal, 5, 8 %>
 <% end %>

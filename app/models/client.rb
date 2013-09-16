@@ -18,6 +18,19 @@ class Client < ActiveRecord::Base
     return goals
   end
   
+  def getVisibleGoalsTimeline(visit)
+    goals = []
+
+    self.goals.each() do |goal|
+      if goal.isVisibleAtVisitTimeline(visit)
+        goal.prepareGoalState(visit)
+        goals.push(goal)
+      end
+    end
+
+    return goals
+  end
+  
   def getVisibleToDos(visit)
     to_dos = []
 

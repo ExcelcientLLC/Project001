@@ -20,6 +20,12 @@ class Goal < ActiveRecord::Base
 
     return (afterFirstVisit and (incomplete or beforeLastVisit))
   end
+  
+  def isVisibleAtVisitTimeline(visit)
+    afterFirstVisit = (visit.visit_date >= getFirstGoalVisitDate())
+
+    return afterFirstVisit
+  end
 
   def getFirstVisit()
     first_state = self.goal_states.first 
