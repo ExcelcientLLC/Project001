@@ -88,6 +88,26 @@ p.circle_text
 {
   position:relative;
 //  bottom:35px;
+  bottom:56px;
+
+  font-family:"Georgia", sans-serif;
+  font-weight:900;
+//  color:#000000;
+  color:#999999;
+
+  white-space: nowrap;
+
+  transform:rotate(300deg);
+  -webkit-transform:rotate(300deg);
+  -moz-transform:rotate(300deg);
+  -ms-transform: rotate(300deg);
+  -o-transform: rotate(300deg);
+}
+
+p.circle_text_goal
+{
+  position:relative;
+//  bottom:35px;
   bottom:50px;
 
   font-family:"Georgia", sans-serif;
@@ -103,6 +123,7 @@ p.circle_text
   -ms-transform: rotate(300deg);
   -o-transform: rotate(300deg);
 }
+
 div.circle_picture
 {
   position:relative;

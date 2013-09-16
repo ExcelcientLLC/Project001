@@ -8,7 +8,7 @@
     <% end %>
   <% else %>
     <div class="line_icon" style="<%=getStylePosition(@events, event) %>">
-      <p class="circle_text"><%= getEventDateString(event) %></p>
+      <p class="circle_text_goal"><%= getEventDateString(event) %></p>
       <% unless event.goal_category.nil? %>
         <div class="circle_picture"><%= image_tag(event.goal_category.avatar.url(:medium), style:"max-height: 16px; max-width: 16px;") %></div>
       <% end %>
