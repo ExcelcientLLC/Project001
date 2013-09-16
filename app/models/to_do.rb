@@ -6,6 +6,7 @@ class ToDo < ActiveRecord::Base
   
   belongs_to :client
   belongs_to :visit
+  belongs_to :starting_visit, :class_name => "Visit"
   
   def isVisibleAtVisit(visit)
     return ((self.visit.nil?) or (self.visit.visit_date >= visit.visit_date))
@@ -22,6 +23,10 @@ class ToDo < ActiveRecord::Base
     else
       self.visit = nil
       self.save
+    end
+    
+    if self.starting_visit.nil? or self.starting_visit.visit_date > visit.visit_date
+      self.starting_visit = visit
     end
   end
 end
