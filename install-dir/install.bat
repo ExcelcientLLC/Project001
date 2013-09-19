@@ -28,7 +28,7 @@ if '%errorlevel%' NEQ '0' (
 setlocal
 set DRIVE=C:
 
-set CLIENT_MANAGEMENT_SERVER_DIR=%DRIVE%\ClientManagementServer
+set CLIENT_MANAGEMENT_SERVER_DIR="%DRIVE%\ClearView Snapshot"
 set PYTHON_DIR=%DRIVE%\Python27\
 set RUBY_DIR=%DRIVE%\RailsInstaller\Ruby1.9.3
 set RUBY_BIN_DIR=%RUBY_DIR%\bin

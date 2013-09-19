@@ -27,7 +27,7 @@ if '%errorlevel%' NEQ '0' (
 
 set DRIVE=C:
 
-set CLIENT_MANAGEMENT_SERVER_DIR=%DRIVE%\ClientManagementServer
+set CLIENT_MANAGEMENT_SERVER_DIR="%DRIVE%\ClearView Snapshot"
 set PYTHON_DIR=%DRIVE%\Python27\
 
 %PYTHON_DIR%\python.exe %CLIENT_MANAGEMENT_SERVER_DIR%\client_management_service.py restart

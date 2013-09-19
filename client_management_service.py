@@ -8,14 +8,14 @@ import win32serviceutil
 import win32service
 import win32event
 
-__server_name__ = "Client Management Server"
+__server_name__ = "ClearView Snapshot"
 
 class ProsperionClientManagementServerService (win32serviceutil.ServiceFramework):
     _svc_name_ = __server_name__
     _svc_display_name_ = __server_name__
     _svc_description_ = "Prosperion {0} from Excelcient LLC".format(__server_name__)
     
-    PROSPERION_DIR = r"C:\{0}".format(__server_name__.replace(' ', ''))
+    PROSPERION_DIR = r"C:\{0}".format(__server_name__)
     RUBY_BIN_DIR = r"C:\RailsInstaller\Ruby1.9.3\bin"
 
     def __init__(self,args):
