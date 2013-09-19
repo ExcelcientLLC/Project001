@@ -35,11 +35,6 @@ div.client_name
   height:54px;
 }
 
-div.client_name p
-{
-  font: corbel;
-}
-
 div.title_text
 {
   float:right;
@@ -53,7 +48,7 @@ div.title_text p
   float:right;
   color:white;
   font-size:36px;
-  font: corbel;
+  font-family:verdana, arial, helvetica, sans-serif;
 }
 
 div.client_title
@@ -78,5 +73,6 @@ img
 p.snapshot_subheader
 {
   font-size: 20px;
+  font-family: verdana, arial, helvetica, sans-serif;
 }
 
