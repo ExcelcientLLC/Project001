@@ -280,7 +280,7 @@
       float:right;
       color:white;
       font-size:36px;
-      font-family:impact, serif;
+      font-family: verdana, arial, helvetica, sans-serif;
     }
     div.client_title
     {
@@ -298,6 +298,12 @@
     {
       border-style:none;
       -ms-interpolation-mode: bicubic;
+    }
+    
+    p.snapshot_subheader
+    {
+      font-size: 20px;
+      font-family: verdana, arial, helvetica, sans-serif;
     }
           
   }

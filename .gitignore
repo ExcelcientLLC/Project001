@@ -24,3 +24,4 @@ Gemfile.lock
 ClientManagementServer
 gems
 /public/assets/
+/public/system/
