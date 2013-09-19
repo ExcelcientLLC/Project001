@@ -6,8 +6,7 @@ class Disclaimer < ActiveRecord::Base
   def self.get_disclaimer
     disclaimer = Disclaimer.all.first
     if disclaimer.nil?
-      discalimer = Disclaimer.new
-      disclaimer.save
+      discalimer = Disclaimer.create
     end
     return disclaimer
   end
