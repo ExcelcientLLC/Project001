@@ -3,7 +3,7 @@
     <div style="float:right;">
       <div class="client_name">
       <% if @client && @client.first_name && @client.last_name %>
-        <%= getClientHeader @client %>
+        <p><%= getClientHeader @client %></p>
       <% elsif @goal && @goal.client && @goal.client.first_name && @goal.client.last_name %>
         <%= getClientHeader @goal.client %>
       <% end %>
