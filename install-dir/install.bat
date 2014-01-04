@@ -35,10 +35,10 @@ set RUBY_BIN_DIR=%RUBY_DIR%\bin
 
 set STARTING_DIR=%~p0
     
-%~p0\python-2.7.5.msi
-%~p0\pywin32-218.win32-py2.7.exe
-%~p0\ImageMagick-6.8.5-8-Q16-x86-static.exe
-%~p0\railsinstaller-2.2.1.exe
+%~dp0\python-2.7.5.msi
+%~dp0\pywin32-218.win32-py2.7.exe
+%~dp0\ImageMagick-6.8.8-1-Q16-x86-static.exe
+%~dp0\railsinstaller-2.2.2.exe
 
 mkdir %CLIENT_MANAGEMENT_SERVER_DIR%
 xcopy /s %~p0\ClientManagementServer %CLIENT_MANAGEMENT_SERVER_DIR% 
